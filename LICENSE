@@ -652,7 +652,8 @@ Also add information on how to contact you by electronic and paper mail.
   If the program does terminal interaction, make it output a short
 notice like this when it starts in an interactive mode:
 
-    <program>  Copyright (C) <year>  <name of author>
+    Internet Cafe Management System V-1.0 is a desktop application designed to manage café operations, compute billing times, and track member accounts efficiently.
+    Copyright (C) 2026  Zin Moe Hein,Shin Khant Phyo Wai,Win Lin Hein,Nine Ko Ko,Wai Lin Htun,Phone Myint Thu.
     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
     This is free software, and you are welcome to redistribute it
     under certain conditions; type `show c' for details.
