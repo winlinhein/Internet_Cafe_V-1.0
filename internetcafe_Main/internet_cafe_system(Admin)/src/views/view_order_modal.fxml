@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="640.0" maxWidth="580.0" minWidth="520.0" prefWidth="560.0" spacing="0.0" stylesheets="@../css/pixel_admin_reactive.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin_controllers.ViewOrderModal">
+    <!-- Hero header with gradient accent -->
+    <StackPane styleClass="order-view-hero">
+        <VBox alignment="CENTER_LEFT" spacing="6.0">
+            <padding>
+                <Insets bottom="20.0" left="22.0" right="22.0" top="20.0" />
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="12.0">
+                <Label fx:id="orderViewId" styleClass="order-view-id" text="ORD-2024-001" />
+                <Label fx:id="orderViewStatus" styleClass="order-view-status" text="Pending" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="closeButton" onAction="#handleClose" styleClass="popup-close-btn" text="✕" />
+            </HBox>
+            <Label fx:id="orderViewDate" styleClass="order-view-date" text="Today · 2:34 PM" />
+            <Label fx:id="orderViewCustomer" styleClass="order-view-customer" text="Aiden Walker · MEM-1042" />
+        </VBox>
+    </StackPane>
+
+    <!-- Section: Order items with column header -->
+    <VBox spacing="0.0" VBox.vgrow="ALWAYS">
+        <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="order-view-header-row">
+            <padding>
+                <Insets bottom="8.0" left="22.0" right="22.0" top="16.0" />
+            </padding>
+            <children>
+                <Label styleClass="order-view-section-title" text="Order Items" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="orderViewItemCount" styleClass="order-view-items-count" text="0 items" />
+            </children>
+        </HBox>
+        <TableView fx:id="orderItemsTable" prefHeight="200.0" prefWidth="200.0">
+            <styleClass>
+                <String fx:value="session-history-table" />
+                <String fx:value="order-items-table" />
+            </styleClass>
+            <columns>
+                <TableColumn fx:id="orderNo" prefWidth="72.66665649414062" text="No" />
+                <TableColumn fx:id="orderItem" prefWidth="173.33331298828125" text="Item" />
+                <TableColumn fx:id="orderQty" prefWidth="101.3333740234375" text="Qty" />
+                <TableColumn fx:id="orderUnitprize" prefWidth="101.3333740234375" text="Unit" />
+                <TableColumn fx:id="orderTotalprize" prefWidth="103.33331298828125" text="Total" />
+            </columns>
+        </TableView>
+    </VBox>
+
+    <!-- Footer: Total and Complete button -->
+    <StackPane styleClass="order-view-footer">
+        <VBox alignment="CENTER_RIGHT" spacing="8.0">
+            <padding>
+                <Insets bottom="20.0" left="22.0" right="22.0" top="16.0" />
+            </padding>
+                <HBox alignment="CENTER_RIGHT" spacing="16.0">
+                    <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="374.0">
+                    <children>
+                        <Button fx:id="completeButton" alignment="CENTER" mnemonicParsing="false" onAction="#handleComplete" text="Mark Complete">
+                           <styleClass>
+                              <String fx:value="btn-blue" />
+                              <String fx:value="order-complete-btn" />
+                              <String fx:value="order-complete-btn-ready" />
+                           </styleClass>
+                        </Button>
+                    </children>
+                </HBox>
+                <Label styleClass="order-view-total-label" text="Total" />
+                <Label fx:id="orderViewTotalValue" styleClass="order-view-total-value" text="P 240" />
+            </HBox>
+        </VBox>
+    </StackPane>
+    <styleClass>
+        <String fx:value="edit-popup" />
+        <String fx:value="order-view-modal" />
+        <String fx:value="nova-modal-card" />
+    </styleClass>
+</VBox>

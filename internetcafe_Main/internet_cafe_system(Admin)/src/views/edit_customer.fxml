@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane alignment="CENTER_RIGHT" prefHeight="760.0" prefWidth="980.0" stylesheets="@../CSS/pixel_admin_reactive.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin_controllers.EditCustomerController">
+    <padding><Insets bottom="22.0" left="22.0" right="22.0" top="22.0" /></padding>
+    <styleClass>
+        <String fx:value="drawer-overlay" />
+        <String fx:value="customer-modal-overlay" />
+        <String fx:value="customer-page-modal-overlay" />
+    </styleClass>
+
+    <VBox fx:id="rootModal" maxHeight="-Infinity" maxWidth="497.0" prefHeight="570.0" prefWidth="497.0" spacing="10.0" StackPane.alignment="CENTER_RIGHT">
+        <padding><Insets bottom="16.0" left="18.0" right="18.0" top="16.0" /></padding>
+        
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Label fx:id="titleLabel" styleClass="edit-popup-title" text="Edit Member" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#close" styleClass="popup-close-btn" text="✕" />
+        </HBox>
+        
+        <VBox spacing="6.0">
+            <Label styleClass="popup-field-label" text="Member Name" />
+            <TextField fx:id="nameField" styleClass="popup-field" />
+            
+            <Label styleClass="popup-field-label" text="Member Type" />
+            <ComboBox fx:id="memberTypeCombo" prefHeight="48.0" prefWidth="463.0" promptText="Select member type">
+                <styleClass>
+                    <String fx:value="combo-box-popup" />
+                    <String fx:value="game-category-box" />
+                </styleClass>
+            </ComboBox>
+            
+            <Label styleClass="popup-field-label" text="Phone" />
+            <TextField fx:id="phoneField" styleClass="popup-field" />
+            
+            <Label styleClass="popup-field-label" text="Email" />
+            <TextField fx:id="emailField" styleClass="popup-field" />
+            
+            <Label styleClass="popup-field-label" text="New Password (leave empty to keep current)" />
+            <PasswordField fx:id="newPasswordField" promptText="At least 8 chars, 1 upper, 1 lower, 1 digit, 1 special" styleClass="popup-field" />
+            
+            <Label styleClass="popup-field-label" text="Confirm New Password" />
+            <PasswordField fx:id="confirmPasswordField" promptText="Re-type the new password" styleClass="popup-field" />
+            
+            <Label styleClass="popup-field-label" text="Points" />
+            <HBox alignment="CENTER_LEFT" style="-fx-border-color: tranparents;" styleClass="customer-card,active-card">
+                <Label fx:id="pointsLabel" styleClass="popup-static-value,customer-points-value" text="0 pts" />
+            </HBox>
+        </VBox>
+        
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Button onAction="#save" prefWidth="100.0" styleClass="btn-blue" text="Save" />
+            <Button onAction="#AddPoints" prefWidth="100.0" styleClass="btn-white" text="Add Points" />
+            <Button disable="true" onAction="#cancel" prefWidth="80.0" styleClass="btn-white" text="Cancel" visible="false" />
+        </HBox>
+        
+        <styleClass>
+            <String fx:value="edit-popup" />
+            <String fx:value="customer-modal" />
+            <String fx:value="nova-modal-card" />
+            <String fx:value="modal-surface-clean" />
+            <String fx:value="customer-neon-modal" />
+        </styleClass>
+    </VBox>
+</StackPane>

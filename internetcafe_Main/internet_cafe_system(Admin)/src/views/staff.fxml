@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="root" styleClass="app-root" stylesheets="@../CSS/pixel_admin_reactive.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin_controllers.StaffController">
+    <center>
+        <StackPane fx:id="contentStack" BorderPane.alignment="CENTER">
+            <VBox spacing="14.0" styleClass="staff-shell-simple">
+                <padding>
+                    <Insets bottom="18.0" left="18.0" right="18.0" top="18.0" />
+                </padding>
+
+                <HBox alignment="CENTER_LEFT" spacing="14.0" styleClass="staff-simple-header">
+                    <VBox spacing="3.0" HBox.hgrow="ALWAYS">
+                        <Label styleClass="staff-simple-title" text="Staff Directory" />
+                    </VBox>
+
+                    <TextField fx:id="staffSearchField" prefWidth="250.0" promptText="Search staff...">
+                  <styleClass>
+                     <String fx:value="search" />
+                     <String fx:value="staff-search-field-simple" />
+                  </styleClass></TextField>
+
+                    <Button onAction="#onRefreshBtnClick" prefHeight="40.0" prefWidth="112.0" styleClass="staff-ghost-btn" text="Refresh">
+                        <graphic>
+                            <ImageView fitHeight="18.0" fitWidth="18.0">
+                                <image>
+                                    <Image url="@../images/rotate.gif" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+
+                    <Button fx:id="addBtn" onAction="#onAddProduct" styleClass="staff-add-btn-simple" text="Add Staff">
+                  <graphic>
+                     <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../images/plus.gif" />
+                        </image>
+                     </ImageView>
+                  </graphic></Button>
+                </HBox>
+
+                <VBox spacing="12.0" styleClass="staff-directory-panel-simple" VBox.vgrow="ALWAYS">
+                    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+                        <content>
+                            <StackPane styleClass="staff-flow-shell">
+                                <children>
+                                    <FlowPane fx:id="staffFlow" hgap="24.0" prefWrapLength="1100.0" styleClass="product-grid staff-grid-simple" vgap="34.0">
+                                        <padding>
+                                            <Insets bottom="30.0" left="28.0" right="28.0" top="30.0" />
+                                        </padding>
+                                    </FlowPane>
+                                </children>
+                            </StackPane>
+                        </content>
+                  <styleClass>
+                     <String fx:value="inventory-scroll" />
+                     <String fx:value="staff-scroll" />
+                  </styleClass>
+                    </ScrollPane>
+                </VBox>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,887 @@
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.member-root {
+    -fx-background-color:
+        radial-gradient(center 20% 10%, radius 90%, rgba(75,25,125,0.55), transparent 55%),
+        radial-gradient(center 85% 15%, radius 70%, rgba(0,210,255,0.18), transparent 50%),
+        linear-gradient(to bottom right, #0a0b18 0%, #101225 45%, #121935 100%);
+}
+
+.member-topbar,
+.member-statusbar,
+.member-sidebar,
+.glass-panel,
+.metric-card,
+.sidebar-profile-card,
+.sidebar-footer-card,
+.food-card-premium,
+.game-card-premium,
+.topbar-pill,
+.food-toolbar,
+.mini-info-card,
+.detail-grid,
+.time-table,
+.mini-banner {
+    -fx-background-color: rgba(13, 18, 38, 0.75);
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-border-width: 1;
+}
+
+.member-topbar,
+.member-statusbar {
+    -fx-background-color: rgba(8, 12, 26, 0.8);
+    -fx-border-color: transparent transparent rgba(255,255,255,0.08) transparent;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+
+.member-statusbar {
+    -fx-border-color: rgba(255,255,255,0.08) transparent transparent transparent;
+}
+
+.member-sidebar {
+    -fx-background-insets: 14 10 14 14;
+    -fx-padding: 0;
+}
+
+.page-shell {
+    -fx-background-color: transparent;
+}
+
+.brand-label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 22px;
+    -fx-font-weight: 800;
+    -fx-letter-spacing: 2px;
+}
+
+.brand-subtitle,
+.page-subtitle,
+.metric-caption,
+.status-note,
+.sidebar-caption,
+.sidebar-footer-caption,
+.mini-info-copy,
+.game-meta-label,
+.food-card-meta,
+.mini-banner-copy,
+.topbar-pill-label {
+    -fx-text-fill: #99a6d6;
+    -fx-font-size: 12px;
+}
+
+.page-title,
+.section-title,
+.metric-value,
+.welcome-name,
+.sidebar-title-text,
+.sidebar-footer-value,
+.mini-info-title,
+.mini-banner-title,
+.food-card-title,
+.game-title-label {
+    -fx-text-fill: #ffffff;
+}
+
+.page-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: 800;
+}
+
+.section-title {
+    -fx-font-size: 17px;
+    -fx-font-weight: 700;
+}
+
+.welcome-chip,
+.chip-badge,
+.genre-badge,
+.inline-status,
+.status-pill,
+.sidebar-mini-stat {
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-padding: 7 12 7 12;
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+}
+
+.welcome-chip,
+.chip-badge,
+.genre-badge {
+    -fx-background-color: rgba(116, 72, 255, 0.18);
+    -fx-border-color: rgba(151, 122, 255, 0.4);
+    -fx-text-fill: #cfc3ff;
+}
+
+.inline-status,
+.status-pill,
+.sidebar-mini-stat {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-text-fill: #d9e2ff;
+}
+
+.success {
+    -fx-background-color: rgba(53, 255, 174, 0.13);
+    -fx-border-color: rgba(53, 255, 174, 0.4);
+    -fx-text-fill: #80ffcf;
+}
+
+.accent {
+    -fx-background-color: rgba(0, 225, 255, 0.14);
+    -fx-border-color: rgba(0, 225, 255, 0.34);
+    -fx-text-fill: #92f5ff;
+}
+
+.topbar-pill {
+    -fx-padding: 8 14 8 14;
+    -fx-spacing: 10;
+}
+
+.topbar-pill-value,
+.welcome-name,
+.metric-value,
+.sidebar-footer-title,
+.food-card-price {
+    -fx-font-weight: 800;
+}
+
+.topbar-pill-value {
+    -fx-text-fill: #8bf6ff;
+    -fx-font-size: 13px;
+}
+
+.welcome-name {
+    -fx-font-size: 15px;
+}
+
+.logout-button,
+.action-button,
+.nav-button-member,
+.category-chip,
+.qty-button {
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-cursor: hand;
+    -fx-font-weight: 700;
+}
+
+.logout-button,
+.action-button,
+.category-chip {
+    -fx-padding: 11 18 11 18;
+}
+
+.logout-button {
+    -fx-background-color: linear-gradient(to right, #ff4d8d, #c742ff);
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-background-radius: 14;
+    -fx-padding: 10 18 10 18;
+}
+.logout-button:hover {
+    -fx-translate-y: -2;
+    -fx-effect: dropshadow(gaussian, rgba(255,77,141,0.4), 18, 0.35, 0, 6);
+}
+
+.action-button:hover,
+.nav-button-member:hover,
+.category-chip:hover,
+.qty-button:hover {
+    -fx-effect: dropshadow(gaussian, rgba(100,150,255,0.22), 22, 0.3, 0, 8);
+}
+
+.nav-button-member {
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-text-fill: #e5ebff;
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-alignment: CENTER_LEFT;
+    -fx-content-display: LEFT;
+    -fx-graphic-text-gap: 12;
+    -fx-min-height: 50;
+    
+}
+
+.nav-toggle {
+    -fx-background-color: linear-gradient(to right, rgba(115,78,255,0.36), rgba(31,208,255,0.18));
+}
+
+.sidebar-profile-card,
+.sidebar-footer-card,
+.metric-card,
+.glass-panel,
+.food-card-premium,
+.game-card-premium,
+.mini-info-card,
+.mini-banner,
+.detail-grid,
+.time-table {
+    -fx-padding: 18;
+}
+
+.sidebar-profile-card {
+    -fx-background-color: linear-gradient(to bottom right, rgba(110,76,255,0.24), rgba(10,18,38,0.9));
+}
+
+.sidebar-footer-card,
+.side-glow {
+    -fx-effect: dropshadow(gaussian, rgba(80, 160, 255, 0.18), 26, 0.22, 0, 10);
+}
+
+.metric-card {
+    -fx-min-height: 140;
+}
+
+.metric-card.highlight {
+    -fx-background-color: linear-gradient(to bottom right, rgba(117,77,255,0.28), rgba(17,18,37,0.88));
+}
+
+.metric-card.accent-blue {
+    -fx-background-color: linear-gradient(to bottom right, rgba(16,190,255,0.22), rgba(17,18,37,0.88));
+}
+
+.metric-card.accent-pink {
+    -fx-background-color: linear-gradient(to bottom right, rgba(255,92,178,0.22), rgba(17,18,37,0.88));
+}
+
+.metric-label,
+.detail-label,
+.table-header,
+.sidebar-footer-title {
+    -fx-text-fill: #8d9cc9;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+}
+
+.metric-value {
+    -fx-font-size: 30px;
+}
+
+.detail-value,
+.table-cell {
+    -fx-text-fill: #f2f5ff;
+    -fx-font-size: 13px;
+}
+
+.table-cell.emphasis,
+.food-card-price {
+    -fx-text-fill: #8cf7ff;
+}
+
+.action-button {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-border-color: rgba(255,255,255,0.09);
+    -fx-text-fill: #f5f7ff;
+}
+
+.action-button.primary {
+    -fx-background-color: linear-gradient(to right, #8056ff, #34d6ff);
+    -fx-text-fill: white;
+    -fx-border-color: transparent;
+}
+
+.action-button.alt {
+    -fx-background-color: linear-gradient(to right, rgba(255,96,173,0.9), rgba(142,74,255,0.9));
+    -fx-border-color: transparent;
+    -fx-text-fill: white;
+}
+
+.action-button.ghost {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255,255,255,0.14);
+}
+
+.action-button.compact {
+    -fx-padding: 10 16 10 16;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+}
+
+.games-scroll,
+.games-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.games-grid {
+    -fx-background-color: transparent;
+}
+
+.game-card-premium,
+.food-card-premium {
+    -fx-background-color: linear-gradient(to bottom, rgba(17,22,44,0.96), rgba(11,14,28,0.96));
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.28), 28, 0.18, 0, 14);
+}
+
+.game-image-wrap,
+.food-image-wrap {
+    -fx-alignment: center;
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-background-color:
+        linear-gradient(to bottom right, rgba(122,83,255,0.22), rgba(0,225,255,0.08)),
+        linear-gradient(to bottom, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    -fx-border-color: rgba(255,255,255,0.10);
+    -fx-padding: 12;
+    -fx-effect: dropshadow(gaussian, rgba(20, 30, 70, 0.32), 22, 0.18, 0, 10);
+}
+
+.game-title-label,
+.food-card-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: 800;
+}
+
+.game-meta-label,
+.food-card-meta {
+    -fx-font-size: 12px;
+}
+
+.food-card-price {
+    -fx-font-size: 19px;
+}
+
+.qty-button {
+    -fx-background-color: rgba(255,255,255,0.08);
+    -fx-border-color: rgba(255,255,255,0.12);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
+
+.qty-label {
+    -fx-alignment: center;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: 800;
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(255,255,255,0.09);
+}
+
+.food-toolbar,
+.food-top-shell {
+    -fx-background-color: transparent;
+}
+
+.category-chip {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-text-fill: #e7eeff;
+    -fx-border-color: rgba(255,255,255,0.08);
+}
+
+.category-chip.active {
+    -fx-background-color: linear-gradient(to right, rgba(126,87,255,0.9), rgba(53,208,255,0.9));
+    -fx-border-color: transparent;
+    -fx-text-fill: white;
+}
+
+.food-searchbar {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(255,255,255,0.1);
+    -fx-prompt-text-fill: #7f8cb5;
+    -fx-text-fill: white;
+    -fx-padding: 0 14 0 14;
+}
+
+.game-search-shell {
+    -fx-min-height: 56;
+    -fx-pref-height: 56;
+    -fx-background-color: transparent;
+}
+
+.game-search-core {
+    -fx-padding: 6 16 6 14;
+    -fx-background-color:
+        linear-gradient(to right, rgba(15, 21, 44, 0.96), rgba(11, 16, 34, 0.94)),
+        linear-gradient(to bottom right, rgba(124,88,255,0.20), rgba(53,208,255,0.08));
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.10);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.28), 20, 0.16, 0, 8);
+}
+
+.game-search-glow {
+    -fx-background-color: linear-gradient(to right, rgba(124,88,255,0.22), rgba(53,208,255,0.18));
+    -fx-background-radius: 20;
+    -fx-opacity: 0.0;
+    -fx-scale-x: 0.96;
+    -fx-scale-y: 0.96;
+}
+
+.game-search-scanline {
+    -fx-max-height: 1.2;
+    -fx-pref-height: 1.2;
+    -fx-background-color: rgba(146, 245, 255, 0.85);
+    -fx-background-radius: 999;
+    -fx-opacity: 0.38;
+    -fx-translate-y: -22;
+}
+
+.game-search-icon {
+    -fx-text-fill: #8cf7ff;
+    -fx-font-size: 21px;
+    -fx-font-weight: 800;
+    -fx-opacity: 0.92;
+}
+
+.game-searchbar {
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 10 4 10 0;
+    -fx-highlight-fill: rgba(124, 88, 255, 0.75);
+    -fx-highlight-text-fill: white;
+}
+
+.game-searchbar:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-effect: null;
+}
+
+.game-search-shell:active .game-search-core,
+.game-search-shell:filled .game-search-core {
+    -fx-border-color: rgba(124, 88, 255, 0.52);
+    -fx-effect: dropshadow(gaussian, rgba(124, 88, 255, 0.22), 22, 0.24, 0, 8);
+}
+
+.game-search-shell:active .game-search-glow,
+.game-search-shell:filled .game-search-glow {
+    -fx-opacity: 1.0;
+    -fx-scale-x: 1.0;
+    -fx-scale-y: 1.0;
+}
+
+.game-search-shell:active .game-search-icon,
+.game-search-shell:filled .game-search-icon {
+    -fx-text-fill: #d5c9ff;
+}
+
+.mini-banner {
+    -fx-background-color: linear-gradient(to right, rgba(124,88,255,0.95), rgba(53,208,255,0.85));
+    -fx-border-color: transparent;
+}
+
+.mini-banner-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: 800;
+}
+
+.mini-banner-copy,
+.mini-info-title {
+    -fx-text-fill: white;
+}
+
+.accent-panel {
+    -fx-background-color: linear-gradient(to right, rgba(255,97,179,0.16), rgba(255,255,255,0.04));
+}
+
+.large-panel {
+    -fx-min-height: 320;
+}
+
+.time-table,
+.detail-grid {
+    -fx-background-color: rgba(255,255,255,0.03);
+}
+
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: linear-gradient(to bottom, rgba(124,88,255,0.9), rgba(53,208,255,0.9));
+    -fx-background-radius: 999;
+}
+
+.scroll-bar .track {
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-background-radius: 999;
+}
+
+
+/* =========================
+   CART UI - NEXT LEVEL
+   ========================= */
+.cart-shell {
+    -fx-background-color:
+        radial-gradient(center 18% 12%, radius 90%, rgba(125, 76, 255, 0.24), transparent 55%),
+        radial-gradient(center 85% 12%, radius 70%, rgba(0, 225, 255, 0.16), transparent 45%),
+        linear-gradient(to bottom right, #0b1020 0%, #0f1630 45%, #101c39 100%);
+    -fx-background-radius: 28;
+    -fx-border-radius: 28;
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-border-width: 1;
+}
+
+.cart-header {
+    -fx-background-color: rgba(255,255,255,0.03);
+    -fx-border-color: transparent transparent rgba(255,255,255,0.08) transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.cart-kicker,
+.cart-summary-kicker {
+    -fx-text-fill: #8ea2e8;
+    -fx-font-size: 10px;
+    -fx-font-weight: 800;
+    -fx-letter-spacing: 1.5px;
+}
+
+.cart-header-title {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: 800;
+}
+
+.cart-back-button,
+.cart-icon-button {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(255,255,255,0.10);
+    -fx-cursor: hand;
+}
+
+.cart-back-button {
+    -fx-pref-width: 38;
+    -fx-pref-height: 38;
+}
+
+.cart-back-button:hover,
+.cart-icon-button:hover,
+.cart-qty-button:hover,
+.cart-order-button:hover {
+    -fx-effect: dropshadow(gaussian, rgba(100,150,255,0.28), 22, 0.35, 0, 8);
+}
+
+.cart-header-badge,
+.cart-mini-pill {
+    -fx-background-color: linear-gradient(to right, rgba(0,225,255,0.18), rgba(124,92,255,0.20));
+    -fx-border-color: rgba(147, 224, 255, 0.22);
+    -fx-border-radius: 999;
+    -fx-background-radius: 999;
+    -fx-padding: 7 14 7 14;
+}
+
+.cart-header-badge-text,
+.cart-mini-pill-text {
+    -fx-text-fill: #bdf7ff;
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+}
+
+.cart-list-shell {
+    -fx-padding: 0;
+}
+
+.cart-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+    -fx-fit-to-width: true;
+}
+
+.cart-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.cart-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-padding: 4;
+}
+
+.cart-scroll .thumb {
+    -fx-background-color: linear-gradient(to bottom, rgba(133,102,255,0.85), rgba(0,224,255,0.75));
+    -fx-background-radius: 999;
+}
+
+.cart-summary-panel,
+.cart-item-card {
+    -fx-background-color: rgba(13, 18, 38, 0.82);
+    -fx-background-radius: 24;
+    -fx-border-radius: 24;
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-border-width: 1;
+}
+
+.cart-summary-panel {
+    -fx-effect: dropshadow(gaussian, rgba(72, 124, 255, 0.18), 28, 0.25, 0, 10);
+}
+
+.cart-total-value {
+    -fx-text-fill: white;
+    -fx-font-size: 42px;
+    -fx-font-weight: 800;
+}
+
+.cart-total-unit {
+    -fx-text-fill: #8bf6ff;
+    -fx-font-size: 24px;
+    -fx-font-weight: 800;
+    -fx-padding: 0 0 6 2;
+}
+
+.cart-summary-note {
+    -fx-text-fill: #95a4d7;
+    -fx-font-size: 12px;
+    -fx-max-width: 180px;
+}
+
+.cart-order-button {
+    -fx-background-color: linear-gradient(to right, #18d7ff, #7d5cff);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 800;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-cursor: hand;
+}
+
+.cart-item-card {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 18, 0.2, 0, 8);
+}
+
+.cart-item-thumb-wrap {
+    -fx-background-color: linear-gradient(to bottom right, rgba(128,95,255,0.20), rgba(0,225,255,0.11));
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-border-color: rgba(255,255,255,0.10);
+}
+
+.cart-item-title {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: 800;
+}
+
+.cart-item-meta-label {
+    -fx-text-fill: #8d9cc9;
+    -fx-font-size: 10px;
+    -fx-font-weight: 800;
+}
+
+.cart-item-point-chip {
+    -fx-background-color: rgba(125, 92, 255, 0.18);
+    -fx-border-color: rgba(160, 128, 255, 0.35);
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-padding: 5 10 5 10;
+    -fx-text-fill: #d6ccff;
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+}
+
+.cart-icon-button {
+    -fx-pref-width: 34;
+    -fx-pref-height: 34;
+}
+
+.cart-qty-box {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-padding: 6 7 6 7;
+}
+
+.cart-qty-button {
+    -fx-background-color: rgba(255,255,255,0.07);
+    -fx-text-fill: #eff3ff;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(255,255,255,0.06);
+    -fx-cursor: hand;
+}
+
+.cart-qty-button-plus {
+    -fx-background-color: linear-gradient(to right, #18d7ff, #7d5cff);
+}
+
+.cart-qty-label {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: 800;
+    -fx-alignment: center;
+}
+
+/* =========================
+   SEPARATE CART VIEW / ITEM
+   ========================= */
+.cart-view-shell {
+    -fx-background-insets: 0;
+    -fx-effect: dropshadow(gaussian, rgba(6, 10, 28, 0.45), 44, 0.28, 0, 18);
+}
+
+.cart-view-header {
+    -fx-background-color: linear-gradient(to bottom right, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    -fx-background-radius: 24;
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-border-radius: 24;
+}
+
+.cart-orb {
+    -fx-background-color:
+        radial-gradient(center 35% 30%, radius 70%, rgba(155,114,255,0.92), rgba(125,92,255,0.18) 60%, transparent 100%),
+        linear-gradient(to bottom right, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.12);
+    -fx-border-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(125,92,255,0.35), 26, 0.32, 0, 8);
+}
+
+.cart-orb-glyph {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: 900;
+}
+
+.cart-status-row {
+    -fx-padding: 4 0 0 0;
+}
+
+.cart-status-pill {
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-padding: 7 12 7 12;
+    -fx-border-width: 1;
+}
+
+.cart-status-pill.success {
+    -fx-background-color: rgba(45, 225, 154, 0.12);
+    -fx-border-color: rgba(72, 255, 185, 0.24);
+}
+
+.cart-status-pill.accent {
+    -fx-background-color: rgba(24, 215, 255, 0.12);
+    -fx-border-color: rgba(24, 215, 255, 0.22);
+}
+
+.cart-status-dot {
+    -fx-text-fill: #50ffbf;
+    -fx-font-size: 10px;
+}
+
+.cart-status-text,
+.cart-section-title,
+.cart-summary-label,
+.cart-summary-value,
+.cart-item-price {
+    -fx-text-fill: #edf3ff;
+    -fx-font-weight: 800;
+}
+
+.cart-status-text {
+    -fx-font-size: 11px;
+}
+
+.cart-section-title {
+    -fx-font-size: 16px;
+}
+
+.cart-ghost-button {
+    -fx-text-fill: #d8e3ff;
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-padding: 8 14 8 14;
+}
+
+.cart-list-frame {
+    -fx-background-color: rgba(255,255,255,0.025);
+    -fx-background-radius: 24;
+    -fx-border-color: rgba(255,255,255,0.05);
+    -fx-border-radius: 24;
+    -fx-padding: 10;
+}
+
+.cart-items-box {
+    -fx-padding: 0 2 0 0;
+}
+
+.cart-item-premium {
+    -fx-background-color:
+        linear-gradient(to bottom right, rgba(20,27,53,0.96), rgba(13,18,38,0.92)),
+        linear-gradient(to right, rgba(24,215,255,0.12), rgba(125,92,255,0.10));
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 22, 21;
+    -fx-border-color: rgba(255,255,255,0.07);
+    -fx-border-radius: 22;
+}
+
+.cart-item-thumb-wrap-premium {
+    -fx-effect: dropshadow(gaussian, rgba(24,215,255,0.18), 20, 0.24, 0, 8);
+}
+
+.cart-remove-button {
+    -fx-text-fill: #ffb5d9;
+    -fx-font-size: 12px;
+    -fx-font-weight: 900;
+}
+
+.cart-item-price {
+    -fx-font-size: 15px;
+}
+
+.cart-qty-box-premium {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-border-color: rgba(255,255,255,0.10);
+}
+
+.cart-summary-premium {
+    -fx-background-color:
+        linear-gradient(to bottom right, rgba(18, 25, 49, 0.96), rgba(10, 14, 31, 0.96)),
+        radial-gradient(center 20% 10%, radius 70%, rgba(0,225,255,0.12), transparent 55%),
+        radial-gradient(center 80% 0%, radius 80%, rgba(125,92,255,0.15), transparent 50%);
+}
+
+.cart-summary-grid {
+    -fx-background-color: rgba(255,255,255,0.03);
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.06);
+    -fx-border-radius: 18;
+    -fx-padding: 12 14 12 14;
+}
+
+.cart-summary-line {
+    -fx-padding: 3 0 3 0;
+}
+
+.cart-summary-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #97abd8;
+}
+
+.cart-summary-value {
+    -fx-font-size: 14px;
+}
+
+.cart-summary-value.discount {
+    -fx-text-fill: #7df4c6;
+}
+
+.cart-total-band {
+    -fx-background-color: rgba(255,255,255,0.03);
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.06);
+    -fx-border-radius: 18;
+    -fx-padding: 14;
+}
+
+.cart-order-button-premium {
+    -fx-effect: dropshadow(gaussian, rgba(97, 113, 255, 0.34), 28, 0.28, 0, 10);
+}
+
+.pulse {
+    -fx-background-color: linear-gradient(to right, rgba(24,215,255,0.24), rgba(125,92,255,0.24));
+}
+

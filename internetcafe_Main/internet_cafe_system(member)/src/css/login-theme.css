@@ -1,0 +1,67 @@
+/* --- Global Styles & Font --- */
+.root {
+    -fx-font-family: "Press Start 2P";
+    /* Light bluish background from your login screen */
+    -fx-background-color: #E0E7FF; 
+}
+
+/* --- Menu Bar Style --- */
+.menu-bar {
+    -fx-background-color: white;
+    /* A solid 4px bottom border to give it a pixelated separation line */
+    -fx-border-color: #3D4C75;
+    -fx-border-width: 0 0 4px 0; 
+    -fx-font-size: 10px;
+}
+
+/* Style for the top-level menu items (File, Manage, etc.) */
+.menu-bar .label {
+    -fx-text-fill: #3D4C75;
+}
+
+/* Pink highlight when hovering over a menu */
+.menu:hover {
+    -fx-background-color: #FFADD6;
+}
+
+/* Darker pink when a menu is open */
+.menu:showing {
+    -fx-background-color: #FF8DC7;
+}
+
+/* --- Dropdown Menu Style --- */
+/* This styles the popup box that appears when you click a menu */
+.context-menu {
+    -fx-background-color: white;
+    -fx-border-color: #3D4C75;
+    -fx-border-width: 3px;
+    -fx-background-insets: 0;
+    
+    /* The same pixelated shadow effect from the login window */
+    -fx-effect: dropshadow(gaussian, #3D4C75, 10, 0, 5, 5);
+}
+
+/* Style for individual items within the dropdown (Logout, Users, etc.) */
+.menu-item {
+    -fx-font-size: 10px;
+}
+
+.menu-item .label {
+    -fx-text-fill: #3D4C75;
+}
+
+/* Pink highlight when hovering over a dropdown item */
+.menu-item:focused {
+    -fx-background-color: #FFADD6;
+}
+
+/* --- Main Content Area Placeholder --- */
+.admin-content-pane {
+    -fx-padding: 20px;
+    -fx-alignment: center;
+}
+
+.admin-title {
+    -fx-font-size: 28px;
+    -fx-text-fill: #3D4C75;
+}

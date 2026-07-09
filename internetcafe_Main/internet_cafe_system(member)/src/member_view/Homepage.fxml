@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fillWidth="true" spacing="20.0" styleClass="page-shell" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="member_controllers.HomepageController">
+    <padding>
+        <Insets bottom="22.0" left="22.0" right="22.0" top="22.0" />
+    </padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="18.0">
+        <VBox spacing="6.0">
+            <Label styleClass="page-title" text="Member Command Center" />
+        </VBox>
+        <Region HBox.hgrow="ALWAYS" />
+        <Label styleClass="chip-badge" text="LIVE SESSION" />
+    </HBox>
+
+    <HBox spacing="16.0">
+        <HBox fx:id="balanceCard" opacity="0" alignment="CENTER_LEFT" spacing="14.0" HBox.hgrow="ALWAYS">
+            <StackPane styleClass="metric-icon-shell metric-icon-balance">
+                <children>
+                    <StackPane styleClass="metric-icon-inner">
+                        <children>
+                            <ImageView fitHeight="33.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true" styleClass="metric-icon-balance">
+                                <image>
+                                    <Image url="@../images/Balance.PNG" />
+                                </image>
+                            </ImageView>
+                        </children>
+                    </StackPane>
+                </children>
+            </StackPane>
+            <VBox spacing="8.0">
+                <Label styleClass="metric-label" text="Balance" />
+                <Label fx:id="myPoint" styleClass="metric-value" text="5000" />
+                
+            </VBox>
+            <styleClass>
+                <String fx:value="metric-card" />
+                <String fx:value="metric-card-rich" />
+                <String fx:value="metric-card-balance" />
+            </styleClass>
+        </HBox>
+        <HBox fx:id="remainingTimeCard" opacity="0" alignment="CENTER_LEFT" spacing="14.0" HBox.hgrow="ALWAYS">
+            <StackPane styleClass="metric-icon-shell metric-icon-time">
+                <children>
+                    <StackPane styleClass="metric-icon-inner">
+                        <children>
+                            <ImageView fitHeight="38.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true" styleClass="metric-icon-time">
+                                <image>
+                                    <Image url="@../images/RemainingTime.PNG" />
+                                </image>
+                            </ImageView>
+                        </children>
+                    </StackPane>
+                </children>
+            </StackPane>
+            <VBox spacing="8.0">
+                <Label styleClass="metric-label" text="Remaining Time" />
+                <Label fx:id="reamainingTime" styleClass="metric-value" text="2h 15m" />
+            </VBox>
+            <styleClass>
+                <String fx:value="metric-card" />
+                <String fx:value="metric-card-rich" />
+                <String fx:value="metric-card-time" />
+            </styleClass>
+        </HBox>
+        <HBox fx:id="currentStationCard" opacity="0" alignment="CENTER_LEFT" spacing="14.0" HBox.hgrow="ALWAYS">
+            <StackPane styleClass="metric-icon-shell metric-icon-station">
+                <children>
+                    <StackPane styleClass="metric-icon-inner">
+                        <children>
+                            <ImageView fitHeight="29.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" styleClass="metric-icon-station">
+                                <image>
+                                    <Image url="@../images/PC.PNG" />
+                                </image>
+                            </ImageView>
+                        </children>
+                    </StackPane>
+                </children>
+            </StackPane>
+            <VBox spacing="8.0">
+                <Label styleClass="metric-label" text="Current Station" />
+                <Label fx:id="pcName" styleClass="metric-value" text="PC-05" />
+                <Label text="ONLINE">
+                    <styleClass>
+                        <String fx:value="inline-status" />
+                        <String fx:value="success" />
+                    </styleClass>
+                </Label>
+            </VBox>
+            <styleClass>
+                <String fx:value="metric-card" />
+                <String fx:value="metric-card-rich" />
+                <String fx:value="metric-card-station" />
+            </styleClass>
+        </HBox>
+        <HBox fx:id="totalPointSpentCard" opacity="0" alignment="CENTER_LEFT" spacing="14.0" HBox.hgrow="ALWAYS">
+            <StackPane styleClass="metric-icon-shell metric-icon-spent">
+                <children>
+                    <StackPane styleClass="metric-icon-inner">
+                        <children>
+                            <ImageView fitHeight="41.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" styleClass="metric-icon-spent">
+                                <image>
+                                    <Image url="@../images/Points.PNG" />
+                                </image>
+                            </ImageView>
+                        </children>
+                    </StackPane>
+                </children>
+            </StackPane>
+            <VBox spacing="8.0">
+                <Label styleClass="metric-label" text="Total Point Spent" />
+                <Label fx:id="totalPointSpent" styleClass="metric-value" text="100000" />
+
+            </VBox>
+            <styleClass>
+                <String fx:value="metric-card" />
+                <String fx:value="metric-card-rich" />
+                <String fx:value="metric-card-spent" />
+            </styleClass>
+        </HBox>
+    </HBox>
+
+    <HBox spacing="20.0" VBox.vgrow="ALWAYS">
+        <VBox spacing="16.0" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT" spacing="12.0">
+                <Label styleClass="section-title" text="Session Details" />
+                <Region HBox.hgrow="ALWAYS" />
+            </HBox>
+
+            <GridPane hgap="18.0" prefHeight="85.0" prefWidth="508.0" styleClass="detail-grid" vgap="14.0">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="38.0" />
+                    <ColumnConstraints hgrow="ALWAYS" percentWidth="62.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                </rowConstraints>
+                <Label styleClass="detail-label" text="Member Name" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <Label fx:id="memberName" styleClass="detail-value" text="Win Lin Hein" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label styleClass="detail-label" text="Membership" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label fx:id="memberType" text="VIP" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <styleClass>
+                  <String fx:value="inline-status" />
+                  <String fx:value="accent" />
+               </styleClass></Label>
+            </GridPane>
+
+            <HBox spacing="14.0">
+                <Button contentDisplay="RIGHT" mnemonicParsing="false" onAction="#ViewGames" prefHeight="30.0" prefWidth="152.0" text="View Games">
+                    <styleClass>
+                        <String fx:value="home-neon-button" />
+                        <String fx:value="action-button" />
+                    </styleClass>
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/joystick.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+                </Button>
+            <Button contentDisplay="RIGHT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ViewsFood" prefHeight="54.0" prefWidth="65.0">
+               <styleClass>
+                  <String fx:value="home-neon-button" />
+                  <String fx:value="action-button" />
+               </styleClass>
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/burger%20(1).png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            </HBox>
+            <styleClass>
+                <String fx:value="glass-panel" />
+                <String fx:value="large-panel" />
+            </styleClass>
+        </VBox>
+    </HBox>
+</VBox>

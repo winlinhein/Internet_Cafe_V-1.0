@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="root" prefHeight="573.0" prefWidth="1103.0" styleClass="app-root" stylesheets="@../CSS/pixel_admin_reactive.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin_controllers.Session_historyController">
+    <center>
+        <StackPane fx:id="contentStack" BorderPane.alignment="CENTER">
+            <VBox spacing="14" styleClass="overview-root">
+                <padding>
+                    <Insets bottom="16" left="16" right="16" top="16" />
+                </padding>
+
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <Label styleClass="page-title" text="Session History" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button fx:id="refreshButton" styleClass="btn-blue" text="REFRESH">
+                  <graphic>
+                     <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../images/rotate.gif" />
+                        </image>
+                     </ImageView>
+                  </graphic></Button>
+                </HBox>
+
+                <VBox spacing="15" style="-fx-background-color: #0f2150; -fx-border-color: #ff63c5; -fx-border-width: 2; -fx-background-radius: 14; -fx-border-radius: 14;" VBox.vgrow="ALWAYS">
+                    <padding>
+                        <Insets bottom="12" left="12" right="12" top="12" />
+                    </padding>
+
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <TextField fx:id="searchField" promptText="Search username / PC..." styleClass="search" />
+                        <DatePicker fx:id="fromDatePicker" promptText="From date" styleClass="session-date-picker" />
+                        <DatePicker fx:id="toDatePicker" promptText="To date" styleClass="session-date-picker" />
+                  <Region prefHeight="41.0" prefWidth="71.0" />
+                        <Button fx:id="filterButton" prefHeight="41.0" prefWidth="115.0" styleClass="btn-blue" text="FILTER">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/filters.gif" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                        <Button fx:id="clearButton" prefHeight="43.0" prefWidth="103.0" style="-fx-background-color: #0f2150; -fx-border-color: #ff63c5; -fx-text-fill: white; -fx-border-radius: 10; -fx-border-width: 2;" text="CLEAR">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/file.gif" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                    </HBox>
+
+                    <TableView fx:id="sessionTable" prefHeight="400.0" prefWidth="961.0" styleClass="session-history-table" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="sessionIdColumn" prefWidth="82.00000381469727" text="Session ID" />
+                            <TableColumn fx:id="usernameColumn" prefWidth="127.3333969116211" text="Username" />
+                            <TableColumn fx:id="pcColumn" prefWidth="94.66670227050781" text="PC" />
+                            <TableColumn fx:id="dateColumn" prefWidth="115.33331298828125" text="Date" />
+                            <TableColumn fx:id="durationColumn" prefWidth="128.66668701171875" text="Duration" />
+                            <TableColumn fx:id="costColumn" prefWidth="119.33331298828125" text="Cost" />
+                            <TableColumn fx:id="boughtProductsColumn" prefWidth="287.99995930989587" text="Bought Products" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>

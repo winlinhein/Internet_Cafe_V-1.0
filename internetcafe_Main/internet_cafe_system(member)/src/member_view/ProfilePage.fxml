@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fillWidth="true" spacing="12.0" styleClass="page-shell profile-page" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="member_controllers.ProfilePageController">
+    <padding>
+        <Insets bottom="12.0" left="18.0" right="18.0" top="12.0" />
+    </padding>
+
+    <!-- DETAILS -->
+    <HBox spacing="12.0">
+      <VBox fx:id="profileCard" opacity="0" prefHeight="266.0" prefWidth="280.0" spacing="10.0" styleClass="glass-panel">
+         <children>
+                <Label text="Online">
+                    <styleClass>
+                        <String fx:value="inline-status" />
+                        <String fx:value="success" />
+                    </styleClass>
+                </Label>
+            <StackPane prefHeight="118.0" prefWidth="200.0" styleClass="detail-grid">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/user.gif" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+               <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="188.0" spacing="8.0">
+               <Label fx:id="nameLabel1" styleClass="detail-label" text="Win Lin Hein" />
+                   <Label styleClass="chip-badge" text="VERIFIED MEMBER" />
+               </HBox>
+   
+                              <HBox alignment="CENTER_LEFT" spacing="8.0">
+                   <Label styleClass="detail-label" text="Member Profile" />
+                   <Label fx:id="memberTypeLabel" text="Gold Member">
+                       <styleClass>
+                           <String fx:value="inline-status" />
+                           <String fx:value="accent" />
+                       </styleClass>
+                   </Label>
+               </HBox>
+         </children>
+      </VBox>
+        <VBox fx:id="accountDetailsCard" opacity="0" prefHeight="266.0" prefWidth="578.0" spacing="10.0" styleClass="glass-panel" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                <Label styleClass="section-title" text="Account Details" />
+                <Region HBox.hgrow="ALWAYS" />
+            </HBox>
+            <GridPane hgap="18.0" prefHeight="214.0" prefWidth="540.0" styleClass="detail-grid profile-account-grid" vgap="10.0">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="34.0" />
+                    <ColumnConstraints percentWidth="66.0" />
+                </columnConstraints>
+                <Label styleClass="detail-label" text="Name" GridPane.columnIndex="0" />
+                <Label fx:id="nameLabel" styleClass="detail-value" text="Win Lin Hein" GridPane.columnIndex="1" />
+                <Label styleClass="detail-label" text="Member ID" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label fx:id="memberIdLabel" styleClass="detail-value" text="MB-1024" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label styleClass="detail-label" text="Balance" GridPane.rowIndex="4" />
+                <Label fx:id="balenceLabel" styleClass="detail-value" text="5,000 P" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label prefHeight="18.0" prefWidth="52.0" styleClass="detail-label" text="Email" GridPane.rowIndex="2" />
+            <Label prefHeight="15.0" prefWidth="93.0" styleClass="detail-label" text="Phone Number" GridPane.rowIndex="3" />
+            <Label fx:id="emailLabel" styleClass="detail-value" text="thu63198@gmail.com" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="phoneLabel" styleClass="detail-value" text="09762168274" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints minHeight="10.0" prefHeight="24.0" />
+               <RowConstraints />
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+        </VBox>
+    </HBox>
+
+    <!-- SPENDING STATS -->
+    <HBox spacing="12.0" VBox.vgrow="ALWAYS">
+        <!-- Spending Overview (Pie Chart) -->
+        <VBox fx:id="spendingCard" minHeight="290.0" minWidth="340.0" opacity="0" prefHeight="290.0" prefWidth="410.0" spacing="10.0" styleClass="glass-panel chart-panel spending-card" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="chart-header">
+                <VBox spacing="3.0">
+                    <Label styleClass="chart-kicker" text="BREAKDOWN" />
+                    <Label styleClass="section-title" text="Spending Overview" />
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label styleClass="chart-pill" text="Play vs Food" />
+            </HBox>
+
+            <StackPane minHeight="232.0" prefHeight="232.0" styleClass="pie-chart-frame" VBox.vgrow="ALWAYS">
+                <PieChart fx:id="spendingPieChart" animated="true" clockwise="true" labelLineLength="8.0" labelsVisible="true" legendVisible="true" prefHeight="240.0" prefWidth="330.0" startAngle="90.0" titleSide="BOTTOM" />
+            </StackPane>
+        </VBox>
+
+        <!-- Daily Spending (Bar Chart) -->
+        <VBox fx:id="dailyCard" minHeight="290.0" minWidth="460.0" opacity="0" prefHeight="290.0" spacing="10.0" styleClass="glass-panel chart-panel daily-card" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="chart-header">
+                <VBox spacing="3.0">
+                    <!-- Changed this text tracker to match your new 7 days window -->
+                    <Label styleClass="chart-kicker" text="LAST 7 DAYS" />
+                    <Label styleClass="section-title" text="Daily Spending" />
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <VBox alignment="CENTER_RIGHT" spacing="2.0" styleClass="monthly-total-card">
+                    <Label styleClass="chart-mini-label" text="Monthly Total" />
+                    <Label fx:id="monthlyTotalLabel" styleClass="chart-total-value" text="0 P" />
+                </VBox>
+            </HBox>
+
+            <StackPane minHeight="232.0" prefHeight="232.0" styleClass="bar-chart-frame" VBox.vgrow="ALWAYS">
+                <BarChart fx:id="dailySpendingBarChart" animated="false" barGap="0.0" categoryGap="25.0" legendVisible="false" prefHeight="238.0" VBox.vgrow="ALWAYS">
+                    <xAxis>
+                        <CategoryAxis fx:id="dateAxis" label="Date" tickLabelRotation="-35.0" />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis fx:id="amountAxis" label="Amount (P)" minorTickVisible="false" />
+                    </yAxis>
+                </BarChart>
+            </StackPane>
+        </VBox>
+    </HBox>
+</VBox>

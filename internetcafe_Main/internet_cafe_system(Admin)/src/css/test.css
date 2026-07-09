@@ -1,0 +1,305 @@
+/* --- Global Styles & Font --- */
+.root {
+    
+    /* A soft, light bluish background */
+    -fx-background-color: #E0E7FF; 
+}
+.welcome{
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 27px;
+    -fx-effect: dropshadow(gaussian, #3D4C75, 10, 0, 5, 5);
+}
+
+/* --- Login Window Style --- */
+.login-window {
+    -fx-background-color: white;
+    -fx-padding: 25px;
+    -fx-spacing: 20px;
+    -fx-alignment: center;
+    
+    /* Dark blue border and a solid "shadow" for the pixel effect */
+    -fx-border-color: #3D4C75;
+    -fx-border-width: 4px;
+    -fx-effect: dropshadow(gaussian, #3D4C75, 10, 0, 5, 5);
+}
+.resetpwd-window {
+    -fx-background-color: white;
+    -fx-padding: 25px;
+    -fx-spacing: 20px;
+    -fx-alignment: center;
+    
+    /* Dark blue border and a solid "shadow" for the pixel effect */
+    -fx-border-color: #3D4C75;
+    -fx-border-width: 4px;
+    -fx-effect: dropshadow(gaussian, #3D4C75, 10, 0, 5, 5);
+}
+.resetpwd-back-btn{
+    -fx-background-color: rgba(10, 25, 40, 0.55);
+    -fx-background-radius: 0px 0px 14px 14px;
+
+    /* neon border */
+    -fx-border-color: rgba(0, 255, 255, 0.65);
+    -fx-border-width: 2;
+    -fx-border-radius: 0px 0px 14px 14px;
+
+    /* outer glow + inner glow-ish */
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.55), 35, 0.35, 0, 0);
+
+    
+
+    -fx-background-color: rgba(10, 25, 40, 0.55);
+
+    -fx-border-color: rgba(140, 180, 255, 0.4);
+
+    -fx-effect: dropshadow(gaussian, rgba(120,190,255,0.25), 25, 0.25, 0, 0);
+    -fx-background-insets: 0, 1;
+}
+/* --- Title Label --- */
+.title-label {
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 24px;
+    -fx-text-fill: #3D4C75; /* Dark blue text */
+}
+.resetpwd-label{
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size:15px;
+    -fx-text-fill: #3D4C75;
+}
+
+/* --- Input Fields (Username/Password) --- */
+.pixel-input {
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 12px;
+    -fx-background-color: transparent; /* Very light blue background */
+    -fx-text-fill: #896EF5;
+    -fx-padding: 12px;
+    
+    /* Pixelated border */
+    -fx-border-color: #82A2FF; /* Bluish border */
+    -fx-border-width: 3px;
+}
+
+/* Style for when the input field is focused */
+.pixel-input:focused {
+    -fx-border-color: #FF8DC7; /* Pink border on focus */
+    -fx-background-color: transparent;
+}
+
+/* --- Login Button Style --- */
+.login-button {
+    -fx-background-color: #FF8DC7; /* pink background */
+    -fx-text-fill: white;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 14px;
+    -fx-padding: 12px 25px;
+    
+    /* Pixelated border and shadow */
+    -fx-border-color: #3D4C75;
+    -fx-border-width: 3px;
+    -fx-effect: dropshadow(gaussian, #3D4C75, 5, 0, 3, 3);
+}
+
+.login-button:hover {
+    -fx-background-color: #FFADD6; /* Lighter pink on hover */
+    -fx-cursor: hand;
+}
+
+/* "Pressed down" effect */
+.login-button:pressed {
+    -fx-effect: none;
+    -fx-translate-x: 3px;
+    -fx-translate-y: 3px;
+}
+/* --- Pixelated Close/Exit Button Style --- */
+.pixel-close-button {
+    
+    
+    
+    /* Pixelated border and shadow */
+    
+    -fx-effect: dropshadow(gaussian, #3D4C75, 5, 0, 3, 3);
+}
+
+.pixel-close-button:hover {
+    display: block;
+    filter: drop-shadow(0 0 10px #fffdef);
+    -fx-background-color: #28a1bf;
+    -fx-cursor: hand;
+    }
+
+.pixel-close-button:pressed {
+    -fx-effect: none;
+    -fx-translate-x: 3px;
+    -fx-translate-y: 3px;
+}
+.bar{
+    -fx-background-color: #E0E7FF;
+    
+    
+    /* Pixelated border and shadow */
+    -fx-border-color: rgba(140, 180, 255, 0.4);
+
+    -fx-effect: dropshadow(gaussian, rgba(120,190,255,0.25), 25, 0.25, 0, 0);
+    -fx-background-insets: 0, 1;
+
+}
+.forgot-link{
+    -fx-font-family: "Press Start 2P";
+    -fx-text-fill: #5cc8ff;
+    -fx-font-size: 9px;
+    -fx-underline: false;
+    -fx-cursor: hand;
+}
+.forgot-link:hover{
+   -fx-text-fill: #8F76DB;
+   -fx-underline: true;
+}
+.OTP-text-box{
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 10px;
+    -fx-background-color: #F0F4FF; /* Very light blue background */
+    -fx-text-fill: #3D4C75;
+    -fx-border-color: #82A2FF; /* Bluish border */
+    -fx-border-width: 3px;
+    -fx-background-radius: 14px;
+    -fx-border-radius: 14px;
+    -fx-pref-width: 44px;
+    -fx-pref-height: 56px;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(92, 200, 255, 0.18), 12, 0.20, 0, 4);
+}
+.OTP-text-box:focused {
+    -fx-border-color: #FF8DC7;
+    -fx-background-color: #FFFFFF;
+    -fx-effect: dropshadow(gaussian, rgba(255, 141, 199, 0.28), 18, 0.28, 0, 6);
+}
+.OTP-verify-btn{
+    -fx-background-color: linear-gradient(to right, #FF8DC7 0%, #FF73B6 100%);
+    -fx-text-fill: white;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 11px;
+    -fx-padding: 12px 18px;
+    -fx-border-color: #3D4C75;
+    -fx-border-width: 3px;
+    -fx-border-radius: 16px;
+    -fx-background-radius: 16px;
+    -fx-effect: dropshadow(gaussian, rgba(61, 76, 117, 0.55), 12, 0.18, 0, 5);
+}
+.OTP-verify-btn:hover {
+    -fx-background-color: linear-gradient(to right, #FFADD6 0%, #FF8BC3 100%);
+    -fx-cursor: hand;
+}
+
+
+.OTP-verify-btn:pressed {
+    -fx-effect: none;
+    -fx-translate-x: 3px;
+    -fx-translate-y: 3px;
+}
+.otp-helper-text {
+    -fx-font-family: "Press Start 2P";
+    -fx-text-fill: #CEE7FF;
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+    -fx-max-width: 280px;
+    -fx-line-spacing: 2px;
+}
+.otp-input-row {
+    -fx-padding: 6px 0 4px 0;
+}
+.otp-status-row {
+    -fx-alignment: center;
+}
+.otp-timer-card {
+    -fx-min-width: 152px;
+    -fx-padding: 10px 14px;
+    -fx-background-color: linear-gradient(to bottom right, rgba(17, 28, 56, 0.92), rgba(13, 22, 42, 0.88));
+    -fx-background-radius: 16px;
+    -fx-border-color: rgba(126, 218, 255, 0.34);
+    -fx-border-width: 2px;
+    -fx-border-radius: 16px;
+    -fx-effect: dropshadow(gaussian, rgba(92, 200, 255, 0.20), 16, 0.18, 0, 5);
+}
+.otp-status-kicker {
+    -fx-text-fill: #8FB9FF;
+    -fx-font-size: 9px;
+    -fx-font-weight: 700;
+}
+.timer-label {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 18px;
+}
+.otp-resend-btn {
+    -fx-background-color: linear-gradient(to right, rgba(92, 200, 255, 0.18), rgba(143, 118, 219, 0.20));
+    -fx-text-fill: #E8F6FF;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 9px;
+    -fx-padding: 11px 14px;
+    -fx-border-color: rgba(126, 218, 255, 0.48);
+    -fx-border-width: 2px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(92, 200, 255, 0.18), 14, 0.14, 0, 5);
+}
+.otp-resend-btn:hover {
+    -fx-background-color: linear-gradient(to right, rgba(92, 200, 255, 0.28), rgba(143, 118, 219, 0.30));
+    -fx-cursor: hand;
+}
+.otp-primary-btn {
+    -fx-min-width: 138px;
+}
+/* ===== HOLOGRAM PANEL (base) ===== */
+.holo-panel {
+    /* glass tint */
+    -fx-background-color: rgba(10, 25, 40, 0.55);
+    -fx-background-radius: 14px 14px 0px 0px;
+
+    /* neon border */
+    -fx-border-color: rgba(0, 255, 255, 0.65);
+    -fx-border-width: 2;
+    -fx-border-radius: 14px 14px 0px 0px;
+    -fx-padding: 25px;
+    -fx-spacing: 20px;
+    -fx-alignment: center;
+
+    /* outer glow + inner glow-ish */
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.55), 35, 0.35, 0, 0);
+
+    -fx-padding: 18;
+
+    -fx-background-color: rgba(10, 25, 40, 0.55);
+
+    -fx-border-color: rgba(140, 180, 255, 0.4);
+
+    -fx-effect: dropshadow(gaussian, rgba(120,190,255,0.25), 25, 0.25, 0, 0);
+    -fx-background-insets: 0, 1;
+}
+.holo-panel12{
+    -fx-background-color: rgba(10, 25, 40, 0.55);
+    -fx-background-radius: 14;
+
+    /* neon border */
+    -fx-border-color: rgba(0, 255, 255, 0.65);
+    -fx-border-width: 2;
+    -fx-border-radius: 14px;
+    -fx-padding: 25px;
+    -fx-spacing: 20px;
+    -fx-alignment: center;
+
+    /* outer glow + inner glow-ish */
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.55), 35, 0.35, 0, 0);
+
+    -fx-padding: 18;
+
+    -fx-background-color: rgba(10, 25, 40, 0.55);
+
+    -fx-border-color: rgba(140, 180, 255, 0.4);
+
+    -fx-effect: dropshadow(gaussian, rgba(120,190,255,0.25), 25, 0.25, 0, 0);
+    -fx-background-insets: 0, 1;
+}
+@font-face {
+    font-family: "Press Start 2P";
+    src: url("/fonts/PressStart2P-Regular.ttf");
+}

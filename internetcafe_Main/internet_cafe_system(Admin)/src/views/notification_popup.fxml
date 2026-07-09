@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="root" styleClass="notify-popup-root" stylesheets="@../css/pixel_admin_reactive.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin_controllers.NotificationPopupController">
+    <children>
+        <VBox fx:id="card" spacing="12.0" styleClass="notify-popup-card">
+            <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="notify-popup-header">
+                <Label fx:id="badgeLabel" styleClass="notify-popup-badge" text="0" />
+                <VBox spacing="2.0" HBox.hgrow="ALWAYS">
+                    <Label styleClass="notify-popup-title" text="NOTIFICATIONS" />
+                    <Label fx:id="subLabel" styleClass="notify-popup-sub" text="No unread alerts right now" />
+                </VBox>
+                <Button fx:id="closeBtn" onAction="#handleCloseAction" text="✕" visible="false">
+               <styleClass>
+                  <String fx:value="icon-btn" />
+                  <String fx:value="notify-popup-close" />
+               </styleClass></Button>
+            </HBox>
+
+            <Separator styleClass="notify-divider" />
+
+            <ScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="NEVER" maxHeight="272.0" minViewportHeight="272.0" pannable="true" prefViewportHeight="272.0" styleClass="notify-popup-scroll" vbarPolicy="AS_NEEDED">
+                <content>
+                    <VBox fx:id="listBox" spacing="8.0" styleClass="notify-popup-list" />
+                </content>
+            </ScrollPane>
+
+            <HBox alignment="CENTER_RIGHT" styleClass="notify-popup-footer">
+                <Button fx:id="clearBtn" text="MARK ALL READ">
+               <styleClass>
+                  <String fx:value="btn-blue" />
+                  <String fx:value="notify-popup-clear" />
+               </styleClass></Button>
+            </HBox>
+        </VBox>
+
+        <Region fx:id="edgeGlow" managed="false" mouseTransparent="true" styleClass="notify-edge-glow" />
+        <Region fx:id="scanline" managed="false" mouseTransparent="true" styleClass="notify-scanline" />
+    </children>
+</StackPane>

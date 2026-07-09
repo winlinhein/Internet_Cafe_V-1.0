@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="720.0" prefWidth="360.0" spacing="18.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="member_controllers.CartViewController">
+    <padding>
+        <Insets bottom="20.0" left="18.0" right="18.0" top="18.0" />
+    </padding>
+
+    <VBox minHeight="50.0" prefHeight="95.0" prefWidth="322.0" spacing="14.0">
+        <padding>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+        </padding>
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <StackPane prefHeight="46.0" prefWidth="46.0" styleClass="cart-orb cart-icon-orb">
+                <Label styleClass="cart-orb-glyph" text="🛒" />
+            </StackPane>
+            <VBox spacing="4.0">
+                <Label styleClass="cart-kicker" text="LIVE ORDER DECK" />
+                <Label styleClass="cart-header-title" text="Your Cart" />
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <VBox alignment="CENTER_RIGHT" spacing="5.0">
+                <HBox alignment="CENTER" spacing="6.0" styleClass="cart-header-badge">
+                    <Label fx:id="totalItemsLabel" styleClass="cart-header-badge-text" text="3 ITEMS" />
+                </HBox>
+            </VBox>
+        </HBox>
+
+        <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="cart-status-row">
+            <HBox alignment="CENTER" spacing="6.0" styleClass="cart-status-pill success" />
+            <HBox alignment="CENTER" spacing="6.0" styleClass="cart-status-pill accent" />
+        </HBox>
+      <styleClass>
+         <String fx:value="cart-header" />
+         <String fx:value="cart-view-header" />
+      </styleClass>
+    </VBox>
+
+    <VBox spacing="12.0" VBox.vgrow="ALWAYS">
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <Label styleClass="cart-section-title" text="Queue" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button mnemonicParsing="false" onAction="#removelastItem" prefHeight="33.0" prefWidth="97.0" text="X">
+            <styleClass>
+               <String fx:value="cart-back-button" />
+               <String fx:value="cart-ghost-button" />
+            </styleClass></Button>
+        </HBox>
+
+        <StackPane styleClass="cart-list-shell cart-list-frame" VBox.vgrow="ALWAYS">
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="298.0" prefWidth="322.0" styleClass="cart-scroll" vbarPolicy="AS_NEEDED">
+                <content>
+                    <VBox fx:id="cartVBox" spacing="12.0" styleClass="cart-items-box">
+                        <padding>
+                            <Insets bottom="6.0" left="2.0" right="6.0" top="2.0" />
+                        </padding>
+                    </VBox>
+                </content>
+            </ScrollPane>
+        </StackPane>
+    </VBox>
+
+    <VBox spacing="14.0">
+        <padding>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+        </padding>
+
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <VBox spacing="3.0">
+                <Label styleClass="cart-summary-kicker" text="ORDER SUMMARY" />
+                <Label styleClass="cart-section-title" text="Checkout" />
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <HBox alignment="CENTER" spacing="6.0" styleClass="cart-mini-pill pulse" />
+        </HBox>
+
+        <HBox alignment="BOTTOM_LEFT" spacing="10.0" styleClass="cart-total-band">
+            <VBox spacing="3.0">
+                <Label styleClass="cart-summary-kicker" text="TOTAL DUE" />
+                <HBox alignment="BOTTOM_LEFT" spacing="4.0">
+                    <Label styleClass="cart-total-unit" text="P" />
+                    <Label fx:id="totalLabel" styleClass="cart-total-value" text="11.00" />
+                </HBox>
+            </VBox>
+        </HBox>
+
+        <Button fx:id="placeorder" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#placeOrder" prefHeight="52.0" text="Place Order" VBox.vgrow="NEVER">
+         <styleClass>
+            <String fx:value="cart-order-button" />
+            <String fx:value="cart-order-button-premium" />
+         </styleClass></Button>
+      <styleClass>
+         <String fx:value="cart-summary-panel" />
+         <String fx:value="cart-summary-premium" />
+      </styleClass>
+    </VBox>
+   <styleClass>
+      <String fx:value="cart-shell" />
+      <String fx:value="cart-view-shell" />
+   </styleClass>
+</VBox>

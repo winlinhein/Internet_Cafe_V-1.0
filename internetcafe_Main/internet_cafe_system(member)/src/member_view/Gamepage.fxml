@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane styleClass="page-shell" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="member_controllers.GamepageController">
+    <top>
+        <VBox spacing="12.0" styleClass="games-page-header">
+            <padding>
+                <Insets bottom="12.0" left="22.0" right="22.0" top="22.0" />
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="16.0">
+                <VBox spacing="4.0">
+                    <Label styleClass="page-title" text="Game Library" />
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <StackPane fx:id="searchShell" opacity="0" maxWidth="460.0" prefWidth="320.0" styleClass="game-search-shell">
+                    <Region mouseTransparent="true" styleClass="game-search-glow" />
+                    <Region mouseTransparent="true" styleClass="game-search-scanline" StackPane.alignment="TOP_CENTER" />
+                    <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="game-search-core">
+                        <Label mouseTransparent="true" styleClass="game-search-icon" text="⌕" />
+                        <TextField fx:id="searchField" maxWidth="420.0" prefWidth="320.0" promptText="Search games...">
+                            <styleClass>
+                                <String fx:value="food-searchbar" />
+                                <String fx:value="game-searchbar" />
+                            </styleClass>
+                        </TextField>
+                    </HBox>
+                </StackPane>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" styleClass="games-scroll">
+            <content>
+                <TilePane fx:id="gameGrid" hgap="22.0" prefColumns="4" prefTileHeight="384.0" prefTileWidth="260.0" styleClass="games-grid" vgap="22.0">
+                    <padding>
+                        <Insets bottom="26.0" left="22.0" right="22.0" top="6.0" />
+                    </padding>
+                </TilePane>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

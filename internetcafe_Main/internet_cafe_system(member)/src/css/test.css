@@ -1,0 +1,251 @@
+/* test.css - merged, fixed, and scoped */
+
+/* ===== Global defaults ===== */
+.root {
+    -fx-font-family: "Press Start 2P", "Segoe UI", "Arial";
+    -fx-background-color: #E0E7FF;
+    -fx-font-size: 14px;
+    -fx-text-fill: #3D4C75;
+}
+
+/* Scoped page classes
+   Use styleClass="page-login" on the login root to apply login-specific overrides.
+   Use styleClass="page-alt" on other pages that rely on the alternate palette.
+*/
+.page-login .root,
+.page-login .hbox,
+.page-login .vbox {
+    /* nothing here by default; page-login selectors below override specific controls */
+}
+
+/* ===== Welcome / headline styles (merged) ===== */
+.welcome {
+    -fx-font: 27px "Press Start 2P";
+    -fx-font-size: 22px; /* fallback if needed */
+    -fx-line-spacing: 6px;
+    -fx-text-fill: #e8f6ff; /* ensure readable on dark overlays */
+    -fx-effect: dropshadow(gaussian, rgba(68,245,255,0.55), 28, 0.22, 0, 0);
+}
+
+/* smaller welcome subtitle */
+.welcome-sub {
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 10px;
+    -fx-line-spacing: 4px;
+    -fx-effect: dropshadow(gaussian, rgba(120,255,255,0.35), 18, 0.15, 0, 0);
+}
+
+/* ===== Login window and variants ===== */
+.login-window {
+    -fx-background-color: white;
+    -fx-padding: 25px;
+    -fx-border-color: #3D4C75;
+    -fx-border-width: 4px;
+    -fx-effect: dropshadow(gaussian, rgba(61,76,117,0.9), 10, 0, 5, 5);
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+}
+
+/* reset password window shares same visual */
+.resetpwd-window {
+    -fx-background-color: white;
+    -fx-padding: 25px;
+    -fx-border-color: #3D4C75;
+    -fx-border-width: 4px;
+    -fx-effect: dropshadow(gaussian, rgba(61,76,117,0.9), 10, 0, 5, 5);
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+}
+
+/* reset back button */
+.resetpwd-back-btn {
+    -fx-background-color: rgba(10,25,40,0.55);
+    -fx-background-radius: 0 0 14px 14px;
+    -fx-border-color: rgba(140,180,255,0.4);
+    -fx-border-width: 2px;
+    -fx-border-radius: 0 0 14px 14px;
+    -fx-effect: dropshadow(gaussian, rgba(120,190,255,0.25), 25, 0.25, 0, 0);
+    -fx-background-insets: 0, 1;
+}
+
+/* ===== Title and small labels ===== */
+.title-label {
+    -fx-font-size: 24px;
+    -fx-text-fill: #3D4C75;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.35), 18, 0.2, 0, 0);
+}
+.resetpwd-label {
+    -fx-font-size: 15px;
+    -fx-text-fill: #3D4C75;
+}
+
+/* ===== Input fields (merged variants) ===== */
+/* Default pixel-input (light theme) */
+.pixel-input {
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 12px;
+    -fx-background-color: transparent;
+    -fx-text-fill: #896EF5;
+    -fx-padding: 12px;
+    -fx-border-color: #82A2FF;
+    -fx-border-width: 3px;
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+}
+
+/* Darker variant used on holo panels */
+.holo-panel .pixel-input,
+.holo-panel12 .pixel-input,
+.page-login .pixel-input {
+    -fx-background-color: rgba(7,20,36,0.92);
+    -fx-background-insets: 0;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: rgba(114,208,255,0.55);
+    -fx-border-width: 2px;
+    -fx-text-fill: #eefaff;
+    -fx-prompt-text-fill: rgba(185,235,255,0.52);
+    -fx-highlight-fill: rgba(0,255,255,0.30);
+    -fx-highlight-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(28,185,255,0.18), 16, 0.10, 0, 0);
+}
+
+.pixel-input:focused {
+    -fx-border-color: #FF8DC7;
+    -fx-background-color: rgba(10,26,44,0.98);
+    -fx-effect: dropshadow(gaussian, rgba(255,94,197,0.26), 18, 0.18, 0, 0);
+}
+
+/* ===== Buttons ===== */
+.login-button {
+    -fx-alignment: center;
+    -fx-padding: 14 22 14 22;
+    -fx-background-color: linear-gradient(to right, rgba(255,66,190,0.96), rgba(72,220,255,0.96));
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: rgba(240,250,255,0.65);
+    -fx-border-width: 1.8;
+    -fx-text-fill: white;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 13px;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.24), 20, 0.2, 0, 0);
+}
+.login-button:hover {
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(255,105,210,0.35), 26, 0.24, 0, 0);
+}
+.login-button:pressed {
+    -fx-effect: none;
+    -fx-translate-x: 3px;
+    -fx-translate-y: 3px;
+}
+
+/* Legacy pink variant preserved for pages that used it */
+.login-button.pink {
+    -fx-background-color: #FF8DC7;
+    -fx-border-color: #3D4C75;
+    -fx-border-width: 3px;
+    -fx-font-size: 14px;
+}
+
+/* OTP and small buttons */
+.OTP-text-box {
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 10px;
+    -fx-background-color: #F0F4FF;
+    -fx-text-fill: #3D4C75;
+    -fx-border-color: #82A2FF;
+    -fx-border-width: 3px;
+    -fx-alignment: center;
+}
+.OTP-verify-btn {
+    -fx-background-color: #FF8DC7;
+    -fx-text-fill: white;
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 12px;
+    -fx-border-color: #3D4C75;
+    -fx-border-width: 3px;
+    -fx-effect: dropshadow(gaussian, rgba(61,76,117,0.9), 5, 0, 3, 3);
+}
+.OTP-verify-btn:hover { -fx-background-color: #FFADD6; -fx-cursor: hand; }
+.OTP-verify-btn:pressed { -fx-effect: none; -fx-translate-x: 3px; -fx-translate-y: 3px; }
+
+/* ===== Hologram panels (merged) ===== */
+.holo-panel, .holo-panel12 {
+    -fx-background-color: linear-gradient(to bottom, rgba(5,14,28,0.88), rgba(10,25,40,0.78));
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(120,228,255,0.46), rgba(255,90,200,0.22);
+    -fx-border-insets: 0, 1;
+    -fx-border-radius: 18, 17;
+    -fx-border-width: 1.8, 1.0;
+    -fx-padding: 24;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.15), 26, 0.16, 0, 0), dropshadow(gaussian, rgba(255,85,190,0.10), 35, 0.12, 0, 0);
+}
+
+/* ===== Overlays and screen effects ===== */
+.screen-dim {
+    -fx-background-color: linear-gradient(to bottom, rgba(2,8,24,0.42), rgba(5,14,38,0.68));
+}
+.screen-vignette {
+    -fx-background-color: radial-gradient(center 50% 50%, radius 78%, rgba(0,0,0,0.0) 48%, rgba(1,6,18,0.46) 100%);
+}
+.screen-scanline {
+    -fx-opacity: 0.16;
+    -fx-background-color:
+        linear-gradient(to bottom,
+            rgba(255,255,255,0.00) 0%,
+            rgba(255,255,255,0.07) 48%,
+            rgba(255,255,255,0.00) 100%),
+        linear-gradient(to bottom,
+            rgba(0,255,255,0.06) 0px,
+            rgba(0,255,255,0.00) 2px,
+            rgba(0,0,0,0.00) 4px,
+            rgba(0,0,0,0.10) 6px);
+    -fx-background-size: 100% 110px, 100% 6px;
+}
+
+/* ===== Misc controls and links ===== */
+.pixel-close-button {
+    -fx-effect: dropshadow(gaussian, rgba(61,76,117,0.9), 5, 0, 3, 3);
+}
+.pixel-close-button:hover {
+    -fx-background-color: #28a1bf;
+    -fx-cursor: hand;
+}
+.bar {
+    -fx-background-color: #E0E7FF;
+    -fx-border-color: rgba(140,180,255,0.4);
+    -fx-effect: dropshadow(gaussian, rgba(120,190,255,0.25), 25, 0.25, 0, 0);
+    -fx-background-insets: 0, 1;
+}
+.forgot-link {
+    -fx-text-fill: #5cc8ff;
+    -fx-font-size: 9px;
+    -fx-underline: false;
+    -fx-cursor: hand;
+}
+.forgot-link:hover { -fx-text-fill: #8F76DB; -fx-underline: true; }
+
+/* ===== Loading box styles ===== */
+.loading-box { -fx-padding: 20 26 20 26; }
+.loading-label {
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 20px;
+    -fx-text-fill: #d6f7ff;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.50), 18, 0.35, 0, 0);
+}
+.loading-sub {
+    -fx-font-family: "Press Start 2P";
+    -fx-font-size: 9px;
+    -fx-text-fill: #8fe7ff;
+    -fx-opacity: 0.85;
+}
+
+/* ===== Utility / fallback ===== */
+/* Force readable text on dark panels when needed */
+.holo-panel .label, .holo-panel12 .label, .page-login .label {
+    -fx-text-fill: #eefaff;
+}
+
+/* If you need a strict white text override for a specific control, use .force-white */
+.force-white { -fx-text-fill: #ffffff !important; }

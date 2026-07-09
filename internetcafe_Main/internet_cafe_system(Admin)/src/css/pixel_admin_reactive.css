@@ -1,0 +1,4338 @@
+/* =========================================================
+   Pixel-Modern Admin UI (JavaFX)
+   Theme: deep blue + neon cyan + neon pink
+   ========================================================= */
+
+/* ====== Base ====== */
+/* global looked-up colors to avoid unresolved CSS values */
+.root, .app-root {
+    -fx-cyan: #5cc8ff;
+    -fx-text-base: white;
+}
+
+.app-root {
+    -fx-background-color: #0b1633; /* deep blue */
+    -fx-font-size: 12px;
+    -fx-font-smoothing-type: gray;
+
+    /* subtle depth */
+    -fx-background-insets: 0;
+}
+
+.label { -fx-text-fill: white; }
+
+/* ====== Global focus ring (keyboard friendly) ====== */
+.button:focused, .text-field:focused, .table-view:focused, .combo-box:focused {
+    -fx-effect: dropshadow(gaussian, rgba(92,200,255,0.35), 14, 0.25, 0, 0);
+}
+
+/* ====== Topbar ====== */
+.topbar {
+    -fx-background-color: #0f2150;
+    -fx-border-color: #5cc8ff;
+    -fx-border-width: 0 0 3 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 14, 0.18, 0, 3);
+}
+
+.title {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.search {
+    -fx-background-color: #091229;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255,255,255,0.55);
+    -fx-border-color: #5cc8ff;
+    -fx-border-width: 2;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 10 12 10 12;
+    -fx-pref-width: 360;
+}
+.search:focused {
+    -fx-border-color: white;
+}
+
+/* ====== Sidebar ====== */
+.sidebar {
+    -fx-background-color: #0f2150;
+    -fx-border-color: #ff63c5;
+    -fx-border-width: 0 3 0 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 14, 0.18, 2, 0);
+}
+
+.brand-box {
+    -fx-background-color: #091229;
+    -fx-border-color: #5cc8ff;
+    -fx-border-width: 2;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 12;
+}
+.brand-icon { -fx-font-size: 22px; -fx-text-fill: #5cc8ff; }
+.brand-text { -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12px; }
+.brand-sub  { -fx-text-fill: #ff63c5; -fx-font-size: 11px; }
+
+.sep { -fx-opacity: 0.35; }
+
+.side-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 12 10 12;
+    -fx-border-color: transparent;
+    -fx-border-width: 2;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+.side-btn:hover {
+    -fx-border-color: #5cc8ff;
+    -fx-background-color: rgba(92,200,255,0.12);
+}
+.side-btn:pressed {
+    -fx-translate-y: 1;
+}
+.side-btn:focused {
+    -fx-border-color: white;
+}
+
+/* quick actions box in sidebar */
+.quick-box {
+    -fx-background-color: rgba(255,255,255,0.03);
+    -fx-border-color: rgba(92,200,255,0.55);
+    -fx-border-width: 2;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 10;
+}
+
+/* ====== Content ====== */
+.content { -fx-background-color: transparent; }
+
+.stats-row .card {
+    /* make cards look like modern "tiles" while staying pixel-themed */
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.32), 12, 0.15, 0, 2);
+}
+
+.card {
+    -fx-background-color: #0f2150;
+    -fx-border-color: rgba(92,200,255,0.95);
+    -fx-border-width: 2;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-padding: 14;
+    -fx-min-height: 110;
+}
+.card-title { -fx-text-fill: rgba(255,255,255,0.72); -fx-font-size: 11px; }
+.card-number { -fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold; }
+.card-sub { -fx-text-fill: rgba(255,255,255,0.62); -fx-font-size: 11px; }
+
+.panel {
+    -fx-background-color: #0f2150;
+    -fx-border-color: #ff63c5;
+    -fx-border-width: 2;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-padding: 14;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.32), 12, 0.15, 0, 2);
+}
+.panel-head { -fx-padding: 0 0 10 0; }
+.panel-title { -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12px; }
+
+.hint { -fx-text-fill: rgba(255,255,255,0.62); -fx-font-size: 11px; }
+
+/* ====== Buttons ====== */
+.button {
+    -fx-cursor: hand;
+}
+
+.icon-btn {
+    -fx-background-color: #091229;
+    -fx-text-fill: white;
+    -fx-border-color: rgba(92,200,255,0.9);
+    -fx-border-width: 2;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 7 12 7 12;
+}
+.icon-btn:hover { -fx-background-color: rgba(92,200,255,0.12); }
+
+.btn-blue {
+    -fx-background-color: #5cc8ff;
+    -fx-text-fill: #071127;
+    -fx-font-weight: bold;
+    -fx-border-color: white;
+    -fx-border-width: 2;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 9 12 9 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0.10, 0, 2);
+}
+.btn-blue:hover { -fx-opacity: 0.94; }
+.btn-blue:pressed { -fx-translate-y: 1; }
+
+.btn-pink {
+    -fx-background-color: #ff63c5;
+    -fx-text-fill: #071127;
+    -fx-font-weight: bold;
+    -fx-border-color: white;
+    -fx-border-width: 2;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 9 12 9 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 10, 0.10, 0, 2);
+}
+.btn-pink:hover { -fx-opacity: 0.94; }
+.btn-pink:pressed { -fx-translate-y: 1; }
+
+.btn-white {
+    -fx-background-color: white;
+    -fx-text-fill: #071127;
+    -fx-font-weight: bold;
+    -fx-border-color: rgba(92,200,255,0.95);
+    -fx-border-width: 2;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 9 12 9 12;
+}
+.btn-white:hover { -fx-background-color: rgba(255,255,255,0.92); }
+.btn-white:pressed { -fx-translate-y: 1; }
+
+.btn-danger {
+    -fx-background-color: linear-gradient(to bottom, #ff7a7a, #ff3d57);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: #ffd3d8;
+    -fx-border-width: 2;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 9 12 9 12;
+    -fx-effect: dropshadow(gaussian, rgba(255,66,98,0.34), 14, 0.18, 0, 4);
+}
+.btn-danger:hover {
+    -fx-background-color: linear-gradient(to bottom, #ff8e8e, #ff4f68);
+    -fx-effect: dropshadow(gaussian, rgba(255,66,98,0.48), 20, 0.25, 0, 6);
+}
+.btn-danger:pressed { -fx-translate-y: 1; }
+
+/* ====== Table ====== */
+.table {
+    -fx-background-color: #091229;
+    -fx-border-color: rgba(92,200,255,0.95);
+    -fx-border-width: 2;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-padding: 2;
+}
+
+.table .column-header-background {
+    -fx-background-color: #0f2150;
+    -fx-background-radius: 14 14 0 0;
+    -fx-padding: 6 0 6 0;
+}
+.table .column-header, .table .filler {
+    -fx-size: 36px;
+    -fx-background-color: transparent;
+}
+.table .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table .table-row-cell {
+    -fx-background-color: #091229;
+    -fx-text-fill: white;
+}
+.table .table-row-cell:odd {
+    -fx-background-color: rgba(255,255,255,0.03);
+}
+.table .table-row-cell:filled:hover {
+    -fx-background-color: rgba(92,200,255,0.10);
+}
+.table .table-row-cell:filled:selected {
+    -fx-background-color: rgba(255,99,197,0.25);
+}
+.table .table-cell {
+    -fx-text-fill: white;
+    -fx-padding: 10 8 10 8;
+}
+
+/* ====== Badges / Mini rows ====== */
+.badge-live {
+    -fx-background-color: rgba(92,200,255,0.18);
+    -fx-border-color: #5cc8ff;
+    -fx-border-width: 2;
+    -fx-text-fill: #5cc8ff;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 3 10 3 10;
+}
+.badge-pink {
+    -fx-background-color: rgba(255,99,197,0.18);
+    -fx-border-color: #ff63c5;
+    -fx-border-width: 2;
+    -fx-text-fill: #ff63c5;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 3 10 3 10;
+}
+
+.mini-row {
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 10;
+}
+.mini-key { -fx-text-fill: white; }
+.mini-ok  { -fx-text-fill: #5cc8ff; -fx-font-weight: bold; }
+.mini-warn{ -fx-text-fill: #ffd34d; -fx-font-weight: bold; }
+.mini-bad { -fx-text-fill: #ff63c5; -fx-font-weight: bold; }
+
+.section-label { -fx-text-fill: rgba(255,255,255,0.75); -fx-font-size: 11px; }
+
+/* ====== Status bar ====== */
+.statusbar {
+    -fx-background-color: #0f2150;
+    -fx-border-color: rgba(92,200,255,0.95);
+    -fx-border-width: 3 0 0 0;
+}
+.status-key { -fx-text-fill: rgba(255,255,255,0.7); }
+.status-ok  { -fx-text-fill: #5cc8ff; -fx-font-weight: bold; }
+.status-val { -fx-text-fill: white; }
+
+/* ====== Inventory extras ====== */
+/* (kept so your inventory screen can reuse this css) */
+
+.combo, .field {
+    -fx-background-color: #091229;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255,255,255,0.55);
+    -fx-border-color: rgba(92,200,255,0.95);
+    -fx-border-width: 2;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 10 12 10 12;
+}
+
+.combo { -fx-pref-width: 180; }
+
+/* combo popup list */
+.combo-box-popup .list-view {
+    -fx-background-color: #091229;
+    -fx-border-color: rgba(92,200,255,0.95);
+    -fx-border-width: 2;
+}
+.combo-box-popup .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: #091229;
+    -fx-padding: 10 10 10 10;
+}
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: rgba(92,200,255,0.12);
+}
+
+/* right detail labels */
+.form-key {
+    -fx-text-fill: rgba(255,255,255,0.70);
+    -fx-font-size: 11px;
+}
+.form-val {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+
+/* ---- Motion helpers (paired with util.PixelMotion.java) ---- */
+.card, .panel, .quick-box, .table, .side-btn, .icon-btn, .btn-blue, .btn-pink, .btn-white, .btn-danger {
+    /* these are "targets" for code-driven animations; keep CSS clean */
+}
+
+.text-field:focused {
+    -fx-border-color: rgba(120, 220, 255, 0.95);
+    -fx-border-width: 2;
+}
+
+.btn-blue:focused, .btn-pink:focused, .btn-white:focused, .btn-danger:focused, .side-btn:focused, .icon-btn:focused {
+    -fx-effect: dropshadow(gaussian, rgba(120, 220, 255, 0.55), 18, 0.25, 0, 0);
+}
+
+
+/* Sidebar toggle */
+.side-toggle{
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255,255,255,0.18);
+    -fx-border-width: 1;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 8 10;
+    -fx-text-fill: -fx-text-base;
+    -fx-font-size: 16px;
+}
+.side-toggle:hover{
+    -fx-border-color: rgba(120,255,255,0.55);
+    -fx-effect: dropshadow(gaussian, rgba(120,255,255,0.45), 14, 0.2, 0, 0);
+}
+
+/* When collapsed, we toggle this style class from code */
+.sidebar.collapsed{
+    -fx-padding: 16 8 16 8;
+}
+.sidebar.collapsed .brand-text,
+.sidebar.collapsed .brand-sub,
+.sidebar.collapsed .section-label{
+    -fx-opacity: 0;
+}
+.sidebar.collapsed .quick-box{
+    -fx-opacity: 0;
+}
+
+/* Page basics */
+.content-stack{
+    -fx-background-color: transparent;
+}
+.content-stack > .scroll-pane,
+.content-stack > .scroll-pane > .viewport,
+.content-stack > .scroll-pane > .corner {
+    -fx-background-color: transparent;
+}
+.page-title{
+    -fx-font-size: 18px;
+    -fx-font-weight: 700;
+    -fx-text-fill: -fx-cyan;
+}
+.page-sub{
+    -fx-font-size: 12px;
+    -fx-text-fill: rgba(255,255,255,0.70);
+}
+
+/* Toast visuals (Popup content uses these classes) */
+/* wrapper */
+.toast-glitch-root {
+    -fx-min-width: 340;
+    -fx-max-width: 480;
+}
+
+/* base card now brighter */
+.toast-glitch {
+    -fx-padding: 14 14 12 14;
+    -fx-spacing: 10;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-width: 2;
+
+    /* brighter base (not black) */
+    -fx-background-color: rgba(245, 248, 255, 0.96);
+    -fx-border-color: rgba(120, 220, 255, 0.55);
+}
+
+/* TYPE THEMES */
+.toast-glitch.ok {
+    -fx-border-color: rgba(80, 255, 170, 0.85);
+    -fx-background-color: rgba(235, 255, 245, 0.97);
+}
+.toast-glitch.warn {
+    -fx-border-color: rgba(255, 110, 220, 0.90);   /* PINK */
+    -fx-background-color: rgba(255, 235, 250, 0.97);
+}
+.toast-glitch.err {
+    -fx-border-color: rgba(255, 80, 110, 0.90);
+    -fx-background-color: rgba(255, 235, 240, 0.97);
+}
+.toast-glitch.info {
+    -fx-border-color: rgba(80, 190, 255, 0.85);
+    -fx-background-color: rgba(235, 246, 255, 0.97);
+}
+
+.toast-glitch-header { -fx-alignment: center-left; }
+
+/* badge now matches type */
+.toast-badge {
+    -fx-min-width: 30;
+    -fx-min-height: 30;
+    -fx-alignment: center;
+    -fx-background-radius: 10;
+    -fx-text-fill: rgba(10, 14, 22, 0.95);
+    -fx-font-size: 14px;
+    -fx-font-weight: 900;
+    -fx-background-color: rgba(0,0,0,0.06);
+}
+
+.toast-glitch.ok .toast-badge   { -fx-background-color: rgba(80, 255, 170, 0.25); }
+.toast-glitch.warn .toast-badge { -fx-background-color: rgba(255, 110, 220, 0.25); }
+.toast-glitch.err .toast-badge  { -fx-background-color: rgba(255, 80, 110, 0.25); }
+.toast-glitch.info .toast-badge { -fx-background-color: rgba(80, 190, 255, 0.25); }
+
+/* title stack */
+.toast-title-stack { -fx-alignment: center-left; }
+
+.toast-glitch-title {
+    -fx-text-fill: rgba(10, 14, 22, 0.95);
+    -fx-font-size: 15px;
+    -fx-font-weight: 900;
+}
+
+/* chromatic ghosts now colored but subtle */
+.toast-glitch-title-ghost1 {
+    -fx-text-fill: rgba(80, 190, 255, 0.70);
+    -fx-font-size: 15px;
+    -fx-font-weight: 900;
+}
+.toast-glitch-title-ghost2 {
+    -fx-text-fill: rgba(255, 90, 210, 0.55);
+    -fx-font-size: 15px;
+    -fx-font-weight: 900;
+}
+
+.toast-glitch-subtitle {
+    -fx-text-fill: rgba(10, 14, 22, 0.55);
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+}
+
+.toast-glitch-msg {
+    -fx-text-fill: rgba(10, 14, 22, 0.78);
+    -fx-font-size: 12px;
+    -fx-line-spacing: 2px;
+}
+.toast-glitch-msg-ghost1 {
+    -fx-text-fill: rgba(80, 190, 255, 0.25);
+    -fx-font-size: 12px;
+}
+.toast-glitch-msg-ghost2 {
+    -fx-text-fill: rgba(255, 90, 210, 0.22);
+    -fx-font-size: 12px;
+}
+
+/* progress */
+.toast-progress-wrap {
+    -fx-background-radius: 999;
+    -fx-background-color: rgba(0,0,0,0.06);
+    -fx-min-height: 6;
+    -fx-max-height: 6;
+}
+.toast-progress {
+    -fx-background-radius: 999;
+    -fx-min-height: 6;
+    -fx-max-height: 6;
+    -fx-background-color: rgba(80, 190, 255, 0.85);
+    -fx-scale-x: 1.0;
+}
+.toast-glitch.ok   .toast-progress { -fx-background-color: rgba(80, 255, 170, 0.90); }
+.toast-glitch.warn .toast-progress { -fx-background-color: rgba(255, 110, 220, 0.90); } /* pink */
+.toast-glitch.err  .toast-progress { -fx-background-color: rgba(255, 80, 110, 0.92); }
+.toast-glitch.info .toast-progress { -fx-background-color: rgba(80, 190, 255, 0.90); }
+
+/* overlays (keep but subtle, works on light card too) */
+.toast-scanlines {
+    -fx-background-radius: 16;
+    -fx-opacity: 0;
+}
+.toast-sheen {
+    -fx-background-radius: 16;
+    -fx-opacity: 0;
+}
+.px-scanline {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 0% 100%,
+        rgba(255,255,255,0.00),
+        rgba(255,255,255,0.10),
+        rgba(255,255,255,0.00)
+    );
+    -fx-blend-mode: SCREEN;
+}
+.notif-badge {
+    -fx-background-color: #ff2aa6;
+    -fx-text-fill: white;
+
+    -fx-font-size: 7px;
+    -fx-padding: 0 3 0 3;
+
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+
+    -fx-min-width: 12px;
+    -fx-min-height: 12px;
+}
+.notif-icon:hover {
+    -fx-effect: dropshadow(gaussian, rgba(92,200,255,0.35), 18, 0.2, 0, 0);
+}
+.page-wrap {
+    -fx-background-color: transparent;
+}
+
+.inventory-top {
+    -fx-background-color: linear-gradient(to bottom right, #0f1a38, #0a1430);
+    -fx-background-radius: 18;
+
+    -fx-border-color: rgba(110,180,255,0.18);
+    -fx-border-width: 2 0 1 0;
+    -fx-border-radius: 18;
+}
+
+.page-title {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: 800;
+}
+
+.search-field {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(120,220,255,0.18);
+    -fx-border-radius: 12;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255,255,255,0.45);
+    -fx-padding: 10 14 10 14;
+    -fx-pref-width: 260;
+}
+
+.chip-btn {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-background-radius: 999;
+    -fx-border-color: rgba(255,255,255,0.10);
+    -fx-border-radius: 999;
+    -fx-text-fill: #dfe9ff;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+}
+
+.inventory-scroll,
+.inventory-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.inventory-scroll .corner {
+    -fx-background-color: transparent;
+}
+
+.inventory-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-padding: 6 6 6 4;
+}
+
+.inventory-scroll .scroll-bar:vertical .track {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-background-radius: 999;
+    -fx-border-color: rgba(112, 178, 255, 0.10);
+    -fx-border-radius: 999;
+}
+
+.inventory-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: linear-gradient(to bottom, #35e1ff, #6a7bff 60%, #ff67b3);
+    -fx-background-radius: 999;
+    -fx-effect: dropshadow(gaussian, rgba(74,172,255,0.42), 10, 0.25, 0, 0);
+}
+
+.inventory-scroll .scroll-bar:vertical .thumb:hover {
+    -fx-effect: dropshadow(gaussian, rgba(255,103,179,0.55), 14, 0.35, 0, 0);
+}
+
+.inventory-scroll .scroll-bar:vertical .increment-button,
+.inventory-scroll .scroll-bar:vertical .decrement-button,
+.inventory-scroll .scroll-bar:vertical .increment-arrow,
+.inventory-scroll .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-shape: "";
+}
+
+.product-grid {
+    -fx-background-color: transparent;
+    -fx-pref-width: Infinity;
+}
+
+.product-card {
+    -fx-min-width: 196;
+    -fx-max-width: 420;
+    -fx-background-color:
+        linear-gradient(to bottom right, rgba(20,31,66,0.98), rgba(11,20,48,0.98));
+    -fx-background-radius: 22;
+    -fx-border-color: rgba(110, 180, 255, 0.16);
+    -fx-border-radius: 22;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.30), 18, 0.18, 0, 6);
+    -fx-cursor: hand;
+}
+
+.product-thumb-wrap {
+    -fx-background-color:
+        linear-gradient(to bottom right, rgba(25,45,90,0.95), rgba(15,28,58,0.95));
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(120,220,255,0.18);
+    -fx-border-radius: 18;
+    -fx-border-width: 1;
+}
+
+.img-placeholder {
+    -fx-text-fill: rgba(255,255,255,0.25);
+    -fx-font-size: 16px;
+    -fx-font-weight: 700;
+}
+
+.product-title {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 800;
+}
+
+.product-sub {
+    -fx-text-fill: rgba(220,230,255,0.62);
+    -fx-font-size: 9px;
+}
+
+.product-price {
+    -fx-text-fill: #86f7d3;
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+}
+
+.stock-pill {
+    -fx-background-color: rgba(80,255,170,0.10);
+    -fx-background-radius: 999;
+    -fx-border-color: rgba(80,255,170,0.28);
+    -fx-border-radius: 999;
+    -fx-border-width: 1.2;
+    -fx-text-fill: #7fffc4;
+    -fx-padding: 4 12 4 12;
+    -fx-font-size: 8px;
+    -fx-font-weight: 700;
+    -fx-effect: dropshadow(gaussian, rgba(80,255,170,0.20), 6, 0.0, 0, 0);
+}
+
+/* LOW STOCK — pulsing red-orange danger badge */
+.stock-pill.low {
+    -fx-background-color: linear-gradient(to right,
+        rgba(255,60,90,0.22),
+        rgba(255,120,50,0.18));
+    -fx-border-color: rgba(255,70,80,0.70);
+    -fx-border-width: 1.5;
+    -fx-text-fill: #ff8080;
+    -fx-effect: dropshadow(gaussian, rgba(255,60,80,0.55), 10, 0.0, 0, 0);
+}
+
+/* CRITICAL STOCK — extra intense when near zero */
+.stock-pill.critical {
+    -fx-background-color: linear-gradient(to right,
+        rgba(255,30,60,0.35),
+        rgba(255,80,30,0.28));
+    -fx-border-color: rgba(255,40,60,0.90);
+    -fx-border-width: 2;
+    -fx-text-fill: #ff4466;
+    -fx-effect: dropshadow(gaussian, rgba(255,40,60,0.75), 14, 0.0, 0, 0);
+}
+
+.qty-btn {
+    -fx-background-color: linear-gradient(to bottom right, #1fd6ff, #4b83ff);
+    -fx-background-radius: 12;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+    -fx-padding: 7 14 7 14;
+    -fx-cursor: hand;
+}
+
+.qty-value {
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+    -fx-min-width: 26;
+    -fx-alignment: center;
+}
+
+.prod-edit {
+    -fx-background-color: linear-gradient(to bottom right, #ff63b8, #ff7d92);
+    -fx-background-radius: 12;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: 800;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+}
+.page-wrap,
+.overview-scroll,
+.overview-scroll > .viewport,
+.overview-root {
+    -fx-background-color: transparent;
+}
+
+.stat-card,
+.chart-panel {
+    -fx-background-color: linear-gradient(to bottom right, #111f46, #0c1838);
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(120, 210, 255, 0.14);
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.28), 18, 0.18, 0, 6);
+}
+
+.active-card {
+    -fx-border-color: rgba(80,255,180,0.22);
+}
+
+.income-day-card {
+    -fx-border-color: rgba(120,220,255,0.22);
+}
+
+.income-month-card {
+    -fx-border-color: rgba(255,120,180,0.22);
+}
+
+.stat-title {
+    -fx-text-fill: rgba(230,240,255,0.72);
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+}
+
+.stat-value {
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-weight: 900;
+}
+
+.stat-sub {
+    -fx-text-fill: rgba(230,240,255,0.48);
+    -fx-font-size: 11px;
+}
+
+.panel-title {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: 800;
+}
+
+.quick-box {
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-background-radius: 14;
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-border-radius: 14;
+    -fx-padding: 12 14 12 14;
+}
+
+.rank-pill {
+    -fx-background-color: linear-gradient(to bottom right, #21dcff, #6b7fff);
+    -fx-background-radius: 999;
+    -fx-text-fill: white;
+    -fx-font-weight: 900;
+    -fx-padding: 6 10 6 10;
+    -fx-min-width: 28;
+    -fx-alignment: center;
+}
+
+.summary-title {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 800;
+}
+
+.summary-sub {
+    -fx-text-fill: rgba(230,240,255,0.55);
+    -fx-font-size: 11px;
+}
+
+.summary-value {
+    -fx-text-fill: #86f7d3;
+    -fx-font-size: 13px;
+    -fx-font-weight: 800;
+}
+
+/* chart base */
+.chart {
+    -fx-background-color: transparent;
+    -fx-padding: 8 4 4 4;
+}
+
+.chart-plot-background {
+    -fx-background-color: rgba(255,255,255,0.03);
+    -fx-background-radius: 14;
+}
+
+.chart-vertical-grid-lines,
+.chart-horizontal-grid-lines {
+    -fx-stroke: rgba(255,255,255,0.08);
+}
+
+.axis {
+    -fx-tick-label-fill: rgba(230,240,255,0.75);
+}
+
+.axis-label {
+    -fx-text-fill: rgba(230,240,255,0.75);
+}
+
+.chart-legend {
+    -fx-background-color: transparent;
+}
+
+.default-color0.chart-bar {
+    -fx-bar-fill: linear-gradient(to top, #34d8ff, #7f8cff);
+    -fx-background-radius: 10 10 0 0;
+}
+
+.default-color0.chart-series-line {
+    -fx-stroke: #59f0c2;
+    -fx-stroke-width: 3px;
+}
+
+.default-color0.chart-line-symbol {
+    -fx-background-color: #59f0c2, #0f1835;
+    -fx-background-radius: 8px;
+    -fx-padding: 5px;
+}
+
+.default-color0.chart-series-area-line {
+    -fx-stroke: #ff7cb8;
+    -fx-stroke-width: 3px;
+}
+
+.default-color0.chart-series-area-fill {
+    -fx-fill: rgba(255,124,184,0.25);
+}
+
+.default-color0.chart-area-symbol {
+    -fx-background-color: #ff7cb8, #0f1835;
+    -fx-background-radius: 8px;
+    -fx-padding: 5px;
+}
+
+/* ===== OVERVIEW SUPER PANEL ===== */
+.overview-page,
+.overview-root.compact-overview {
+    -fx-background-color: transparent;
+}
+
+.compact-overview {
+    -fx-background-insets: 0;
+}
+
+.overview-main-title {
+    -fx-text-fill: white;
+    -fx-font-size: 19px;
+    -fx-font-weight: 900;
+    -fx-effect: dropshadow(gaussian, rgba(125,233,255,0.24), 14, 0.2, 0, 0);
+}
+
+.overview-subtitle {
+    -fx-text-fill: rgba(228,240,255,0.70);
+    -fx-font-size: 11px;
+}
+
+.overview-chip {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-background-radius: 999;
+    -fx-border-color: rgba(123,227,255,0.22);
+    -fx-border-radius: 999;
+    -fx-border-width: 1.2;
+    -fx-text-fill: #c7efff;
+    -fx-padding: 7 12 7 12;
+    -fx-font-size: 10px;
+    -fx-font-weight: 800;
+}
+
+.stat-card,
+.chart-panel {
+    -fx-background-color: linear-gradient(to bottom right, #10214e, #0b1635 58%, #0a112a);
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(140,225,255,0.20);
+    -fx-border-width: 1.3;
+    -fx-border-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.36), 18, 0.18, 0, 6);
+}
+
+.stat-card {
+    -fx-min-height: 92;
+}
+
+.chart-panel {
+    -fx-min-height: 238;
+}
+
+.neon-cyan-panel {
+    -fx-border-color: rgba(103, 231, 255, 0.30);
+}
+
+.neon-pink-panel {
+    -fx-border-color: rgba(255, 130, 196, 0.28);
+}
+
+.neon-mix-panel {
+    -fx-border-color: rgba(157, 170, 255, 0.30);
+}
+
+.active-card {
+    -fx-border-color: rgba(98,255,187,0.28);
+}
+
+.income-day-card {
+    -fx-border-color: rgba(116,227,255,0.28);
+}
+
+.income-month-card {
+    -fx-border-color: rgba(255,133,191,0.28);
+}
+
+.stat-title {
+    -fx-text-fill: rgba(230,240,255,0.74);
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+}
+
+.stat-value {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: 900;
+}
+
+.stat-sub,
+.chart-kicker {
+    -fx-text-fill: rgba(224,235,255,0.54);
+    -fx-font-size: 10px;
+}
+
+.panel-title {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 900;
+}
+
+.fx-glitch-title {
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.08), 8, 0.15, 0, 0);
+}
+
+.chart {
+    -fx-background-color: transparent;
+    -fx-padding: 2 0 0 0;
+}
+
+.chart-plot-background {
+    -fx-background-color: linear-gradient(to bottom, rgba(255,255,255,0.040), rgba(255,255,255,0.015));
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(136,219,255,0.14);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+}
+
+.chart-vertical-grid-lines,
+.chart-horizontal-grid-lines,
+.chart-alternative-column-fill,
+.chart-alternative-row-fill {
+    -fx-stroke: rgba(255,255,255,0.06);
+    -fx-fill: transparent;
+}
+
+.axis {
+    -fx-tick-label-fill: rgba(234,241,255,0.75);
+    -fx-font-size: 10px;
+}
+
+.axis-label {
+    -fx-text-fill: rgba(225,236,255,0.70);
+    -fx-font-size: 10px;
+}
+
+.chart-legend {
+    -fx-background-color: transparent;
+    -fx-padding: 6 0 0 0;
+}
+
+.chart-legend-item {
+    -fx-text-fill: rgba(234,241,255,0.74);
+    -fx-font-size: 10px;
+}
+
+.overview-bar-chart .default-color0.chart-bar {
+    -fx-bar-fill: linear-gradient(to top, #45dfff, #7b89ff 58%, #ff8bcf);
+    -fx-background-radius: 12 12 0 0;
+    -fx-effect: dropshadow(gaussian, rgba(102, 234, 255, 0.25), 10, 0.2, 0, 1);
+}
+
+.overview-area-chart .default-color0.chart-series-area-line {
+    -fx-stroke: #69ffd0;
+    -fx-stroke-width: 2.8px;
+}
+
+.overview-area-chart .default-color0.chart-series-area-fill {
+    -fx-fill: linear-gradient(to bottom, rgba(105,255,208,0.36), rgba(105,255,208,0.04));
+}
+
+.overview-area-chart .default-color0.chart-area-symbol {
+    -fx-background-color: #69ffd0, #0f1835;
+    -fx-background-radius: 8px;
+    -fx-padding: 4px;
+}
+
+.overview-pie-chart .chart-pie-label,
+.chart-pie-label {
+    -fx-fill: white;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+.overview-pie-chart,
+#pieProductsSoldMonth {
+    -fx-min-height: 320px;
+    -fx-min-width: 300px;
+    -fx-pref-height: 320px;
+    -fx-pref-width: 320px;
+}
+
+.overview-pie-chart .chart-content,
+#pieProductsSoldMonth .chart-content {
+    -fx-padding: 8 8 8 8;
+}
+
+.overview-pie-chart .data0.chart-pie,
+.pie-slice-0 {
+    -fx-pie-color: #45deff;
+}
+
+.overview-pie-chart .data1.chart-pie,
+.pie-slice-1 {
+    -fx-pie-color: #7a8bff;
+}
+
+.overview-pie-chart .data2.chart-pie,
+.pie-slice-2 {
+    -fx-pie-color: #ff8cc9;
+}
+
+.overview-pie-chart .data3.chart-pie,
+.pie-slice-3 {
+    -fx-pie-color: #69ffd0;
+}
+
+.pc-status-chart .data0.chart-pie {
+    -fx-pie-color: #69ffd0;
+}
+
+.pc-status-chart .data1.chart-pie {
+    -fx-pie-color: #55daff;
+}
+
+.pc-status-chart .data2.chart-pie {
+    -fx-pie-color: #ff8cc9;
+}
+
+.chart-pie {
+    -fx-border-color: rgba(7, 14, 32, 0.72);
+    -fx-border-width: 1.2;
+}
+
+.sparkle-layer {
+    -fx-background-color: transparent;
+}
+
+
+/* ===== Notification popup ===== */
+.notify-popup-root {
+    -fx-min-width: 388;
+    -fx-max-width: 388;
+    -fx-padding: 0;
+}
+
+.notify-popup-card {
+    -fx-padding: 16 16 14 16;
+    -fx-spacing: 12;
+    -fx-background-color:
+        linear-gradient(to bottom, rgba(15, 27, 62, 0.985), rgba(8, 15, 37, 0.99)),
+        linear-gradient(to bottom right, rgba(255,255,255,0.055), rgba(255,255,255,0.012));
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 22, 21;
+    -fx-border-color: linear-gradient(to right, rgba(255,92,207,0.95), rgba(92,200,255,0.95));
+    -fx-border-width: 1.6;
+    -fx-border-radius: 22;
+    -fx-effect: dropshadow(gaussian, rgba(92, 200, 255, 0.26), 28, 0.28, 0, 10);
+}
+
+.notify-edge-glow {
+    -fx-border-color: linear-gradient(to right, rgba(255,92,207,0.82), rgba(92,200,255,0.82));
+    -fx-border-width: 1.2;
+    -fx-border-radius: 22;
+    -fx-background-color: transparent;
+}
+
+.notify-scanline {
+    -fx-pref-height: 64;
+    -fx-max-height: 64;
+    -fx-background-color: linear-gradient(to bottom, rgba(92,200,255,0.00), rgba(92,200,255,0.24), rgba(255,92,207,0.00));
+    -fx-background-radius: 18;
+    -fx-opacity: 0;
+}
+
+.notify-popup-header {
+    -fx-alignment: center-left;
+    -fx-spacing: 10;
+}
+
+.notify-popup-badge {
+    -fx-min-width: 38;
+    -fx-min-height: 38;
+    -fx-alignment: center;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-background-color: linear-gradient(to bottom, rgba(255,92,207,0.28), rgba(255,92,207,0.12));
+    -fx-border-color: rgba(255, 145, 221, 0.88);
+    -fx-border-width: 1.5;
+    -fx-text-fill: #fff1fa;
+    -fx-font-size: 14px;
+    -fx-font-weight: 800;
+    -fx-effect: dropshadow(gaussian, rgba(255,92,207,0.24), 14, 0.22, 0, 0);
+}
+
+.notify-popup-title {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 800;
+}
+
+.notify-popup-sub {
+    -fx-text-fill: rgba(220, 232, 255, 0.72);
+    -fx-font-size: 10px;
+}
+
+.notify-popup-close,
+.notify-popup-clear {
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-width: 1.2;
+}
+
+.notify-popup-close {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-text-fill: #ffd7f1;
+    -fx-border-color: rgba(255, 99, 197, 0.42);
+    -fx-padding: 6 10 6 10;
+}
+
+.notify-popup-close:hover {
+    -fx-background-color: rgba(255, 92, 207, 0.14);
+    -fx-effect: dropshadow(gaussian, rgba(255,92,207,0.18), 12, 0.22, 0, 0);
+}
+
+.notify-popup-clear {
+    -fx-background-color: linear-gradient(to bottom, rgba(92, 200, 255, 0.18), rgba(92, 200, 255, 0.10));
+    -fx-text-fill: white;
+    -fx-border-color: rgba(92, 200, 255, 0.62);
+    -fx-padding: 8 12 8 12;
+}
+
+.notify-popup-clear:hover {
+    -fx-background-color: linear-gradient(to bottom, rgba(92, 200, 255, 0.28), rgba(92, 200, 255, 0.14));
+    -fx-effect: dropshadow(gaussian, rgba(92,200,255,0.20), 12, 0.22, 0, 0);
+}
+
+.notify-popup-scroll {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0 2 0 0;
+    -fx-fit-to-width: true;
+}
+
+.notify-popup-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.notify-popup-scroll .corner {
+    -fx-background-color: transparent;
+}
+
+.notify-popup-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 10;
+    -fx-padding: 2 0 2 0;
+}
+
+.notify-popup-scroll .scroll-bar:vertical .track {
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-background-radius: 999;
+}
+
+.notify-popup-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: linear-gradient(to bottom, rgba(255,92,207,0.88), rgba(92,200,255,0.88));
+    -fx-background-radius: 999;
+    -fx-effect: dropshadow(gaussian, rgba(92,200,255,0.24), 8, 0.2, 0, 0);
+}
+
+.notify-popup-scroll .scroll-bar:vertical .increment-button,
+.notify-popup-scroll .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-shape: "";
+}
+
+.notify-popup-scroll .scroll-bar:vertical .increment-arrow,
+.notify-popup-scroll .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: transparent;
+    -fx-shape: "";
+    -fx-padding: 0;
+}
+
+.notify-popup-list {
+    -fx-spacing: 8;
+    -fx-padding: 0 6 0 0;
+}
+
+.notify-item-card {
+    -fx-background-color:
+        linear-gradient(to bottom right, rgba(255,255,255,0.055), rgba(255,255,255,0.018));
+    -fx-border-color: rgba(92, 200, 255, 0.18);
+    -fx-border-width: 1;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-padding: 11 11 11 11;
+    -fx-spacing: 10;
+    -fx-alignment: center-left;
+    -fx-cursor: hand;
+}
+
+.notify-item-card:hover {
+    -fx-background-color:
+        linear-gradient(to bottom right, rgba(92, 200, 255, 0.09), rgba(255, 92, 207, 0.06));
+    -fx-border-color: rgba(130, 221, 255, 0.34);
+    -fx-effect: dropshadow(gaussian, rgba(92,200,255,0.12), 10, 0.18, 0, 0);
+}
+
+.notify-item-dot {
+    -fx-min-width: 10;
+    -fx-min-height: 10;
+    -fx-max-width: 10;
+    -fx-max-height: 10;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-background-color: linear-gradient(to bottom, #7de9ff, #5cc8ff);
+    -fx-border-color: rgba(255,255,255,0.78);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(92,200,255,0.26), 8, 0.22, 0, 0);
+}
+
+.notify-item-title {
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-wrap-text: true;
+}
+
+.notify-item-time {
+    -fx-text-fill: #ff9adc;
+    -fx-font-size: 9px;
+}
+
+.notify-empty {
+    -fx-text-fill: rgba(220, 232, 255, 0.74);
+    -fx-font-size: 11px;
+    -fx-alignment: center;
+    -fx-padding: 14 8 14 8;
+}
+
+.notify-divider {
+    -fx-background-color: rgba(255,255,255,0.09);
+    -fx-border-color: transparent;
+}
+
+.notify-popup-footer {
+    -fx-alignment: center-right;
+}
+
+
+.notify-close-mini {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-text-fill: rgba(255,255,255,0.76);
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-color: rgba(255,255,255,0.10);
+    -fx-border-width: 1;
+    -fx-padding: 5 9 5 9;
+    -fx-font-size: 10px;
+    -fx-font-weight: 800;
+    -fx-cursor: hand;
+}
+
+.notify-close-mini:hover {
+    -fx-background-color: rgba(255,92,207,0.16);
+    -fx-border-color: rgba(255,92,207,0.40);
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(255,92,207,0.16), 10, 0.2, 0, 0);
+}
+
+.notify-item-tag {
+    -fx-padding: 3 8 3 8;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-width: 1;
+    -fx-font-size: 8px;
+    -fx-font-weight: 800;
+}
+
+.notify-item-tag-info {
+    -fx-background-color: rgba(92,200,255,0.14);
+    -fx-border-color: rgba(92,200,255,0.40);
+    -fx-text-fill: #c8f3ff;
+}
+
+.notify-item-tag-warn {
+    -fx-background-color: rgba(255,92,207,0.14);
+    -fx-border-color: rgba(255,92,207,0.42);
+    -fx-text-fill: #ffd4f0;
+}
+
+.notify-item-tag-ok {
+    -fx-background-color: rgba(93,255,170,0.12);
+    -fx-border-color: rgba(93,255,170,0.42);
+    -fx-text-fill: #d7ffeb;
+}
+
+.notify-item-dot-info {
+    -fx-background-color: linear-gradient(to bottom, #7de9ff, #5cc8ff);
+}
+
+.notify-item-dot-warn {
+    -fx-background-color: linear-gradient(to bottom, #ff8add, #ff5ccf);
+}
+
+.notify-item-dot-ok {
+    -fx-background-color: linear-gradient(to bottom, #9affcb, #4fff9a);
+}
+
+.product-grid {
+    -fx-alignment: top-left;
+}
+
+.notif-icon-active {
+    -fx-effect: dropshadow(gaussian, rgba(255, 99, 197, 0.34), 22, 0.24, 0, 0);
+}
+
+
+
+
+.edit-overlay {
+    -fx-background-color: rgba(2, 8, 24, 0.62);
+}
+
+.edit-popup {
+    -fx-background-color: linear-gradient(to bottom right, rgba(18,30,63,0.98), rgba(9,18,44,0.98));
+    -fx-background-radius: 24;
+    -fx-border-color: rgba(110, 198, 255, 0.22);
+    -fx-border-radius: 24;
+    -fx-border-width: 1.2;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.42), 28, 0.24, 0, 10);
+}
+
+.edit-popup-title {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: 800;
+}
+
+.popup-close-btn {
+    -fx-background-color: rgba(255,255,255,0.08);
+    -fx-background-radius: 999;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: 800;
+    -fx-padding: 7 12 7 12;
+    -fx-cursor: hand;
+}
+
+.popup-field-label {
+    -fx-text-fill: rgba(228,236,255,0.82);
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+}
+
+.popup-field {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-background-radius: 14;
+    -fx-border-color: rgba(105,180,255,0.18);
+    -fx-border-radius: 14;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255,255,255,0.42);
+    -fx-padding: 11 13 11 13;
+}
+
+
+/* inventory popup image editing */
+.edit-image-preview-wrap{
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-border-color: rgba(92,200,255,0.45);
+    -fx-border-width: 2;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-padding: 12;
+}
+
+/* smoother center resize with sidebar */
+.content-stack{
+    -fx-padding: 0;
+}
+.page-wrap{
+    -fx-background-color: transparent;
+}
+.product-grid{
+    -fx-alignment: top-left;
+}
+
+/* ====== PCS PAGE UPGRADE ====== */
+.pcs-page {
+    -fx-background-color: linear-gradient(to bottom right, rgba(10,22,51,0.92), rgba(7,13,30,0.96));
+}
+
+.pcs-hero {
+    -fx-background-color: linear-gradient(to right, rgba(92,200,255,0.10), rgba(255,99,197,0.10));
+    -fx-border-color: rgba(92,200,255,0.75);
+    -fx-border-width: 2;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-padding: 16;
+}
+
+.pcs-hero-title {
+    -fx-font-size: 18px;
+    -fx-text-fill: white;
+}
+
+.badge-live-strong {
+    -fx-padding: 5 12 5 12;
+    -fx-effect: dropshadow(gaussian, rgba(92,200,255,0.32), 12, 0.20, 0, 0);
+}
+
+.pcs-hero-sub,
+.pcs-stat-sub {
+    -fx-text-fill: rgba(255,255,255,0.78);
+}
+
+.pcs-stat-card {
+    -fx-background-color: linear-gradient(to bottom right, rgba(15,33,80,0.98), rgba(9,18,41,0.98));
+    -fx-border-color: rgba(92,200,255,0.88);
+    -fx-border-width: 2;
+}
+
+.pcs-stat-card-alt { -fx-border-color: rgba(255,99,197,0.92); }
+.pcs-stat-card-warn { -fx-border-color: rgba(255,170,87,0.95); }
+.pcs-stat-card-soft { -fx-border-color: rgba(165,126,255,0.90); }
+
+.pcs-stat-number {
+    -fx-font-size: 24px;
+}
+
+.pcs-toolbar,
+.pcs-grid-shell,
+.pcs-side-panel {
+    -fx-background-color: linear-gradient(to bottom, rgba(15,33,80,0.98), rgba(9,18,41,0.98));
+}
+
+.pcs-search {
+    -fx-pref-width: 420;
+}
+
+.pcs-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+}
+.pcs-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+.pcs-scroll .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 12;
+}
+.pcs-scroll .scroll-bar:vertical .track {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-background-radius: 10;
+}
+.pcs-scroll .scroll-bar:vertical .thumb {
+    -fx-background-color: linear-gradient(to bottom, #5cc8ff, #ff63c5);
+    -fx-background-radius: 10;
+}
+.pcs-scroll .increment-button,
+.pcs-scroll .decrement-button {
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+}
+
+.pcs-card-flow {
+    -fx-padding: 4;
+}
+
+.pcs-unit-card {
+    -fx-background-color: linear-gradient(to bottom, rgba(14,26,59,0.98), rgba(7,14,33,0.98));
+    -fx-border-width: 2;
+    -fx-border-radius: 18;
+    -fx-background-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.30), 16, 0.22, 0, 5);
+}
+.pcs-card-online { -fx-border-color: rgba(92,200,255,0.92); }
+.pcs-card-boost { -fx-border-color: rgba(165,126,255,0.92); }
+.pcs-card-idle { -fx-border-color: rgba(117,255,196,0.82); }
+.pcs-card-warn { -fx-border-color: rgba(255,170,87,0.95); }
+.pcs-card-offline { -fx-border-color: rgba(255,99,197,0.95); }
+
+.pcs-card-name {
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.pcs-status-dot {
+    -fx-background-radius: 999;
+}
+.pcs-dot-online  { -fx-background-color: #5cc8ff; -fx-effect: dropshadow(gaussian, rgba(92,200,255,0.85), 8, 0.3, 0, 0); }
+.pcs-dot-boost   { -fx-background-color: #a57eff; -fx-effect: dropshadow(gaussian, rgba(165,126,255,0.85), 8, 0.3, 0, 0); }
+.pcs-dot-idle    { -fx-background-color: #3dffa3; -fx-effect: dropshadow(gaussian, rgba(61,255,163,0.85), 8, 0.3, 0, 0); }
+.pcs-dot-warn    { -fx-background-color: #ffaa57; -fx-effect: dropshadow(gaussian, rgba(255,170,87,0.85),  8, 0.3, 0, 0); }
+.pcs-dot-offline { -fx-background-color: #ff4f7e; -fx-effect: dropshadow(gaussian, rgba(255,79,126,0.85), 8, 0.3, 0, 0); }
+
+.pcs-status-chip {
+    -fx-padding: 4 12 4 12;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 999;
+    -fx-background-radius: 999;
+    -fx-font-size: 9px;
+    -fx-font-weight: 900;
+}
+
+/* ONLINE — cyan glow */
+.pcs-chip-online {
+    -fx-background-color: rgba(92,200,255,0.15);
+    -fx-border-color: rgba(92,200,255,0.90);
+    -fx-text-fill: #5cc8ff;
+    -fx-effect: dropshadow(gaussian, rgba(92,200,255,0.40), 10, 0.0, 0, 0);
+}
+.pcs-chip-boost {
+    -fx-background-color: rgba(165,126,255,0.15);
+    -fx-border-color: rgba(165,126,255,0.90);
+    -fx-text-fill: #c7b0ff;
+    -fx-effect: dropshadow(gaussian, rgba(165,126,255,0.40), 10, 0.0, 0, 0);
+}
+/* AVAILABLE — green glow */
+.pcs-chip-idle {
+    -fx-background-color: rgba(61,255,163,0.13);
+    -fx-border-color: rgba(61,255,163,0.88);
+    -fx-text-fill: #3dffa3;
+    -fx-effect: dropshadow(gaussian, rgba(61,255,163,0.40), 10, 0.0, 0, 0);
+}
+.pcs-chip-warn {
+    -fx-background-color: rgba(255,170,87,0.13);
+    -fx-border-color: rgba(255,170,87,0.88);
+    -fx-text-fill: #ffaa57;
+    -fx-effect: dropshadow(gaussian, rgba(255,170,87,0.40), 10, 0.0, 0, 0);
+}
+/* OFFLINE — red/pink glow */
+.pcs-chip-offline {
+    -fx-background-color: rgba(255,79,126,0.13);
+    -fx-border-color: rgba(255,79,126,0.88);
+    -fx-text-fill: #ff4f7e;
+    -fx-effect: dropshadow(gaussian, rgba(255,79,126,0.40), 10, 0.0, 0, 0);
+}
+
+.pcs-monitor {
+    -fx-background-color: linear-gradient(to bottom right, rgba(4,10,24,0.95), rgba(18,40,79,0.95));
+    -fx-border-color: rgba(92,200,255,0.28);
+    -fx-border-width: 2;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-padding: 10;
+}
+
+.pcs-monitor-inner {
+    -fx-background-color: linear-gradient(to bottom right, rgba(92,200,255,0.10), rgba(255,99,197,0.08));
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-border-radius: 12;
+    -fx-padding: 14;
+}
+
+.pcs-zone-label {
+    -fx-text-fill: #5cc8ff;
+    -fx-font-size: 11px;
+}
+
+.pcs-user-label {
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-alignment: center;
+}
+
+.pcs-mini-row,
+.pcs-side-row {
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(255,255,255,0.05);
+}
+
+.pcs-focus-visual {
+    -fx-background-color: linear-gradient(to bottom right, rgba(4,10,24,1), rgba(17,38,70,0.98));
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(92,200,255,0.32);
+    -fx-border-width: 2;
+    -fx-padding: 14;
+}
+
+.pcs-focus-screen {
+    -fx-background-color: linear-gradient(to bottom right, rgba(92,200,255,0.12), rgba(255,99,197,0.10));
+    -fx-background-radius: 14;
+    -fx-padding: 18;
+}
+
+.pcs-focus-name {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.pcs-focus-user {
+    -fx-text-fill: rgba(255,255,255,0.80);
+    -fx-font-size: 11px;
+}
+
+
+.pcs-card-flow {
+    -fx-padding: 4;
+}
+
+.pcs-unit-card {
+    -fx-padding: 16;
+    -fx-pref-width: 262;
+    -fx-min-width: 262;
+    -fx-max-width: 262;
+    -fx-min-height: 252;
+    -fx-background-color: linear-gradient(to bottom right, rgba(10,22,45,0.96), rgba(13,18,34,0.96));
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.28), 22, 0.18, 0, 7);
+}
+
+.pcs-card-btn {
+    -fx-font-size: 11px;
+}
+
+.pcs-add-panel {
+    -fx-background-color: linear-gradient(to bottom right, rgba(12,25,49,0.98), rgba(19,17,44,0.98));
+}
+
+.pcs-input-clean,
+.pcs-combo-clean {
+    -fx-background-color: rgba(255,255,255,0.055);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(92,200,255,0.26);
+    -fx-border-radius: 12;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255,255,255,0.45);
+}
+
+.pcs-input-clean {
+    -fx-padding: 12 14 12 14;
+}
+
+.pcs-combo-clean {
+    -fx-padding: 4 10 4 10;
+}
+
+.pcs-combo-clean .list-cell,
+.pcs-combo-clean .text {
+    -fx-text-fill: white;
+}
+
+.pcs-combo-clean .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.pcs-combo-clean .arrow {
+    -fx-background-color: #5cc8ff;
+}
+
+.pcs-add-btn {
+    -fx-padding: 12 14 12 14;
+}
+
+
+/* ===== PCS dynamic modules ===== */
+.pcs-root-shell {
+    -fx-background-color: transparent;
+}
+
+.pcs-modal-overlay {
+    -fx-background-color: rgba(4, 8, 20, 0.68);
+    -fx-padding: 18;
+    -fx-alignment: center;
+}
+
+.pcs-modal-card {
+    -fx-padding: 14 14 14 14;
+    -fx-background-color: linear-gradient(to bottom right, rgba(15,31,73,0.98), rgba(8,16,38,0.99));
+    -fx-background-radius: 24;
+    -fx-border-color: linear-gradient(to right, rgba(92,200,255,0.85), rgba(255,99,197,0.72));
+    -fx-border-width: 1.4;
+    -fx-border-radius: 24;
+    -fx-effect: dropshadow(gaussian, rgba(6,12,28,0.62), 34, 0.25, 0, 14);
+}
+
+.pcs-modal-title {
+    -fx-font-size: 17px;
+    -fx-font-weight: 900;
+}
+
+.pcs-modal-close {
+    -fx-min-width: 38;
+    -fx-min-height: 38;
+    -fx-background-radius: 14;
+}
+
+.pcs-modal-screen {
+    -fx-padding: 8;
+    -fx-background-color: linear-gradient(to bottom, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    -fx-background-radius: 22;
+    -fx-border-color: rgba(111, 207, 255, 0.20);
+    -fx-border-radius: 22;
+}
+
+.pcs-modal-stat {
+    -fx-padding: 10 12 10 12;
+    -fx-background-color: rgba(255,255,255,0.035);
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-border-radius: 18;
+}
+
+.pcs-modal-value {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+}
+
+.pcs-modal-note {
+    -fx-text-fill: rgba(236,244,255,0.82);
+    -fx-font-size: 11px;
+    -fx-line-spacing: 1.2px;
+}
+
+.pcs-modal-action {
+    -fx-padding: 10 12 10 12;
+}
+
+
+/* ===== PCS compact layout refresh ===== */
+.pcs-page {
+    -fx-padding: 0;
+}
+
+.pcs-stats-row {
+    -fx-padding: 0 0 2 0;
+}
+
+.pcs-stat-card {
+    -fx-padding: 12 14 12 14;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+}
+
+.pcs-stat-number {
+    -fx-font-size: 20px;
+}
+
+.pcs-right-rail {
+    -fx-min-width: 332;
+    -fx-max-width: 332;
+}
+
+.pcs-session-panel {
+    -fx-padding: 14;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(92,200,255,0.26);
+    -fx-border-width: 1.2;
+    -fx-effect: dropshadow(gaussian, rgba(5,10,24,0.40), 18, 0.18, 0, 7);
+}
+
+.pcs-session-hero {
+    -fx-padding: 10;
+}
+
+.pcs-focus-screen {
+    -fx-padding: 14;
+}
+
+.pcs-focus-name {
+    -fx-font-size: 18px;
+}
+
+.pcs-focus-user {
+    -fx-text-alignment: center;
+}
+
+.pcs-session-chip-row,
+.pcs-session-summary {
+    -fx-padding: 0;
+}
+
+.pcs-session-chip {
+    -fx-padding: 10 12 10 12;
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-background-radius: 14;
+    -fx-border-color: rgba(255,255,255,0.06);
+    -fx-border-radius: 14;
+}
+
+.pcs-side-row {
+    -fx-padding: 10 12 10 12;
+}
+
+.pcs-session-btn {
+    -fx-padding: 10 12 10 12;
+    -fx-font-size: 11px;
+}
+
+.pcs-session-btn-sub {
+    -fx-background-color: linear-gradient(to right, rgba(92,200,255,0.16), rgba(165,126,255,0.14));
+    -fx-border-color: rgba(92,200,255,0.42);
+}
+
+.pcs-session-btn-danger {
+    -fx-background-color: linear-gradient(to right, rgba(255,88,88,0.96), rgba(255,62,108,0.94));
+    -fx-border-color: rgba(255,219,224,0.92);
+    -fx-effect: dropshadow(gaussian, rgba(255,72,96,0.42), 18, 0.26, 0, 5);
+}
+
+.pcs-session-btn-danger:hover {
+    -fx-background-color: linear-gradient(to right, rgba(255,106,106,0.98), rgba(255,83,123,0.96));
+    -fx-border-color: rgba(255,236,238,0.98);
+    -fx-effect: dropshadow(gaussian, rgba(255,72,96,0.56), 24, 0.28, 0, 7);
+}
+
+/* ===== PCS layout upgrade: cleaner full-height control panel ===== */
+.pcs-main-layout {
+    -fx-padding: 2 0 0 0;
+}
+
+.pcs-left-zone {
+    -fx-min-width: 0;
+}
+
+.pcs-grid-shell {
+    -fx-padding: 12 12 10 12;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+}
+
+.pcs-right-rail {
+    -fx-min-width: 350;
+    -fx-max-width: 350;
+}
+
+.pcs-session-panel {
+    -fx-padding: 16;
+    -fx-background-color: linear-gradient(to bottom, rgba(14,24,46,0.96), rgba(10,17,33,0.98));
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-border-color: rgba(92,200,255,0.28);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.34), 22, 0.22, 0, 9);
+}
+
+.pcs-session-title {
+    -fx-font-size: 16px;
+    -fx-letter-spacing: 1.4px;
+}
+
+.pcs-status-badge {
+    -fx-padding: 7 11 7 11;
+}
+
+.pcs-session-subtitle {
+    -fx-text-fill: rgba(236,244,255,0.70);
+    -fx-line-spacing: 1.6px;
+}
+
+.pcs-session-hero {
+    -fx-padding: 12;
+    -fx-background-color: linear-gradient(to bottom, rgba(92,200,255,0.08), rgba(165,126,255,0.10));
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-border-radius: 18;
+}
+
+.pcs-focus-name {
+    -fx-font-size: 20px;
+}
+
+.pcs-focus-user {
+    -fx-max-width: 240;
+}
+
+.pcs-session-chip {
+    -fx-padding: 12 13 12 13;
+    -fx-background-color: rgba(255,255,255,0.045);
+    -fx-border-color: rgba(255,255,255,0.07);
+}
+
+.pcs-session-summary {
+    -fx-spacing: 9;
+}
+
+.pcs-side-row {
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-background-radius: 14;
+    -fx-border-color: rgba(255,255,255,0.06);
+    -fx-border-radius: 14;
+}
+
+.pcs-session-btn {
+    -fx-padding: 11 12 11 12;
+}
+
+.pcs-scroll {
+    -fx-background-insets: 0;
+    -fx-padding: 0 2 0 0;
+}
+
+.pcs-side-scroll {
+    -fx-background-insets: 0;
+    -fx-padding: 2 4 6 0;
+}
+
+.pcs-side-scroll > .viewport {
+    -fx-background-color: transparent;
+    -fx-padding: 6 8 8 6;
+}
+
+.pcs-action-row {
+    -fx-padding: 2 1 2 1;
+}
+
+/* ===== GAME MANAGEMENT PAGE ===== */
+.game-page {
+    -fx-background-color: linear-gradient(to bottom right, #0b1633, #091126);
+}
+
+.game-page-layer,
+.game-content-shell,
+.game-grid {
+    -fx-background-color: transparent;
+}
+
+.game-top-shell {
+    -fx-border-color: rgba(255,103,179,0.18);
+}
+
+.chip-btn-active {
+    -fx-background-color: linear-gradient(to right, rgba(31,214,255,0.22), rgba(255,99,184,0.18));
+    -fx-border-color: rgba(110,180,255,0.42);
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(92,200,255,0.22), 12, 0.18, 0, 0);
+}
+
+.game-grid {
+    -fx-alignment: top-left;
+}
+
+.game-stat-card {
+    -fx-border-color: rgba(92,200,255,0.24);
+}
+
+.game-stat-card-alt {
+    -fx-border-color: rgba(255,103,179,0.24);
+}
+
+.game-stat-card-soft {
+    -fx-border-color: rgba(165,126,255,0.24);
+}
+
+.game-right-rail {
+    -fx-min-width: 320;
+    -fx-max-width: 320;
+}
+
+.game-side-panel {
+    -fx-background-color: linear-gradient(to bottom, rgba(16,27,56,0.98), rgba(10,18,41,0.98));
+    -fx-background-radius: 22;
+    -fx-border-color: rgba(110,180,255,0.18);
+    -fx-border-radius: 22;
+    -fx-padding: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.30), 18, 0.18, 0, 8);
+}
+
+.game-side-hero {
+    -fx-padding: 12;
+    -fx-background-color: linear-gradient(to right, rgba(31,214,255,0.10), rgba(255,99,184,0.08));
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.06);
+    -fx-border-radius: 18;
+}
+
+.game-focus-title {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: 800;
+}
+
+.game-focus-meta {
+    -fx-text-fill: rgba(228,236,255,0.74);
+    -fx-font-size: 11px;
+}
+
+.game-chip-full {
+    -fx-max-width: Infinity;
+}
+
+.game-card {
+    -fx-background-color: linear-gradient(to bottom right, rgba(18,28,60,0.98), rgba(8,15,38,0.98));
+    -fx-background-radius: 24;
+    -fx-border-color: rgba(110,180,255,0.16);
+    -fx-border-width: 1.2;
+    -fx-border-radius: 24;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.34), 20, 0.22, 0, 9);
+    -fx-cursor: hand;
+}
+
+.game-thumb-wrap {
+    -fx-background-color: linear-gradient(to bottom right, rgba(24,44,88,0.96), rgba(12,24,56,0.98));
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(120,220,255,0.20);
+    -fx-border-radius: 18;
+    -fx-padding: 10;
+}
+
+.game-status-badge {
+    -fx-padding: 6 11 6 11;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-font-size: 9px;
+    -fx-font-weight: 800;
+}
+
+.game-status-badge.status-installed {
+    -fx-background-color: rgba(120,255,190,0.16);
+    -fx-border-color: rgba(120,255,190,0.28);
+    -fx-text-fill: #abffd4;
+}
+
+.game-status-badge.status-updating {
+    -fx-background-color: rgba(92,200,255,0.16);
+    -fx-border-color: rgba(92,200,255,0.28);
+    -fx-text-fill: #bdefff;
+}
+
+.game-status-badge.status-hidden {
+    -fx-background-color: rgba(255,103,179,0.14);
+    -fx-border-color: rgba(255,103,179,0.26);
+    -fx-text-fill: #ffc2df;
+}
+
+.game-title {
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: 800;
+}
+
+.game-sub {
+    -fx-text-fill: rgba(220,230,255,0.66);
+    -fx-font-size: 10px;
+}
+
+.game-install-pill {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-background-radius: 999;
+    -fx-border-color: rgba(255,255,255,0.08);
+    -fx-border-radius: 999;
+    -fx-padding: 5 9 5 9;
+    -fx-text-fill: white;
+    -fx-font-size: 9px;
+    -fx-font-weight: 700;
+}
+
+.game-key {
+    -fx-text-fill: rgba(228,236,255,0.54);
+    -fx-font-size: 9px;
+}
+
+.game-value {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: 800;
+}
+
+.game-action-btn {
+    -fx-padding: 8 14 8 14;
+}
+
+.game-chip-btn {
+    -fx-padding: 8 14 8 14;
+}
+
+.game-modal {
+    -fx-border-color: rgba(255,103,179,0.22);
+}
+
+.game-modal-preview-wrap {
+    -fx-background-color: linear-gradient(to bottom right, rgba(24,44,88,0.96), rgba(12,24,56,0.98));
+}
+
+
+/* ===== Game page toolbar cleanup ===== */
+.game-toolbar {
+    -fx-padding: 2 0 2 0;
+    -fx-alignment: center-left;
+}
+
+.game-search-field {
+    -fx-background-color: rgba(9, 16, 32, 0.94);
+    -fx-background-radius: 14;
+    -fx-border-color: rgba(255, 87, 214, 0.92);
+    -fx-border-radius: 14;
+    -fx-border-width: 1.4;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(214, 225, 255, 0.62);
+    -fx-padding: 12 14 12 14;
+}
+
+.game-search-field:focused {
+    -fx-border-color: #74ecff;
+    -fx-effect: dropshadow(gaussian, rgba(116,236,255,0.24), 16, 0.26, 0, 0);
+}
+
+.game-category-box {
+    -fx-background-color: rgba(9, 16, 32, 0.94);
+    -fx-background-radius: 14;
+    -fx-border-color: rgba(255, 87, 214, 0.92);
+    -fx-border-radius: 14;
+    -fx-border-width: 1.4;
+    -fx-padding: 4 8 4 8;
+    -fx-min-width: 190;
+}
+
+.game-category-box:hover,
+.game-category-box:focused {
+    -fx-border-color: #74ecff;
+    -fx-effect: dropshadow(gaussian, rgba(116,236,255,0.22), 14, 0.22, 0, 0);
+}
+
+.game-category-box .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+.game-category-box .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.game-category-box .arrow {
+    -fx-background-color: #ff57d6;
+}
+
+
+
+
+/* Hover room so scaled cards never get clipped */
+.product-grid {
+    -fx-padding: 12;
+}
+
+.game-grid,
+.customer-grid,
+.pcs-card-flow {
+    -fx-padding: 12;
+}
+
+.inventory-scroll,
+.pcs-scroll,
+.game-scroll,
+.customer-history-scroll {
+    -fx-padding: 4;
+}
+
+.popup-combo-box {
+    -fx-min-width: 1;
+    -fx-pref-width: Infinity;
+    -fx-max-width: Infinity;
+}
+
+/* ===== CUSTOMER LOUNGE PAGE ===== */
+.customer-page {
+    -fx-background-color: transparent;
+}
+
+.customer-top-shell {
+    -fx-border-color: rgba(116,236,255,0.16);
+}
+
+.customer-grid {
+    -fx-alignment: top-left;
+}
+
+.customer-right-rail {
+    -fx-min-width: 332;
+    -fx-max-width: 332;
+}
+
+.customer-side-panel {
+    -fx-background-color: linear-gradient(to bottom, rgba(16,27,56,0.98), rgba(10,18,41,0.98));
+}
+
+.customer-focus-card {
+    -fx-background-color: linear-gradient(to right, rgba(31,214,255,0.08), rgba(255,99,184,0.08));
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.06);
+    -fx-border-radius: 18;
+    -fx-padding: 14;
+}
+
+.customer-card {
+    -fx-border-color: rgba(116,236,255,0.14);
+}
+
+.customer-card-selected {
+    -fx-border-color: rgba(255,87,214,0.58);
+    -fx-effect: dropshadow(gaussian, rgba(255,87,214,0.18), 24, 0.22, 0, 8);
+}
+
+.customer-avatar-wrap {
+    -fx-background-color: linear-gradient(to bottom right, rgba(24,44,88,0.96), rgba(18,28,60,0.98));
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(120,220,255,0.20);
+    -fx-border-radius: 18;
+    -fx-padding: 10;
+}
+
+.customer-avatar-text {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: 900;
+}
+
+.customer-mini-stat {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(255,255,255,0.07);
+    -fx-border-radius: 16;
+}
+
+.customer-last-visit {
+    -fx-text-fill: rgba(220,230,255,0.70);
+    -fx-font-size: 10px;
+}
+
+.customer-points-value {
+    -fx-text-fill: #87f5ff;
+    -fx-font-size: 14px;
+    -fx-font-weight: 900;
+}
+
+.customer-history-item {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(255,255,255,0.07);
+    -fx-border-radius: 16;
+}
+
+.customer-history-title {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: 800;
+}
+
+.customer-history-plus {
+    -fx-text-fill: #a9ffd2;
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+}
+
+.customer-history-minus {
+    -fx-text-fill: #ffc4df;
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+}
+
+.customer-modal {
+    -fx-border-color: rgba(116,236,255,0.22);
+}
+
+.popup-static-value {
+    -fx-background-color: rgba(255,255,255,0.045);
+    -fx-border-color: rgba(92,200,255,0.22);
+    -fx-border-width: 2;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 12 14 12 14;
+}
+
+.card-hover-shell{
+    -fx-padding:14;
+    -fx-background-color:transparent;
+}
+
+/* ===== slide-in detail drawers ===== */
+.drawer-overlay {
+    -fx-background-color: rgba(3, 10, 24, 0.56);
+    -fx-padding: 14 14 14 14;
+}
+
+.drawer-host {
+    -fx-alignment: top-right;
+    -fx-padding: 8 0 8 0;
+}
+
+.detail-drawer {
+    -fx-background-color: linear-gradient(to bottom right, rgba(14,26,59,0.985), rgba(7,14,33,0.99));
+    -fx-background-radius: 28 0 0 28;
+    -fx-border-color: linear-gradient(to bottom, rgba(92,200,255,0.85), rgba(255,99,197,0.70));
+    -fx-border-width: 1.4 0 1.4 1.4;
+    -fx-border-radius: 28 0 0 28;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.42), 28, 0.25, -4, 10);
+}
+
+.detail-drawer-title {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: 900;
+}
+
+.detail-drawer-hero {
+    -fx-border-color: rgba(255,255,255,0.06);
+    -fx-border-radius: 22;
+    -fx-background-radius: 22;
+}
+
+.detail-drawer-hero-title {
+    -fx-font-size: 22px;
+}
+
+.detail-drawer-chip,
+.detail-drawer-section {
+    -fx-background-color: rgba(255,255,255,0.045);
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.06);
+    -fx-border-radius: 18;
+}
+
+.detail-drawer-section {
+    -fx-padding: 12;
+}
+
+.detail-drawer-scroll,
+.detail-drawer-scroll > .viewport {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.pcs-detail-drawer .pcs-session-chip,
+.pcs-detail-drawer .pcs-session-summary {
+    -fx-background-color: rgba(255,255,255,0.045);
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(255,255,255,0.06);
+}
+
+.customer-page .inventory-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+
+/* generic helper classes used across newer FXMLs */
+.page {
+    -fx-background-color: transparent;
+}
+
+.main-grid {
+    -fx-alignment: top-left;
+}
+
+.right-rail {
+    -fx-background-color: transparent;
+}
+
+.overview-anim-card {
+    -fx-background-insets: 0;
+}
+
+.customer-drawer {
+    -fx-background-color: linear-gradient(to bottom right, rgba(14,26,59,0.985), rgba(7,14,33,0.99));
+}
+
+/* ===== safer cyber popup/card additions ===== */
+.cyber-popup-overlay{
+    -fx-background-color: rgba(4, 10, 26, 0.66);
+}
+.cyber-modal-card{
+    -fx-border-color: rgba(120, 220, 255, 0.26);
+    -fx-border-width: 1.2;
+}
+.cyber-popup-hero{
+    -fx-effect: dropshadow(gaussian, rgba(77, 219, 255, 0.18), 16, 0.18, 0, 6);
+}
+.cyber-addpc-btn{
+    -fx-padding: 11 16 11 16;
+}
+.cyber-action-btn{
+    -fx-padding: 11 14 11 14;
+}
+.cyber-card{
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.24), 20, 0.16, 0, 6);
+}
+.pcs-card-hint{
+    -fx-text-fill: rgba(212, 226, 255, 0.52);
+    -fx-font-size: 9px;
+}
+.cyber-history-item{
+    -fx-border-color: rgba(120,220,255,0.12);
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+    -fx-background-radius: 14;
+}
+
+/* ===== Nova modal / drawer accents ===== */
+.nova-overlay {
+    -fx-background-color: rgba(6, 11, 30, 0.76);
+}
+
+.nova-modal-card {
+    -fx-background-color:
+        linear-gradient(to bottom right, rgba(15,26,58,0.98), rgba(19,12,39,0.98)),
+        linear-gradient(to bottom, rgba(255,255,255,0.03), rgba(255,255,255,0.0));
+    -fx-background-radius: 22;
+    -fx-border-radius: 22;
+    -fx-border-color: rgba(92, 211, 255, 0.35), rgba(255, 92, 199, 0.18);
+    -fx-border-width: 1.2, 1;
+    -fx-effect: dropshadow(gaussian, rgba(35, 210, 255, 0.16), 32, 0.18, 0, 10);
+}
+
+.detail-drawer, .customer-drawer, .pcs-detail-drawer {
+    -fx-background-color:
+        linear-gradient(to bottom right, rgba(13,22,48,0.98), rgba(21,13,39,0.98));
+    -fx-background-radius: 24 0 0 24;
+    -fx-border-color: rgba(92, 211, 255, 0.24);
+    -fx-border-width: 1 0 0 1;
+    -fx-border-radius: 24 0 0 24;
+    -fx-max-height: -Infinity;
+}
+
+
+/* ===== NovaFX cyber upgrade ===== */
+.nova-modal-card, .cyber-modal-card, .pcs-modal-card, .customer-drawer, .pcs-detail-drawer {
+    -fx-background-color: linear-gradient(to bottom right, rgba(12,22,48,0.97), rgba(8,12,28,0.98));
+    -fx-background-insets: 0;
+    -fx-background-radius: 24;
+    -fx-border-radius: 24;
+    -fx-border-color: rgba(92,220,255,0.28), rgba(255,90,210,0.22);
+    -fx-border-width: 1.2;
+    -fx-effect: dropshadow(gaussian, rgba(52,198,255,0.18), 28, 0.20, 0, 8);
+}
+
+.nova-modal-card:hover, .cyber-modal-card:hover, .pcs-modal-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(255,92,201,0.18), 30, 0.24, 0, 10);
+}
+
+.cyber-popup-overlay, .nova-overlay, .pcs-modal-overlay, .drawer-overlay {
+    -fx-background-color: rgba(8, 12, 22, 0.76);
+}
+
+.popup-close-btn, .cyber-action-btn, .pcs-session-btn, .game-action-btn {
+    -fx-cursor: hand;
+}
+
+.customer-history-item, .cyber-history-item {
+    -fx-background-color: linear-gradient(to right, rgba(18,28,58,0.86), rgba(11,18,36,0.92));
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(97,233,255,0.14);
+    -fx-border-width: 1;
+    -fx-padding: 12 14 12 14;
+}
+
+.customer-history-item:hover, .cyber-history-item:hover {
+    -fx-border-color: rgba(255,117,212,0.28);
+    -fx-effect: dropshadow(gaussian, rgba(95,225,255,0.16), 20, 0.16, 0, 6);
+}
+
+
+.cyber-card, .product-card, .game-card {
+    -fx-effect: dropshadow(gaussian, rgba(55,180,255,0.10), 18, 0.16, 0, 6);
+}
+
+.cyber-card:hover, .product-card:hover, .game-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(255,92,203,0.12), 22, 0.18, 0, 10);
+}
+
+
+
+
+.customer-history-title:hover {
+    -fx-text-fill: white;
+    -fx-effect: none;
+}
+
+.customer-history-plus:hover {
+    -fx-text-fill: #a9ffd2;
+    -fx-effect: none;
+}
+
+.customer-history-minus:hover {
+    -fx-text-fill: #ffc4df;
+    -fx-effect: none;
+}
+
+
+.customer-modal, .nova-modal-card {
+    -fx-max-height: -Infinity;
+}
+
+.customer-page .drawer-overlay,
+.customer-page .nova-overlay,
+.pcs-root-shell .drawer-overlay,
+.pcs-root-shell .pcs-modal-overlay,
+.pcs-root-shell .cyber-popup-overlay {
+    -fx-background-color: rgba(9, 12, 20, 0.78);
+}
+
+
+.game-scroll,
+.game-scroll > .viewport,
+.game-scroll .corner,
+.game-scroll .content,
+.customer-history-scroll,
+.customer-history-scroll > .viewport {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background: transparent;
+    -fx-padding: 6;
+}
+
+.game-card, .customer-history-item, .cyber-history-item {
+    -fx-background-insets: 0;
+}
+
+.game-grid {
+    -fx-padding: 16;
+}
+
+.customer-history-scroll {
+    -fx-padding: 6;
+}
+
+.game-page .edit-overlay,
+.game-page .nova-overlay {
+    -fx-background-color: rgba(9, 12, 20, 0.78);
+}
+
+.game-page-content {
+    -fx-background-color: transparent;
+}
+
+.game-card.customer-card {
+    -fx-border-color: rgba(116,236,255,0.14);
+}
+
+.game-card.customer-card .customer-mini-stat {
+    -fx-background-color: rgba(255,255,255,0.05);
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(255,255,255,0.07);
+    -fx-border-radius: 16;
+}
+
+/* Core Root Colors */
+.app-root {
+    -fx-background-color: #050b1c; /* Deep Dark Blue */
+}
+
+/* Topbar Design */
+.topbar {
+    -fx-background-color: #0a1533;
+    -fx-border-color: transparent transparent #ff63c5 transparent;
+    -fx-border-width: 0 0 2 0;
+}
+
+.title {
+    -fx-text-fill: #ff63c5;
+    -fx-font-weight: bold;
+    -fx-font-size: 20px;
+    -fx-effect: dropshadow(gaussian, #ff63c5, 10, 0.5, 0, 0);
+}
+
+/* Sidebar Design */
+.sidebar {
+    -fx-background-color: #0a1533;
+    -fx-border-color: transparent #ff63c5 transparent transparent;
+    -fx-border-width: 0 2 0 0;
+}
+
+.side-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-size: 14px;
+}
+
+.side-btn:hover {
+    -fx-background-color: rgba(255, 99, 197, 0.2);
+    -fx-text-fill: #ff63c5;
+}
+
+.side-btn-active {
+    -fx-background-color: rgba(255, 99, 197, 0.3);
+    -fx-text-fill: #ff63c5;
+    -fx-border-color: transparent transparent transparent #ff63c5;
+    -fx-border-width: 0 0 0 4;
+}
+
+/* Customer Card Design (For the FlowPane) */
+.card {
+    -fx-background-color: #0f2150;
+    -fx-border-color: #ff63c5;
+    -fx-border-radius: 14;
+    -fx-background-radius: 14;
+    -fx-border-width: 1.5;
+}
+
+.page-title {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+/* Search Field */
+.search, .game-search-field {
+    -fx-background-color: #0f2150;
+    -fx-text-fill: white;
+    -fx-border-color: #ff63c5;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-prompt-text-fill: #888888;
+}
+
+
+/* ===== NEXT LEVEL GLOBAL MOTION POLISH ===== */
+.app-root, .page-wrap, .panel, .quick-box, .product-card, .game-card, .pcs-unit-card, .detail-drawer, .edit-popup, .nova-modal-card, .cyber-modal-card {
+    -fx-snap-to-pixel: false;
+}
+
+.panel, .quick-box, .product-card, .game-card, .pcs-unit-card, .card-hover-shell, .customer-card, .inventory-card, .staff-card {
+    -fx-background-insets: 0;
+    -fx-effect: dropshadow(gaussian, rgba(44,176,255,0.12), 20, 0.18, 0, 7);
+}
+
+.panel:hover, .quick-box:hover, .product-card:hover, .game-card:hover, .pcs-unit-card:hover, .card-hover-shell:hover, .customer-card:hover, .inventory-card:hover, .staff-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(255,102,214,0.16), 28, 0.22, 0, 10), dropshadow(gaussian, rgba(92,200,255,0.12), 18, 0.16, 0, 0);
+}
+
+.btn-blue, .btn-pink, .btn-white, .btn-danger, .icon-btn, .side-btn, .popup-close-btn, .chip-btn, .cyber-action-btn, .pcs-session-btn {
+    -fx-effect: dropshadow(gaussian, rgba(92,200,255,0.10), 12, 0.18, 0, 3);
+}
+
+.btn-blue:hover, .btn-pink:hover, .btn-white:hover, .btn-danger:hover, .icon-btn:hover, .side-btn:hover, .popup-close-btn:hover, .chip-btn:hover, .cyber-action-btn:hover, .pcs-session-btn:hover {
+    -fx-effect: dropshadow(gaussian, rgba(255,99,197,0.18), 18, 0.22, 0, 6);
+}
+
+.edit-overlay, .cyber-popup-overlay, .nova-overlay, .drawer-overlay, .pcs-modal-overlay {
+    -fx-background-color: linear-gradient(to bottom, rgba(4,8,20,0.72), rgba(4,8,20,0.86));
+}
+
+.edit-popup, .nova-modal-card, .cyber-modal-card, .detail-drawer, .pcs-detail-drawer {
+    -fx-border-color: rgba(92,220,255,0.34), rgba(255,90,210,0.24), rgba(255,255,255,0.06);
+    -fx-border-width: 1.2, 1.0, 1.0;
+    -fx-background-radius: 24;
+    -fx-border-radius: 24;
+}
+
+.popup-field, .search, .field, .text-field, .password-field, .combo-box {
+    -fx-effect: dropshadow(gaussian, rgba(92,200,255,0.06), 8, 0.10, 0, 1);
+}
+
+.popup-field:focused, .search:focused, .field:focused, .text-field:focused, .password-field:focused, .combo-box:focused {
+    -fx-effect: dropshadow(gaussian, rgba(92,200,255,0.22), 16, 0.18, 0, 0);
+}
+
+
+/* ===== Modal corner cleanup + deeper side drawers ===== */
+.customer-page-modal-overlay,
+.pc-page-modal-overlay {
+    -fx-background-color: rgba(3, 6, 16, 0.88);
+}
+
+.modal-surface-clean {
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+    -fx-padding: 18;
+}
+
+.customer-modal-overlay,
+.customer-page-modal-overlay,
+.pc-page-modal-overlay,
+.drawer-overlay,
+.cyber-popup-overlay,
+.edit-overlay,
+.nova-overlay,
+.pcs-modal-overlay {
+    -fx-background-insets: 0;
+}
+
+.edit-popup,
+.nova-modal-card,
+.cyber-modal-card,
+.detail-drawer,
+.pcs-detail-drawer,
+.customer-modal,
+.modal-surface-clean {
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+}
+
+.detail-drawer,
+.pcs-detail-drawer {
+    -fx-background-radius: 28 0 0 28;
+    -fx-border-radius: 28 0 0 28;
+}
+
+
+/* ===== CONTENT-STACK MODAL NEXT-LEVEL GLASS / NO STRETCH ===== */
+.content-stack-modal-overlay,
+.customer-page-modal-overlay,
+.pc-page-modal-overlay,
+.drawer-overlay,
+.cyber-popup-overlay,
+.edit-overlay,
+.nova-overlay,
+.pcs-modal-overlay {
+    -fx-background-color: linear-gradient(to bottom, rgba(5,10,22,0.16), rgba(6,12,28,0.26));
+    -fx-background-insets: 0;
+}
+
+.edit-popup,
+.nova-modal-card,
+.cyber-modal-card,
+.customer-modal,
+.panel,
+.pcs-modal-card {
+    -fx-background-color: linear-gradient(to bottom right, rgba(10,20,44,0.96), rgba(7,12,26,0.98)), linear-gradient(to bottom, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 26, 25;
+    -fx-border-color: rgba(88,230,255,0.34), rgba(255,111,214,0.22), rgba(255,255,255,0.06);
+    -fx-border-width: 1.2, 1.0, 1.0;
+    -fx-border-insets: 0, 1, 2;
+    -fx-border-radius: 26, 25, 24;
+    -fx-effect: dropshadow(gaussian, rgba(40,210,255,0.18), 36, 0.28, 0, 12), dropshadow(gaussian, rgba(255,98,214,0.10), 22, 0.18, 0, 0);
+}
+
+.edit-popup:hover,
+.nova-modal-card:hover,
+.cyber-modal-card:hover,
+.customer-modal:hover,
+.panel:hover,
+.pcs-modal-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(40,210,255,0.24), 44, 0.30, 0, 14), dropshadow(gaussian, rgba(255,98,214,0.16), 28, 0.20, 0, 0);
+}
+
+.detail-drawer,
+.pcs-detail-drawer {
+    -fx-background-color: linear-gradient(to bottom left, rgba(10,20,44,0.97), rgba(7,12,26,0.985)), linear-gradient(to bottom, rgba(255,255,255,0.024), rgba(255,255,255,0.01));
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 30 0 0 30, 29 0 0 29;
+    -fx-border-color: rgba(88,230,255,0.34), rgba(255,111,214,0.22), rgba(255,255,255,0.06);
+    -fx-border-width: 1.2, 1.0, 1.0;
+    -fx-border-radius: 30 0 0 30, 29 0 0 29, 28 0 0 28;
+    -fx-effect: dropshadow(gaussian, rgba(40,210,255,0.18), 38, 0.28, -8, 12), dropshadow(gaussian, rgba(255,98,214,0.10), 22, 0.18, 0, 0);
+}
+
+
+/* ===== FIX: cleaner PC drawer + no dark shadow leak behind modals ===== */
+.pcs-drawer-main-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: 900;
+    -fx-text-fill: white;
+}
+
+.customer-page-modal-overlay,
+.pc-page-modal-overlay,
+.drawer-overlay,
+.cyber-popup-overlay,
+.edit-overlay,
+.nova-overlay,
+.pcs-modal-overlay,
+.content-stack-modal-overlay {
+    -fx-background-color: linear-gradient(to bottom, rgba(6,10,22,0.10), rgba(6,12,28,0.18));
+}
+
+.edit-popup,
+.nova-modal-card,
+.cyber-modal-card,
+.customer-modal,
+.panel,
+.pcs-modal-card,
+.detail-drawer,
+.pcs-detail-drawer {
+    -fx-effect: dropshadow(gaussian, rgba(56,220,255,0.16), 22, 0.18, 0, 0), dropshadow(gaussian, rgba(255,100,214,0.08), 14, 0.14, 0, 0);
+}
+
+.edit-popup:hover,
+.nova-modal-card:hover,
+.cyber-modal-card:hover,
+.customer-modal:hover,
+.panel:hover,
+.pcs-modal-card:hover,
+.detail-drawer:hover,
+.pcs-detail-drawer:hover {
+    -fx-effect: dropshadow(gaussian, rgba(56,220,255,0.22), 28, 0.22, 0, 0), dropshadow(gaussian, rgba(255,100,214,0.12), 18, 0.16, 0, 0);
+}
+
+.card-hover-shell,
+.product-card,
+.game-card,
+.customer-card,
+.inventory-card,
+.staff-card,
+.pcs-unit-card {
+    -fx-cursor: hand;
+}
+
+
+/* ===== Final polish: customer / pc neon modals + safe inventory hover ===== */
+.customer-neon-modal,
+.pc-neon-modal {
+    -fx-background-insets: 0, 1, 3;
+    -fx-background-radius: 28, 27, 25;
+    -fx-border-insets: 0, 1, 3;
+    -fx-border-radius: 28, 27, 25;
+    -fx-border-width: 1.25, 1.0, 1.0;
+}
+
+.customer-neon-modal {
+    -fx-border-color: rgba(88,238,255,0.82), rgba(255,117,223,0.48), rgba(255,255,255,0.10);
+    -fx-effect: dropshadow(gaussian, rgba(72,226,255,0.28), 42, 0.30, 0, 0),
+                dropshadow(gaussian, rgba(255,92,209,0.18), 24, 0.18, 0, 0);
+}
+
+.pc-neon-modal {
+    -fx-border-color: rgba(92,232,255,0.88), rgba(109,154,255,0.34), rgba(255,255,255,0.10);
+    -fx-effect: dropshadow(gaussian, rgba(56,220,255,0.30), 46, 0.30, 0, 0),
+                dropshadow(gaussian, rgba(112,132,255,0.16), 26, 0.18, 0, 0);
+}
+
+.customer-neon-modal:hover,
+.pc-neon-modal:hover {
+    -fx-effect: dropshadow(gaussian, rgba(72,226,255,0.36), 54, 0.34, 0, 0),
+                dropshadow(gaussian, rgba(255,92,209,0.20), 30, 0.20, 0, 0);
+}
+
+.pc-selected-modal {
+    -fx-padding: 18 18 18 18;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+    -fx-max-height: -Infinity;
+    -fx-min-height: -Infinity;
+}
+
+.pc-selected-modal .detail-drawer-title,
+.pc-selected-modal .pcs-drawer-main-title {
+    -fx-font-size: 21px;
+}
+
+.inventory-flow-safe {
+    -fx-padding: 8 8 18 8;
+}
+
+.card-hover-shell {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.product-card,
+.game-card,
+.customer-card,
+.inventory-card,
+.staff-card,
+.pcs-unit-card,
+.card-hover-shell {
+    -fx-cursor: hand;
+}
+
+.product-card:hover,
+.game-card:hover,
+.customer-card:hover,
+.inventory-card:hover,
+.staff-card:hover,
+.pcs-unit-card:hover,
+.card-hover-shell:hover {
+    -fx-effect: dropshadow(gaussian, rgba(60,224,255,0.18), 28, 0.22, 0, 0),
+                dropshadow(gaussian, rgba(255,110,214,0.10), 18, 0.16, 0, 0);
+}
+
+
+/* ===== Customer / PC modal cleanup: remove muddy shadow and rebalance widths ===== */
+.customer-neon-modal,
+.pc-neon-modal,
+.pc-selected-modal {
+    -fx-background-color: linear-gradient(to bottom right, rgba(12,24,50,0.985), rgba(8,14,30,0.992)),
+                          linear-gradient(to bottom, rgba(255,255,255,0.035), rgba(255,255,255,0.012));
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 28, 27;
+    -fx-border-insets: 0, 1;
+    -fx-border-radius: 28, 27;
+}
+
+.customer-neon-modal {
+    -fx-effect: dropshadow(gaussian, rgba(82,236,255,0.24), 26, 0.20, 0, 0),
+                dropshadow(gaussian, rgba(255,98,214,0.12), 16, 0.14, 0, 0);
+}
+
+.pc-neon-modal,
+.pc-selected-modal {
+    -fx-effect: dropshadow(gaussian, rgba(70,230,255,0.26), 28, 0.22, 0, 0),
+                dropshadow(gaussian, rgba(122,150,255,0.10), 16, 0.12, 0, 0);
+}
+
+.customer-neon-modal:hover {
+    -fx-effect: dropshadow(gaussian, rgba(82,236,255,0.30), 32, 0.24, 0, 0),
+                dropshadow(gaussian, rgba(255,98,214,0.15), 18, 0.16, 0, 0);
+}
+
+.pc-neon-modal:hover,
+.pc-selected-modal:hover {
+    -fx-effect: dropshadow(gaussian, rgba(70,230,255,0.32), 34, 0.24, 0, 0),
+                dropshadow(gaussian, rgba(122,150,255,0.13), 18, 0.14, 0, 0);
+}
+
+.pc-selected-modal {
+    -fx-min-width: 580px;
+    -fx-pref-width: 620px;
+    -fx-max-width: 620px;
+}
+
+.pcs-detail-drawer,
+.pcs-modal-card.pc-selected-modal {
+    -fx-min-width: 580px;
+    -fx-pref-width: 620px;
+    -fx-max-width: 620px;
+}
+
+
+/* ===== Customer / PC overlay root cleanup: no dark box behind modal card ===== */
+.customer-page-modal-overlay,
+.customer-page-modal-overlay.drawer-overlay,
+.customer-page-modal-overlay.edit-overlay,
+.customer-page-modal-overlay.cyber-popup-overlay,
+.pc-page-modal-overlay,
+.pc-page-modal-overlay.drawer-overlay,
+.pc-page-modal-overlay.edit-overlay,
+.pc-page-modal-overlay.cyber-popup-overlay {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-color: transparent;
+    -fx-border-insets: 0;
+    -fx-border-radius: 0;
+    -fx-effect: null;
+}
+
+.customer-page-modal-overlay > *,
+.pc-page-modal-overlay > * {
+    -fx-background-insets: 0;
+}
+/* ===== Session History Table ===== */
+.session-history-table {
+    -fx-background-color: linear-gradient(to bottom, #182f63, #122650);
+    -fx-control-inner-background: #122650;
+    -fx-background-insets: 0;
+    -fx-background-radius: 14;
+    -fx-border-color: rgba(125, 220, 255, 0.45);
+    -fx-border-width: 1.4;
+    -fx-border-radius: 14;
+    -fx-padding: 2;
+}
+
+.session-history-table .column-header-background {
+    -fx-background-color: linear-gradient(to right, #21458c, #2d4f96);
+    -fx-background-radius: 12 12 0 0;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-width: 0 0 1 0;
+}
+
+.session-history-table .column-header,
+.session-history-table .filler {
+    -fx-background-color: transparent;
+    -fx-size: 38;
+}
+
+.session-history-table .column-header .label {
+    -fx-text-fill: #e8f3ff;
+    -fx-font-weight: bold;
+}
+
+.session-history-table .table-row-cell {
+    -fx-background-color: #132a57;
+    -fx-table-cell-border-color: transparent;
+}
+
+.session-history-table .table-row-cell:odd {
+    -fx-background-color: #11244d;
+}
+
+.session-history-table .table-row-cell:filled:hover {
+    -fx-background-color: rgba(92, 200, 255, 0.20);
+}
+
+.session-history-table .table-row-cell:filled:selected {
+    -fx-background-color: rgba(255, 99, 197, 0.26);
+}
+
+.session-history-table .table-cell {
+    -fx-text-fill: white;
+    -fx-alignment: CENTER;
+    -fx-padding: 10 8 10 8;
+}
+
+.session-history-table .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.session-history-table .scroll-bar:vertical .track {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 999;
+}
+
+.session-history-table .scroll-bar:vertical .thumb {
+    -fx-background-color: linear-gradient(to bottom, #5cc8ff, #8a7eff);
+    -fx-background-radius: 999;
+}
+
+.session-history-table .scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.session-history-table .scroll-bar:horizontal .track {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 999;
+}
+
+.session-history-table .scroll-bar:horizontal .thumb {
+    -fx-background-color: linear-gradient(to bottom, #5cc8ff, #8a7eff);
+    -fx-background-radius: 999;
+}
+
+/* ===== Session History DatePickers ===== */
+.session-date-picker {
+    -fx-translate-y: 2;
+    -fx-background-color: linear-gradient(to bottom, #183265, #10224c);
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(125, 220, 255, 0.55);
+    -fx-border-width: 2;
+    -fx-border-radius: 12;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(gaussian, rgba(10, 18, 40, 0.55), 10, 0.12, 0, 2);
+}
+
+.session-date-picker > .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(225, 238, 255, 0.55);
+    -fx-background-radius: 10 0 0 10;
+    -fx-border-color: transparent;
+    -fx-padding: 8 10 8 10;
+}
+
+.session-date-picker > .arrow-button {
+    -fx-background-color: rgba(20, 42, 85, 0.92);
+    -fx-background-radius: 0 10 10 0;
+    -fx-border-color: rgba(125, 220, 255, 0.28);
+    -fx-border-width: 0 0 0 1;
+    -fx-padding: 0 10 0 10;
+}
+
+.session-date-picker > .arrow-button > .arrow {
+    -fx-background-color: #dff3ff;
+}
+
+.session-date-picker:hover {
+    -fx-border-color: rgba(255, 99, 197, 0.72);
+}
+
+.session-date-picker:focused {
+    -fx-border-color: #5cc8ff;
+    -fx-effect: dropshadow(gaussian, rgba(92, 200, 255, 0.40), 14, 0.20, 0, 0);
+}
+
+.session-date-picker:focused > .arrow-button {
+    -fx-background-color: rgba(24, 58, 112, 0.95);
+}
+
+/* ============================================================
+   CYBER SOLID DATE PICKER – DARK BACKGROUND, NO GRADIENT
+   ============================================================ */
+
+/* ----- POPUP CONTAINER (SOLID DARK BLUE) ----- */
+.date-picker-popup {
+    -fx-background-color: #0e1f45 !important;   /* Solid deep navy */
+    -fx-background-radius: 12 !important;
+    -fx-border-color: #3cc6ff !important;
+    -fx-border-width: 1.8 !important;
+    -fx-border-radius: 12 !important;
+    -fx-effect: dropshadow(gaussian, rgba(60, 198, 255, 0.45), 18, 0.12, 0, 6) !important;
+    -fx-padding: 8 6 8 6 !important;
+}
+
+/* ----- KILL ALL WHITE BACKGROUNDS IN CHILD NODES ----- */
+.date-picker-popup *,
+.date-picker-popup .container,
+.date-picker-popup .calendar-grid,
+.date-picker-popup .month-year-pane,
+.date-picker-popup .day-name-cell,
+.date-picker-popup .day-cell {
+    -fx-background-color: black !important;
+}
+
+/* ----- MONTH / YEAR HEADER ----- */
+.date-picker-popup .month-year-pane {
+    -fx-border-color: rgba(92, 200, 255, 0.25) !important;
+    -fx-border-width: 0 0 1 0 !important;
+    -fx-padding: 6 8 6 8 !important;
+}
+
+/* Month / Year label */
+.date-picker-popup .spinner .label,
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: #e6f3ff !important;
+    -fx-font-size: 15px !important;
+    -fx-font-weight: bold !important;
+    -fx-effect: dropshadow(gaussian, #3cc6ff, 5, 0.2, 0, 0) !important;
+}
+
+/* Spinner arrows */
+.date-picker-popup .spinner .button {
+    -fx-background-color: transparent !important;
+    -fx-background-radius: 6 !important;
+}
+
+.date-picker-popup .spinner .button:hover {
+    -fx-background-color: rgba(92, 200, 255, 0.18) !important;
+    -fx-effect: dropshadow(gaussian, #5cc8ff, 10, 0.2, 0, 0) !important;
+}
+
+.date-picker-popup .spinner .button:pressed {
+    -fx-background-color: rgba(255, 99, 197, 0.25) !important;
+}
+
+.date-picker-popup .spinner .button .arrow {
+    -fx-background-color: #b3e4ff !important;
+    -fx-effect: dropshadow(gaussian, #7de9ff, 6, 0.3, 0, 0) !important;
+}
+
+/* ----- DAY NAME HEADER (Mon, Tue, ...) ----- */
+.date-picker-popup .day-name-cell {
+    -fx-text-fill: #9bc9ff !important;
+    -fx-font-weight: bold !important;
+    -fx-font-size: 12px !important;
+    -fx-padding: 8 0 4 0 !important;
+}
+
+/* ----- DAY CELLS (NUMBERS) ----- */
+.date-picker-popup .day-cell {
+    -fx-text-fill: #e8f3ff !important;
+    -fx-font-size: 13px !important;
+    -fx-font-weight: 500 !important;
+    -fx-background-radius: 30 !important;
+    -fx-padding: 6 8 6 8 !important;
+}
+
+/* Hover – neon pulse */
+.date-picker-popup .day-cell:hover {
+    -fx-background-color: rgba(92, 200, 255, 0.25) !important;   /* Solid colour, no radial gradient */
+    -fx-text-fill: white !important;
+    -fx-effect: dropshadow(gaussian, #5cc8ff, 12, 0.3, 0, 0) !important;
+}
+
+/* Selected day – glitch pink accent */
+.date-picker-popup .day-cell:selected {
+    -fx-background-color: rgba(255, 99, 197, 0.35) !important;   /* Solid pink overlay */
+    -fx-text-fill: #ffffff !important;
+    -fx-font-weight: bold !important;
+    -fx-effect: dropshadow(gaussian, #ff63c5, 15, 0.35, 0, 2) !important;
+    -fx-border-color: #ff9fe6 !important;
+    -fx-border-width: 1.2 !important;
+    -fx-border-radius: 30 !important;
+}
+
+/* Today's date – glowing cyan border */
+.date-picker-popup .today {
+    -fx-border-color: #5cc8ff !important;
+    -fx-border-width: 2 !important;
+    -fx-border-radius: 30 !important;
+    -fx-effect: dropshadow(gaussian, #5cc8ff, 10, 0.5, 0, 0) !important;
+}
+
+.date-picker-popup .today:selected {
+    -fx-background-color: rgba(255, 99, 197, 0.5) !important;   /* Solid */
+}
+
+/* Previous / next month days (greyed out) */
+.date-picker-popup .day-cell:empty,
+.date-picker-popup .day-cell.other-month {
+    -fx-text-fill: #6f8aaa !important;
+    -fx-opacity: 0.7 !important;
+}
+
+/* ----- DATEPICKER TEXT FIELD (WHEN CLOSED) ----- */
+.date-picker .text-field {
+    -fx-background-color: #0f1e3a !important;
+    -fx-text-fill: #e8f3ff !important;
+    -fx-border-color: #3cc6ff !important;
+    -fx-border-width: 1.2 !important;
+    -fx-border-radius: 8 !important;
+    -fx-background-radius: 8 !important;
+    -fx-prompt-text-fill: #6a8db5 !important;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: transparent !important;
+}
+
+.date-picker .arrow-button:hover {
+    -fx-background-color: rgba(60, 198, 255, 0.15) !important;
+}
+
+.date-picker .arrow-button .arrow {
+    -fx-background-color: #7de9ff !important;
+}
+
+.date-picker-popup .day-cell:disabled,
+.date-picker-popup .date-cell-future-disabled:disabled {
+    -fx-text-fill: rgba(140, 167, 200, 0.55) !important;
+    -fx-background-color: rgba(8, 15, 32, 0.72) !important;
+    -fx-opacity: 0.65 !important;
+    -fx-effect: none !important;
+}
+
+.date-picker-popup .day-cell:disabled:hover,
+.date-picker-popup .date-cell-future-disabled:disabled:hover {
+    -fx-background-color: rgba(8, 15, 32, 0.72) !important;
+    -fx-text-fill: rgba(140, 167, 200, 0.55) !important;
+    -fx-effect: none !important;
+}
+
+.date-picker-popup .next-month-button:disabled,
+.date-picker-popup .next-year-button:disabled,
+.date-picker-popup .right-button:disabled {
+    -fx-opacity: 0.35 !important;
+}
+
+/* ===== Next-Level Admin Overview ===== */
+.admin-overview-shell {
+    -fx-background-color:
+        linear-gradient(to bottom right, rgba(7, 13, 29, 0.98), rgba(12, 25, 54, 0.98)),
+        radial-gradient(center 8% 10%, radius 75%, rgba(92, 200, 255, 0.12), transparent 54%),
+        radial-gradient(center 92% 6%, radius 55%, rgba(255, 99, 197, 0.12), transparent 48%);
+    -fx-background-radius: 28;
+    -fx-border-color: rgba(124, 214, 255, 0.18);
+    -fx-border-width: 1.2;
+    -fx-border-radius: 28;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.32), 26, 0.18, 0, 10);
+}
+
+.admin-overview-scroll {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.admin-overview-scroll,
+.admin-overview-scroll > .viewport,
+.admin-overview-scroll > .corner {
+    -fx-background-color: transparent;
+}
+
+.admin-overview-scroll > .viewport {
+    -fx-background-insets: 0;
+}
+
+.dashboard-hero {
+    -fx-padding: 22 24 22 24;
+    -fx-background-color:
+        linear-gradient(to right, rgba(10, 24, 54, 0.98), rgba(16, 36, 75, 0.92)),
+        radial-gradient(center 18% 22%, radius 65%, rgba(92, 200, 255, 0.14), transparent 58%);
+    -fx-background-radius: 24;
+    -fx-border-color: rgba(120, 214, 255, 0.22);
+    -fx-border-width: 1.2;
+    -fx-border-radius: 24;
+}
+
+.dashboard-eyebrow {
+    -fx-text-fill: #76dcff;
+    -fx-font-size: 12px;
+    -fx-font-weight: 800;
+    -fx-letter-spacing: 1.1px;
+}
+
+.dashboard-hero-title {
+    -fx-font-size: 30px;
+    -fx-text-fill: #f5fbff;
+}
+
+.dashboard-subtitle {
+    -fx-text-fill: rgba(221, 236, 255, 0.82);
+    -fx-font-size: 13px;
+    -fx-font-weight: 500;
+}
+
+.dashboard-pill {
+    -fx-padding: 6 12 6 12;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-width: 1;
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+}
+
+.dashboard-pill-blue {
+    -fx-background-color: rgba(92, 200, 255, 0.12);
+    -fx-border-color: rgba(120, 214, 255, 0.48);
+    -fx-text-fill: #bfe9ff;
+}
+
+.dashboard-pill-pink {
+    -fx-background-color: rgba(255, 99, 197, 0.12);
+    -fx-border-color: rgba(255, 143, 216, 0.46);
+    -fx-text-fill: #ffd0ef;
+}
+
+.dashboard-pill-gold {
+    -fx-background-color: rgba(255, 196, 92, 0.12);
+    -fx-border-color: rgba(255, 209, 127, 0.46);
+    -fx-text-fill: #ffe2a6;
+}
+
+.dashboard-control-card {
+    -fx-min-width: 280;
+    -fx-padding: 18 18 18 18;
+    -fx-background-color: rgba(5, 13, 31, 0.48);
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.08);
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+}
+
+.control-caption {
+    -fx-text-fill: #9bcfff;
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+}
+
+.control-helper {
+    -fx-text-fill: rgba(213, 229, 255, 0.68);
+    -fx-font-size: 11px;
+    -fx-font-weight: 500;
+}
+
+.live-badge-stack {
+    -fx-padding: 10 14 10 14;
+    -fx-background-color: rgba(0, 255, 136, 0.08);
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(103, 255, 185, 0.34);
+    -fx-border-width: 1;
+    -fx-border-radius: 18;
+}
+
+.live-badge-dot {
+    -fx-fill: #4dffb0;
+}
+
+.live-badge-text {
+    -fx-text-fill: #a9ffd6;
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+}
+
+.overview-date-picker > .text-field {
+    -fx-font-size: 13px !important;
+    -fx-font-weight: 700 !important;
+}
+
+.overview-stat-card {
+    -fx-background-color:
+        linear-gradient(to bottom, rgba(11, 24, 54, 0.98), rgba(10, 20, 44, 0.95)),
+        radial-gradient(center 18% 12%, radius 75%, rgba(255, 255, 255, 0.04), transparent 52%);
+    -fx-background-radius: 22;
+    -fx-border-width: 1.4;
+    -fx-border-radius: 22;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.28), 20, 0.12, 0, 8);
+}
+
+.card-accent-blue {
+    -fx-border-color: rgba(92, 200, 255, 0.62);
+}
+
+.card-accent-pink {
+    -fx-border-color: rgba(255, 99, 197, 0.62);
+}
+
+.card-accent-gold {
+    -fx-border-color: rgba(255, 196, 92, 0.62);
+}
+
+.stat-icon-wrap {
+    -fx-min-width: 42;
+    -fx-min-height: 42;
+    -fx-alignment: center;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+}
+
+.stat-icon-blue {
+    -fx-background-color: rgba(92, 200, 255, 0.16);
+    -fx-border-color: rgba(126, 218, 255, 0.42);
+}
+
+.stat-icon-pink {
+    -fx-background-color: rgba(255, 99, 197, 0.16);
+    -fx-border-color: rgba(255, 145, 219, 0.42);
+}
+
+.stat-icon-gold {
+    -fx-background-color: rgba(255, 196, 92, 0.16);
+    -fx-border-color: rgba(255, 216, 136, 0.42);
+}
+
+.stat-card-caption {
+    -fx-text-fill: #f4f8ff;
+    -fx-font-size: 15px;
+    -fx-font-weight: 800;
+}
+
+.highlight-caption {
+    -fx-font-size: 14px;
+}
+
+.stat-card-helper {
+    -fx-text-fill: rgba(183, 209, 244, 0.72);
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+}
+
+.overview-stat-value {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 38px;
+    -fx-font-weight: 900;
+}
+
+.overview-stat-inline-value {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: 900;
+}
+
+.pink-value {
+    -fx-text-fill: #ffd0ef;
+}
+
+.gold-value {
+    -fx-text-fill: #ffe4ae;
+}
+
+.stat-mini-kicker {
+    -fx-text-fill: #8acbff;
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+}
+
+.stat-mini-copy,
+.stat-footnote {
+    -fx-text-fill: rgba(214, 228, 248, 0.68);
+    -fx-font-size: 11px;
+    -fx-font-weight: 500;
+}
+
+.stat-divider,
+.panel-divider {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-min-height: 1;
+    -fx-max-height: 1;
+}
+
+.metric-chip {
+    -fx-padding: 5 10 5 10;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-width: 1;
+    -fx-font-size: 10px;
+    -fx-font-weight: 800;
+}
+
+.metric-chip-blue {
+    -fx-background-color: rgba(92, 200, 255, 0.12);
+    -fx-border-color: rgba(126, 218, 255, 0.36);
+    -fx-text-fill: #c8ecff;
+}
+
+.metric-chip-pink {
+    -fx-background-color: rgba(255, 99, 197, 0.14);
+    -fx-border-color: rgba(255, 145, 219, 0.34);
+    -fx-text-fill: #ffd5f1;
+}
+
+.metric-chip-gold {
+    -fx-background-color: rgba(255, 196, 92, 0.14);
+    -fx-border-color: rgba(255, 216, 136, 0.34);
+    -fx-text-fill: #ffe7bb;
+}
+
+.analytics-panel {
+    -fx-background-color:
+        linear-gradient(to bottom, rgba(11, 22, 48, 0.98), rgba(8, 17, 37, 0.96)),
+        radial-gradient(center 16% 12%, radius 75%, rgba(255, 255, 255, 0.03), transparent 52%);
+    -fx-background-radius: 24;
+    -fx-border-width: 1.4;
+    -fx-border-radius: 24;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.28), 20, 0.12, 0, 8);
+}
+
+.analytics-panel-blue {
+    -fx-border-color: rgba(92, 200, 255, 0.54);
+}
+
+.analytics-panel-pink {
+    -fx-border-color: rgba(255, 99, 197, 0.54);
+}
+
+.panel-icon-wrap {
+    -fx-min-width: 38;
+    -fx-min-height: 38;
+    -fx-alignment: center;
+    -fx-background-color: rgba(92, 200, 255, 0.15);
+    -fx-border-color: rgba(126, 218, 255, 0.34);
+    -fx-border-width: 1;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+}
+
+.panel-icon-wrap-pink {
+    -fx-background-color: rgba(255, 99, 197, 0.15);
+    -fx-border-color: rgba(255, 145, 219, 0.34);
+}
+
+.panel-title {
+    -fx-text-fill: #f4f8ff;
+    -fx-font-size: 16px;
+    -fx-font-weight: 800;
+}
+
+.panel-subtitle {
+    -fx-text-fill: rgba(205, 222, 245, 0.72);
+    -fx-font-size: 11px;
+    -fx-font-weight: 500;
+}
+
+.analytics-chart-surface {
+    -fx-background-color:
+        linear-gradient(to bottom, rgba(5, 11, 25, 0.82), rgba(10, 19, 42, 0.72));
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(255, 255, 255, 0.06);
+    -fx-border-width: 1;
+    -fx-border-radius: 18;
+}
+
+.analytics-legend-box {
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(255, 255, 255, 0.06);
+    -fx-border-width: 1;
+    -fx-border-radius: 18;
+}
+
+.overview-range-box {
+    -fx-background-radius: 12;
+}
+
+/* ===== Order View Modal ===== */
+.order-view-modal {
+    -fx-background-color:
+        linear-gradient(to bottom right, rgba(9, 18, 38, 0.99), rgba(6, 12, 27, 0.995)),
+        radial-gradient(center 18% 12%, radius 70%, rgba(92, 200, 255, 0.10), transparent 62%);
+    -fx-background-radius: 24;
+    -fx-border-radius: 24;
+    -fx-border-color: rgba(118, 223, 255, 0.35);
+    -fx-border-width: 1.4;
+}
+
+.order-view-hero {
+    -fx-background-color:
+        linear-gradient(to right, rgba(12, 32, 67, 0.97), rgba(25, 60, 115, 0.92)),
+        radial-gradient(center 30% 30%, radius 80%, rgba(80, 215, 255, 0.16), transparent 60%);
+    -fx-background-radius: 24 24 0 0;
+    -fx-border-color: transparent transparent rgba(174, 228, 255, 0.22) transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.order-view-id {
+    -fx-text-fill: #f5fbff;
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+    -fx-letter-spacing: 0.4px;
+}
+
+.order-view-status {
+    -fx-padding: 6 14 6 14;
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+    -fx-border-width: 1.2;
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+}
+
+.order-status-pending {
+    -fx-background-color: rgba(255, 184, 72, 0.18);
+    -fx-border-color: rgba(255, 198, 95, 0.62);
+    -fx-text-fill: #ffd894;
+}
+
+.order-status-processing {
+    -fx-background-color: rgba(92, 200, 255, 0.18);
+    -fx-border-color: rgba(126, 214, 255, 0.64);
+    -fx-text-fill: #bde9ff;
+}
+
+.order-status-completed {
+    -fx-background-color: rgba(72, 228, 162, 0.18);
+    -fx-border-color: rgba(108, 255, 195, 0.62);
+    -fx-text-fill: #9bffd6;
+}
+
+.order-status-cancelled,
+.order-status-unknown {
+    -fx-background-color: rgba(255, 99, 141, 0.18);
+    -fx-border-color: rgba(255, 130, 166, 0.58);
+    -fx-text-fill: #ffb8cb;
+}
+
+.order-view-date {
+    -fx-text-fill: #d6e7ff;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+}
+
+.order-view-customer {
+    -fx-text-fill: #f0f7ff;
+    -fx-font-size: 13px;
+    -fx-font-weight: 700;
+}
+
+.order-view-header-row {
+    -fx-background-color: linear-gradient(to right, rgba(13, 28, 58, 0.94), rgba(8, 18, 37, 0.95));
+    -fx-border-color: transparent transparent rgba(126, 213, 255, 0.18) transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.order-view-section-title {
+    -fx-text-fill: #f2f8ff;
+    -fx-font-size: 14px;
+    -fx-font-weight: 800;
+}
+
+.order-view-items-count {
+    -fx-text-fill: #8fb8de;
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+}
+
+.order-items-table {
+    -fx-background-color: linear-gradient(to bottom, #10214a, #0c1a38);
+    -fx-control-inner-background: #0d1c3f;
+    -fx-border-color: rgba(126, 213, 255, 0.30);
+}
+
+.order-items-table .table-row-cell:filled:hover {
+    -fx-background-color: rgba(109, 200, 255, 0.24);
+}
+
+.order-items-table .table-row-cell:filled:selected {
+    -fx-background-color: rgba(80, 255, 186, 0.28);
+}
+
+.order-items-table .table-cell {
+    -fx-font-size: 12px;
+    -fx-font-weight: 600;
+}
+
+.order-view-footer {
+    -fx-background-color:
+        linear-gradient(to top, rgba(9, 18, 38, 0.99), rgba(9, 20, 41, 0.96)),
+        radial-gradient(center 86% 62%, radius 50%, rgba(72, 228, 162, 0.10), transparent 70%);
+    -fx-background-radius: 0 0 24 24;
+    -fx-border-color: rgba(110, 210, 255, 0.16) transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
+
+.order-view-total-label {
+    -fx-text-fill: #9bb9d8;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+}
+
+.order-view-total-value {
+    -fx-text-fill: #f5fcff;
+    -fx-font-size: 20px;
+    -fx-font-weight: 900;
+}
+
+.order-complete-btn {
+    -fx-padding: 10 18 10 18;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-font-size: 12px;
+    -fx-font-weight: 800;
+}
+
+.order-complete-btn-ready {
+    -fx-background-color: linear-gradient(to right, #29c5ff, #6f88ff);
+    -fx-border-color: rgba(201, 234, 255, 0.72);
+    -fx-text-fill: #081328;
+}
+
+.order-complete-btn-ready:hover {
+    -fx-effect: dropshadow(gaussian, rgba(90, 204, 255, 0.42), 16, 0.26, 0, 5);
+}
+
+.order-complete-btn-done {
+    -fx-background-color: linear-gradient(to right, #42e09f, #4bcf8f);
+    -fx-border-color: rgba(178, 255, 221, 0.70);
+    -fx-text-fill: #07321f;
+}
+
+.order-complete-btn-cancelled {
+    -fx-background-color: linear-gradient(to right, #ff7b9a, #ff8db0);
+    -fx-border-color: rgba(255, 210, 222, 0.72);
+    -fx-text-fill: #3d1021;
+}
+
+.order-complete-btn:disabled {
+    -fx-opacity: 0.96;
+}
+
+/* ============================================================
+   DATE PICKER V2 OVERRIDES (NEO GLASS)
+   ============================================================ */
+
+.date-picker-popup {
+    -fx-padding: 10 8 10 8 !important;
+    -fx-background-color:
+        linear-gradient(to bottom right, rgba(8, 20, 48, 0.99), rgba(5, 13, 32, 0.995)),
+        radial-gradient(center 22% 14%, radius 78%, rgba(96, 212, 255, 0.14), transparent 64%) !important;
+    -fx-background-radius: 16 !important;
+    -fx-border-color: rgba(88, 213, 255, 0.86) !important;
+    -fx-border-width: 1.6 !important;
+    -fx-border-radius: 16 !important;
+    -fx-effect: dropshadow(gaussian, rgba(58, 196, 255, 0.42), 24, 0.16, 0, 8) !important;
+}
+
+.date-picker-popup .month-year-pane {
+    -fx-background-color: linear-gradient(to right, rgba(16, 42, 86, 0.96), rgba(10, 26, 54, 0.96)) !important;
+    -fx-background-radius: 12 12 0 0 !important;
+    -fx-border-color: rgba(96, 212, 255, 0.22) !important;
+    -fx-border-width: 0 0 1 0 !important;
+    -fx-padding: 7 8 7 8 !important;
+}
+
+.date-picker-popup .spinner .label,
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: #ecf8ff !important;
+    -fx-font-size: 15px !important;
+    -fx-font-weight: 800 !important;
+    -fx-effect: dropshadow(gaussian, rgba(118, 232, 255, 0.45), 6, 0.24, 0, 0) !important;
+}
+
+.date-picker-popup .spinner .button {
+    -fx-background-color: rgba(255, 255, 255, 0.04) !important;
+    -fx-background-radius: 8 !important;
+}
+
+.date-picker-popup .spinner .button:hover {
+    -fx-background-color: rgba(92, 200, 255, 0.22) !important;
+    -fx-effect: dropshadow(gaussian, rgba(92, 200, 255, 0.36), 10, 0.20, 0, 0) !important;
+}
+
+.date-picker-popup .spinner .button:pressed {
+    -fx-background-color: rgba(255, 132, 182, 0.32) !important;
+}
+
+.date-picker-popup .spinner .button .arrow {
+    -fx-background-color: #b8ebff !important;
+}
+
+.date-picker-popup .day-name-cell {
+    -fx-background-color: rgba(13, 28, 59, 0.98) !important;
+    -fx-text-fill: #9ecbff !important;
+    -fx-font-size: 11px !important;
+    -fx-font-weight: 800 !important;
+    -fx-padding: 8 0 6 0 !important;
+}
+
+.date-picker-popup .day-cell {
+    -fx-background-color: rgba(255, 255, 255, 0.02) !important;
+    -fx-text-fill: #eaf4ff !important;
+    -fx-font-size: 13px !important;
+    -fx-font-weight: 700 !important;
+    -fx-background-radius: 999 !important;
+    -fx-border-color: transparent !important;
+    -fx-border-width: 1.0 !important;
+    -fx-border-radius: 999 !important;
+    -fx-padding: 6 8 6 8 !important;
+}
+
+.date-picker-popup .day-cell:hover {
+    -fx-background-color: rgba(96, 212, 255, 0.24) !important;
+    -fx-border-color: rgba(146, 228, 255, 0.56) !important;
+    -fx-text-fill: #ffffff !important;
+}
+
+.date-picker-popup .day-cell:selected {
+    -fx-background-color: linear-gradient(to bottom right, rgba(255, 120, 182, 0.92), rgba(255, 94, 166, 0.92)) !important;
+    -fx-border-color: rgba(255, 202, 226, 0.86) !important;
+    -fx-text-fill: #ffffff !important;
+    -fx-effect: dropshadow(gaussian, rgba(255, 107, 173, 0.40), 13, 0.30, 0, 1) !important;
+}
+
+.date-picker-popup .today {
+    -fx-border-color: rgba(99, 224, 255, 0.92) !important;
+    -fx-border-width: 1.4 !important;
+    -fx-border-radius: 999 !important;
+    -fx-effect: dropshadow(gaussian, rgba(96, 212, 255, 0.45), 10, 0.25, 0, 0) !important;
+}
+
+.date-picker-popup .today:selected {
+    -fx-background-color: linear-gradient(to bottom right, rgba(255, 128, 186, 0.94), rgba(255, 102, 170, 0.94)) !important;
+}
+
+/* Hide non-current-month days so trailing cells appear empty. */
+.date-picker-popup .day-cell.other-month,
+.date-picker-popup .day-cell.previous-month,
+.date-picker-popup .day-cell.next-month,
+.date-picker-popup .day-cell:previous-month,
+.date-picker-popup .day-cell:next-month {
+    -fx-text-fill: transparent !important;
+    -fx-background-color: transparent !important;
+    -fx-border-color: transparent !important;
+    -fx-opacity: 0.0 !important;
+    -fx-cursor: default !important;
+}
+
+.date-picker-popup .day-cell.other-month:hover,
+.date-picker-popup .day-cell.previous-month:hover,
+.date-picker-popup .day-cell.next-month:hover,
+.date-picker-popup .day-cell:previous-month:hover,
+.date-picker-popup .day-cell:next-month:hover {
+    -fx-text-fill: transparent !important;
+    -fx-background-color: transparent !important;
+    -fx-border-color: transparent !important;
+    -fx-opacity: 0.0 !important;
+}
+
+.date-picker-popup .day-cell.other-month:selected,
+.date-picker-popup .day-cell.previous-month:selected,
+.date-picker-popup .day-cell.next-month:selected,
+.date-picker-popup .day-cell:previous-month:selected,
+.date-picker-popup .day-cell:next-month:selected {
+    -fx-text-fill: transparent !important;
+    -fx-background-color: transparent !important;
+    -fx-border-color: transparent !important;
+    -fx-opacity: 0.0 !important;
+}
+
+.date-picker-popup .day-cell:empty {
+    -fx-background-color: transparent !important;
+    -fx-border-color: transparent !important;
+}
+
+.date-picker .text-field {
+    -fx-background-color: linear-gradient(to bottom, #0f2350, #0b1b3d) !important;
+    -fx-text-fill: #eaf4ff !important;
+    -fx-prompt-text-fill: rgba(191, 214, 242, 0.65) !important;
+    -fx-border-color: rgba(88, 213, 255, 0.74) !important;
+    -fx-border-width: 1.2 !important;
+    -fx-border-radius: 9 !important;
+    -fx-background-radius: 9 !important;
+}
+
+.date-picker .arrow-button {
+    -fx-background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+.date-picker .arrow-button:hover {
+    -fx-background-color: rgba(60, 198, 255, 0.18) !important;
+}
+
+.date-picker .arrow-button .arrow {
+    -fx-background-color: #91e6ff !important;
+}
+
+/* ===== Staff Command Center ===== */
+.staff-shell {
+    -fx-background-color:
+        linear-gradient(to bottom right, rgba(6, 13, 30, 0.98), rgba(12, 24, 52, 0.98)),
+        radial-gradient(center 12% 8%, radius 72%, rgba(92, 200, 255, 0.14), transparent 55%),
+        radial-gradient(center 92% 6%, radius 54%, rgba(255, 99, 197, 0.12), transparent 48%);
+    -fx-background-radius: 28;
+    -fx-border-color: rgba(122, 217, 255, 0.16);
+    -fx-border-width: 1.2;
+    -fx-border-radius: 28;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.34), 24, 0.16, 0, 8);
+}
+
+.staff-hero {
+    -fx-padding: 22 24 22 24;
+    -fx-background-color:
+        linear-gradient(to right, rgba(11, 28, 61, 0.96), rgba(16, 39, 82, 0.92)),
+        radial-gradient(center 24% 22%, radius 70%, rgba(92, 200, 255, 0.16), transparent 58%);
+    -fx-background-radius: 24;
+    -fx-border-color: rgba(126, 218, 255, 0.20);
+    -fx-border-width: 1.2;
+    -fx-border-radius: 24;
+}
+
+.staff-add-btn {
+    -fx-background-color: linear-gradient(to right, #ff67b3, #ff9b68);
+    -fx-text-fill: #071127;
+    -fx-font-weight: 800;
+    -fx-border-color: rgba(255, 241, 246, 0.72);
+    -fx-border-width: 1.4;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-padding: 10 18 10 18;
+}
+
+.staff-add-btn:hover {
+    -fx-effect: dropshadow(gaussian, rgba(255, 123, 180, 0.34), 16, 0.25, 0, 5);
+}
+
+.staff-stat-card {
+    -fx-padding: 18 18 18 18;
+    -fx-background-radius: 22;
+    -fx-border-width: 1.2;
+    -fx-border-radius: 22;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.28), 18, 0.12, 0, 6);
+}
+
+.staff-stat-card-blue {
+    -fx-background-color: linear-gradient(to bottom, rgba(9, 25, 54, 0.98), rgba(8, 17, 38, 0.96));
+    -fx-border-color: rgba(97, 208, 255, 0.48);
+}
+
+.staff-stat-card-pink {
+    -fx-background-color: linear-gradient(to bottom, rgba(33, 19, 47, 0.98), rgba(18, 13, 31, 0.96));
+    -fx-border-color: rgba(255, 123, 203, 0.42);
+}
+
+.staff-stat-card-gold {
+    -fx-background-color: linear-gradient(to bottom, rgba(44, 31, 14, 0.98), rgba(24, 18, 10, 0.96));
+    -fx-border-color: rgba(255, 208, 120, 0.42);
+}
+
+.staff-stat-card-cyan {
+    -fx-background-color: linear-gradient(to bottom, rgba(7, 35, 43, 0.98), rgba(8, 22, 28, 0.96));
+    -fx-border-color: rgba(102, 244, 225, 0.42);
+}
+
+.staff-stat-kicker {
+    -fx-text-fill: rgba(202, 228, 255, 0.70);
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+}
+
+.staff-stat-value {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 34px;
+    -fx-font-weight: 900;
+}
+
+.staff-stat-copy {
+    -fx-text-fill: rgba(214, 228, 248, 0.66);
+    -fx-font-size: 11px;
+    -fx-font-weight: 500;
+}
+
+.staff-directory-panel {
+    -fx-padding: 18 18 18 18;
+    -fx-background-color:
+        linear-gradient(to bottom, rgba(9, 20, 45, 0.98), rgba(8, 16, 34, 0.96)),
+        radial-gradient(center 15% 12%, radius 70%, rgba(255, 255, 255, 0.03), transparent 50%);
+    -fx-background-radius: 24;
+    -fx-border-color: rgba(255, 255, 255, 0.08);
+    -fx-border-width: 1.2;
+    -fx-border-radius: 24;
+}
+
+.staff-search-field {
+    -fx-pref-height: 42;
+}
+
+.staff-scroll,
+.staff-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.staff-grid {
+    -fx-background-color: transparent;
+}
+
+.staff-card {
+    -fx-min-width: 280;
+    -fx-max-width: 320;
+    -fx-background-color:
+        linear-gradient(to bottom right, rgba(17, 31, 68, 0.98), rgba(9, 18, 41, 0.98)),
+        radial-gradient(center 18% 10%, radius 68%, rgba(255, 255, 255, 0.04), transparent 52%);
+    -fx-border-color: rgba(114, 188, 255, 0.18);
+    -fx-border-width: 1.1;
+    -fx-background-radius: 24;
+    -fx-border-radius: 24;
+}
+
+.staff-card-hero {
+    -fx-padding: 14 16 14 16;
+    -fx-background-color:
+        linear-gradient(to right, rgba(17, 42, 91, 0.96), rgba(19, 31, 68, 0.92)),
+        radial-gradient(center 16% 20%, radius 68%, rgba(92, 200, 255, 0.18), transparent 56%);
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(126, 218, 255, 0.16);
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+}
+
+.staff-avatar {
+    -fx-min-width: 56;
+    -fx-min-height: 56;
+    -fx-background-color: linear-gradient(to bottom right, #34d7ff, #6d83ff 62%, #ff77c9);
+    -fx-background-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(90, 197, 255, 0.36), 14, 0.24, 0, 4);
+}
+
+.staff-avatar-text {
+    -fx-text-fill: #081328;
+    -fx-font-size: 18px;
+    -fx-font-weight: 900;
+}
+
+.staff-name {
+    -fx-font-size: 16px;
+}
+
+.staff-role-pill {
+    -fx-padding: 5 12 5 12;
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-background-radius: 999;
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+    -fx-border-width: 1;
+    -fx-border-radius: 999;
+    -fx-text-fill: #dff1ff;
+    -fx-font-size: 10px;
+    -fx-font-weight: 800;
+}
+
+.staff-status-pill {
+    -fx-background-color: rgba(92, 255, 188, 0.12);
+    -fx-border-color: rgba(112, 255, 198, 0.34);
+    -fx-text-fill: #9fffd4;
+}
+
+.staff-info-panel {
+    -fx-padding: 14 14 14 14;
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(255, 255, 255, 0.06);
+    -fx-border-width: 1;
+    -fx-border-radius: 18;
+}
+
+.staff-info-key {
+    -fx-text-fill: rgba(176, 207, 240, 0.72);
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+}
+
+.staff-info-value {
+    -fx-text-fill: #f5fbff;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+}
+
+.staff-open-btn {
+    -fx-padding: 10 18 10 18;
+}
+
+/* ===== Simple Staff Page ===== */
+.staff-shell-simple {
+    -fx-background-color: transparent;
+}
+
+.staff-simple-header {
+    -fx-padding: 4 2 8 2;
+}
+
+.staff-simple-title {
+    -fx-text-fill: #f4f8ff;
+    -fx-font-size: 24px;
+    -fx-font-weight: 800;
+}
+
+.staff-simple-subtitle {
+    -fx-text-fill: rgba(210, 226, 248, 0.68);
+    -fx-font-size: 12px;
+    -fx-font-weight: 500;
+}
+
+.staff-search-field-simple {
+    -fx-pref-height: 40;
+    -fx-pref-width: 250;
+}
+
+.staff-ghost-btn {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-text-fill: #e8f2ff;
+    -fx-font-weight: 700;
+    -fx-border-color: rgba(116, 206, 255, 0.22);
+    -fx-border-width: 1.2;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 9 14 9 14;
+}
+
+.staff-ghost-btn:hover {
+    -fx-background-color: rgba(92,200,255,0.12);
+}
+
+.staff-add-btn-simple {
+    -fx-background-color: linear-gradient(to right, #34d7ff, #5d82ff);
+    -fx-text-fill: #071127;
+    -fx-font-weight: 800;
+    -fx-border-color: rgba(232, 245, 255, 0.72);
+    -fx-border-width: 1.2;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 10 18 10 18;
+}
+
+.staff-add-btn-simple:hover {
+    -fx-effect: dropshadow(gaussian, rgba(92, 200, 255, 0.32), 16, 0.22, 0, 4);
+}
+
+.staff-directory-panel-simple {
+    -fx-padding: 14 14 14 14;
+    -fx-background-color: linear-gradient(to bottom, rgba(10, 20, 43, 0.98), rgba(8, 16, 34, 0.96));
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(255,255,255,0.06);
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+}
+
+.staff-grid-simple {
+    -fx-background-color: transparent;
+    -fx-alignment: top-left;
+    -fx-padding: 8;
+}
+
+.staff-card-simple {
+    -fx-min-width: 248;
+    -fx-max-width: 248;
+    -fx-min-height: 240;
+    -fx-pref-height: 240;
+    -fx-background-color: linear-gradient(to bottom right, rgba(16, 31, 64, 0.98), rgba(10, 18, 39, 0.98));
+    -fx-border-color: rgba(112, 188, 255, 0.16);
+    -fx-border-width: 1;
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.24), 16, 0.12, 0, 6);
+}
+
+.staff-card-simple:hover {
+    -fx-border-color: rgba(132, 214, 255, 0.34);
+    -fx-effect: dropshadow(gaussian, rgba(92, 200, 255, 0.22), 18, 0.14, 0, 7);
+}
+
+.staff-flow-shell {
+    -fx-background-color: transparent;
+    -fx-padding: 20 22 24 22;
+}
+
+.staff-scroll {
+    -fx-padding: 12 14 14 14;
+}
+
+.staff-scroll .viewport {
+    -fx-padding: 0;
+}
+
+.profile-modal-root {
+    -fx-background-color: transparent;
+    -fx-padding: 10;
+}
+
+.profile-modal-card {
+    -fx-background-color:
+        linear-gradient(to bottom right, rgba(11, 22, 49, 0.98), rgba(8, 16, 34, 0.98)),
+        radial-gradient(center 14% 10%, radius 72%, rgba(92, 200, 255, 0.10), transparent 56%);
+    -fx-border-color: rgba(118, 214, 255, 0.22);
+}
+
+.staff-card-top-simple {
+    -fx-padding: 10 12 10 12;
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-background-radius: 14;
+    -fx-border-color: rgba(255,255,255,0.05);
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+}
+
+.staff-avatar-simple {
+    -fx-min-width: 52;
+    -fx-min-height: 52;
+    -fx-background-color: linear-gradient(to bottom right, #3ad8ff, #6e82ff);
+    -fx-background-radius: 15;
+}
+
+.staff-name-simple {
+    -fx-font-size: 15px;
+    -fx-font-weight: 800;
+}
+
+.staff-role-text-simple {
+    -fx-text-fill: rgba(196, 220, 248, 0.72);
+    -fx-font-size: 11px;
+    -fx-font-weight: 600;
+}
+
+.staff-info-panel-simple {
+    -fx-padding: 4 2 4 2;
+}
+
+.staff-info-key-simple {
+    -fx-text-fill: #8acfff;
+    -fx-font-size: 11px;
+    -fx-font-weight: 700;
+    -fx-min-width: 40;
+}
+
+.staff-status-text-simple {
+    -fx-padding: 6 10 6 10;
+    -fx-background-color: rgba(92, 255, 188, 0.10);
+    -fx-background-radius: 999;
+    -fx-border-color: rgba(112, 255, 198, 0.24);
+    -fx-border-width: 1;
+    -fx-border-radius: 999;
+    -fx-text-fill: #9fffd4;
+    -fx-font-size: 10px;
+    -fx-font-weight: 700;
+}
+
+.staff-open-btn-simple {
+    -fx-background-color: rgba(255,255,255,0.08);
+    -fx-text-fill: #eef6ff;
+    -fx-font-weight: 700;
+    -fx-border-color: rgba(116, 206, 255, 0.20);
+    -fx-border-width: 1.2;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 9 14 9 14;
+}
+
+.staff-open-btn-simple:pressed {
+    -fx-background-color: rgba(92,200,255,0.22);
+}
+
+.staff-open-btn-simple:hover {
+    -fx-background-color: rgba(92,200,255,0.14);
+}

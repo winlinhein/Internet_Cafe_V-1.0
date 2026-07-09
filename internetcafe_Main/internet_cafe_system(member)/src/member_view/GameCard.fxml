@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="cardRoot" alignment="TOP_LEFT" prefHeight="340.0" prefWidth="230.0" spacing="14.0" styleClass="game-card-premium" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="member_controllers.GameCardController">
+    <StackPane fx:id="imageWrap" prefHeight="212.0" prefWidth="198.0" styleClass="game-image-wrap">
+        <ImageView fx:id="gameImage" fitHeight="194.0" fitWidth="182.0" pickOnBounds="true" smooth="true" />
+    </StackPane>
+    <VBox alignment="CENTER" spacing="8.0">
+        <Label fx:id="gameTitle" styleClass="game-title-label" text="Game Name" wrapText="true" />
+    </VBox>
+    <HBox alignment="CENTER" spacing="10.0">
+        <Button fx:id="playButton" onAction="#handlePlayAction" text="Launch">
+         <styleClass>
+            <String fx:value="action-button" />
+            <String fx:value="primary" />
+            <String fx:value="compact" />
+         </styleClass></Button>
+    </HBox>
+</VBox>

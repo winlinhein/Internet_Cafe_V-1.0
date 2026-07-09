@@ -1,0 +1,60 @@
+/* Applied automatically by PixelMotion.install(root) */
+
+.root {
+    /* small polish defaults */
+}
+
+.button, .toggle-button, .hyperlink {
+    -fx-background-radius: 10;
+    -fx-padding: 8 14 8 14;
+}
+
+.button:pxhover, .toggle-button:pxhover {
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.12), 18, 0.25, 0, 0);
+}
+
+.text-field:pxfocus, .password-field:pxfocus, .combo-box:pxfocus {
+    -fx-effect: dropshadow(gaussian, rgba(64,255,200,0.30), 16, 0.25, 0, 0);
+}
+
+/* Toast */
+.px-toast {
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-border-color: rgba(255,255,255,0.18);
+    -fx-background-color: rgba(20, 20, 30, 0.92);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 22, 0.2, 0, 6);
+}
+
+.px-toast-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.px-toast-msg {
+    -fx-font-size: 12px;
+    -fx-text-fill: rgba(255,255,255,0.86);
+}
+
+.px-toast.px-ok {
+    -fx-border-color: rgba(64,255,200,0.45);
+}
+
+.px-toast.px-warn {
+    -fx-border-color: rgba(255,120,220,0.50);
+}
+
+.px-toast.px-err {
+    -fx-border-color: rgba(255,80,80,0.55);
+}
+.px-scanline {
+    -fx-background-color: linear-gradient(
+        from 0% 0% to 0% 100%,
+        rgba(255,255,255,0.00),
+        rgba(255,255,255,0.09),
+        rgba(255,255,255,0.00)
+    );
+    -fx-blend-mode: SCREEN;
+}

@@ -1,0 +1,66 @@
+/* ROOT COLORS */
+.root {
+    -pixel-bg: #1b1b1b;
+    -pixel-border: #3aff9e;
+    -pixel-text: #eaffea;
+    -pixel-btn-bg: #2a2a2a;
+    -pixel-btn-hover: #3aff9e;
+    -pixel-btn-close: #ff4d4d;
+}
+
+/* TITLE BAR */
+#titleBar {
+    -fx-background-color: -pixel-bg;
+    -fx-border-color: -pixel-border;
+    -fx-border-width: 0 0 2 0;
+    -fx-padding: 4 8 4 8;
+    -fx-spacing: 6;
+}
+
+/* TITLE TEXT */
+#titleBar Label {
+    -fx-text-fill: -pixel-text;
+    -fx-font-family: "Press Start 2P", "Pixel Emulator", monospace;
+    -fx-font-size: 10px;
+}
+
+/* BUTTON BASE */
+#titleBar Button {
+    -fx-background-color: -pixel-btn-bg;
+    -fx-text-fill: -pixel-text;
+    -fx-font-family: "Press Start 2P", monospace;
+    -fx-font-size: 9px;
+
+    -fx-pref-width: 26px;
+    -fx-pref-height: 20px;
+
+    -fx-border-color: -pixel-border;
+    -fx-border-width: 2;
+
+    -fx-background-insets: 0;
+    -fx-border-insets: 0;
+    -fx-padding: 0;
+}
+
+/* BUTTON HOVER */
+#titleBar Button:hover {
+    -fx-background-color: -pixel-btn-hover;
+    -fx-text-fill: #000000;
+}
+
+/* BUTTON PRESS (PIXEL CLICK FEEL) */
+#titleBar Button:pressed {
+    -fx-translate-y: 1px;
+    -fx-background-color: #2fdc8a;
+}
+
+/* CLOSE BUTTON SPECIAL */
+#closeButton {
+    -fx-border-color: -pixel-btn-close;
+}
+
+#closeButton:hover {
+    -fx-background-color: -pixel-btn-close;
+    -fx-text-fill: #000000;
+}
+

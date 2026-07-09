@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="cardShell" prefHeight="310.0" prefWidth="220.0" styleClass="card-hover-shell" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin_controllers.InventoryCardController">
+    <padding>
+        <Insets bottom="12.0" left="12.0" right="12.0" top="16.0" />
+    </padding>
+    <VBox fx:id="cardRoot" prefHeight="310.0" prefWidth="220.0" spacing="12.0" styleClass="product-card" stylesheets="@../CSS/pixel_admin_reactive.css">
+        <padding>
+            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+        </padding>
+
+        <StackPane maxHeight="130.0" minHeight="130.0" prefHeight="130.0" styleClass="product-thumb-wrap">
+            <ImageView fx:id="productImage" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="imagePlaceholder" styleClass="img-placeholder" text="📷" />
+        </StackPane>
+
+        <VBox spacing="6.0">
+            <Label fx:id="titleLabel" styleClass="product-title" text="Product Name" wrapText="true" />
+            <Label fx:id="subLabel" styleClass="product-sub" text="Category" />
+        </VBox>
+
+        <HBox alignment="CENTER_LEFT" spacing="8.0">
+            <Label fx:id="priceLabel" styleClass="product-price" text="Ks 0" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="stockLabel" styleClass="stock-pill" text="Stock: 0" />
+        </HBox>
+
+        <HBox alignment="CENTER" spacing="8.0">
+            <Button fx:id="editBtn" onAction="#edit" styleClass="prod-edit" text="Edit" textAlignment="CENTER" />
+        </HBox>
+    </VBox>
+</StackPane>

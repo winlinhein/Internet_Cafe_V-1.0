@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="mainBorderPane" prefHeight="720.0" prefWidth="1280.0" styleClass="member-root" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="member_controllers.HomeController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="14.0" styleClass="member-topbar">
+            <padding>
+                <Insets bottom="16.0" left="22.0" right="22.0" top="16.0" />
+            </padding>
+         <HBox prefHeight="54.0" prefWidth="830.0">
+            <children>
+                   <StackPane minHeight="33.0" minWidth="44.0" prefHeight="33.0" prefWidth="62.0" styleClass="sidebar-logo-badge">
+                  <children>
+                     <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../images/file_0000000086547208a0c9c063bd3462f7.png" />
+                        </image>
+                     </ImageView>
+                  </children>
+                  <HBox.margin>
+                     <Insets />
+                  </HBox.margin>
+                   </StackPane>
+            </children>
+         </HBox>
+            <HBox alignment="CENTER" prefHeight="54.0" prefWidth="263.0" styleClass="topbar-pill">
+                <children>
+                    <Label styleClass="topbar-pill-label" text="POINTS COSTS" />
+                    <Label fx:id="pointCost" styleClass="topbar-pill-value" text="00 pts" />
+                </children>
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="12.0" styleClass="topbar-pill">
+                <Label styleClass="topbar-pill-label" text="SESSION" />
+                <Label fx:id="lblSessionTime" styleClass="topbar-pill-value" text="00:00:00" />
+            </HBox>
+
+            <VBox alignment="CENTER" spacing="4.0">
+                <Label styleClass="welcome-chip" text="WELCOME BACK" />
+                <Label fx:id="lblName" alignment="CENTER" styleClass="welcome-name" text="Loading..." />
+            </VBox>
+
+            <Button mnemonicParsing="false" onAction="#handleLogout" styleClass="logout-button" text="Logout" />
+        </HBox>
+    </top>
+
+    <left>
+        <VBox fx:id="sidebar" maxWidth="272.0" minWidth="272.0" prefWidth="272.0" spacing="18.0" styleClass="member-sidebar dashboard-sidebar">
+            <padding>
+                <Insets bottom="18.0" left="16.0" right="16.0" top="18.0" />
+            </padding>
+            <HBox alignment="CENTER_LEFT" styleClass="sidebar-top-row">
+                <VBox fx:id="sidebarBrandBox" spacing="2.0">
+                    <children>
+                        <Label styleClass="sidebar-brand-title" text="I.CAFE" />
+                        <Label styleClass="sidebar-brand-subtitle" text="Member dashboard" />
+                    </children>
+                    <HBox.margin>
+                        <Insets left="6.0" />
+                    </HBox.margin>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button fx:id="btnCollapse" mnemonicParsing="false" onAction="#toggleSidebar" styleClass="sidebar-collapse-button">
+                    <graphic>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/Menu.gif" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </HBox>
+
+            <VBox spacing="10.0">
+                <children>
+                    <VBox spacing="10.0">
+                        <children>
+                            <Button fx:id="btnHome" onAction="#openHome" prefHeight="58.0" prefWidth="168.8" styleClass="nav-button-member">
+                                <graphic>
+                                    <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="nav-button-box">
+                                        <children>
+                                            <StackPane styleClass="nav-icon-wrap">
+                                                <children>
+                                                    <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                        <image>
+                                                            <Image url="@../images/website.gif" />
+                                                        </image>
+                                                    </ImageView>
+                                                </children>
+                                            </StackPane>
+                                            <Label fx:id="lblHomeNav" styleClass="nav-button-text" text="Home" />
+                                        </children>
+                                    </HBox>
+                                </graphic>
+                            </Button>
+
+                            <Button fx:id="btnGames" onAction="#openGames" prefHeight="58.0" prefWidth="168.8" styleClass="nav-button-member">
+                                <graphic>
+                                    <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="nav-button-box">
+                                        <children>
+                                            <StackPane styleClass="nav-icon-wrap">
+                                                <children>
+                                                    <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                        <image>
+                                                            <Image url="@../images/game-controller.gif" />
+                                                        </image>
+                                                    </ImageView>
+                                                </children>
+                                            </StackPane>
+                                            <Label fx:id="lblGamesNav" styleClass="nav-button-text" text="Games" />
+                                        </children>
+                                    </HBox>
+                                </graphic>
+                            </Button>
+
+                            <Button fx:id="btnFood" onAction="#openFood" styleClass="nav-button-member">
+                                <graphic>
+                                    <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="nav-button-box">
+                                        <children>
+                                            <StackPane styleClass="nav-icon-wrap">
+                                                <children>
+                                                    <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                        <image>
+                                                            <Image url="@../images/food.gif" />
+                                                        </image>
+                                                    </ImageView>
+                                                </children>
+                                            </StackPane>
+                                            <Label fx:id="lblFoodNav" styleClass="nav-button-text" text="Food &amp; Drinks" />
+                                        </children>
+                                    </HBox>
+                                </graphic>
+                            </Button>
+                          <Button fx:id="btnProfile" onAction="#openProfile" prefHeight="58.0" prefWidth="168.8" styleClass="nav-button-member">
+                              <graphic>
+                                  <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="nav-button-box">
+                                      <children>
+                                          <StackPane styleClass="nav-icon-wrap">
+                                              <children>
+                                                  <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                      <image>
+                                                          <Image url="@../images/social.gif" />
+                                                      </image>
+                                                  </ImageView>
+                                              </children>
+                                          </StackPane>
+                                          <Label fx:id="lblProfileNav" styleClass="nav-button-text" text="Profile" />
+                                      </children>
+                                  </HBox>
+                              </graphic>
+                          </Button>
+
+                            
+                        </children>
+                    </VBox>
+                </children>
+            </VBox>
+
+            <Region VBox.vgrow="ALWAYS" />
+        </VBox>
+    </left>
+
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="14.0" styleClass="member-statusbar">
+            <padding>
+                <Insets bottom="12.0" left="20.0" right="20.0" top="12.0" />
+            </padding>
+            <Label fx:id="lblPcInfo" text="PC 05">
+            <styleClass>
+               <String fx:value="metric-card-balance" />
+               <String fx:value="inline-status" />
+            </styleClass></Label>
+            <Label fx:id="myPoint" text="100 pts">
+            <styleClass>
+               <String fx:value="metric-card-time" />
+               <String fx:value="inline-status" />
+            </styleClass></Label>
+            <Label text="Status Online">
+                <styleClass>
+                    <String fx:value="status-pill" />
+                    <String fx:value="success" />
+                </styleClass>
+            </Label>
+            <Label fx:id="lblUserTier" text="Tier VIP Gold">
+                <styleClass>
+                    <String fx:value="status-pill" />
+                    <String fx:value="accent" />
+                </styleClass>
+            </Label>
+            <Pane HBox.hgrow="ALWAYS" />
+        </HBox>
+    </bottom>
+
+</BorderPane>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="gameModal" maxWidth="520.0" prefWidth="520.0" spacing="14.0" stylesheets="@../css/pixel_admin_reactive.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin_controllers.GameModalController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="10.0">
+        <VBox spacing="4.0">
+            <Label fx:id="modalTitleLabel" styleClass="edit-popup-title" text="Add Game" />
+        </VBox>
+        <Region HBox.hgrow="ALWAYS" />
+        <Button onAction="#closeModal" styleClass="popup-close-btn" text="✕" />
+    </HBox>
+
+    <HBox alignment="CENTER_LEFT" spacing="14.0">
+        <StackPane minHeight="128.0" prefHeight="128.0" prefWidth="148.0" styleClass="edit-image-preview-wrap game-modal-preview-wrap">
+            <ImageView fx:id="imagePreview" fitHeight="96.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="imagePlaceholder" styleClass="img-placeholder" text="GAME" />
+        </StackPane>
+        <VBox spacing="8.0" HBox.hgrow="ALWAYS">
+            <Label styleClass="popup-field-label" text="Cover Image" />
+            <TextField fx:id="imagePathField" promptText="Image file path" styleClass="popup-field" />
+            <HBox spacing="10.0">
+                <Button onAction="#chooseImage" styleClass="chip-btn" text="Browse" />
+                <Button onAction="#resetImage" styleClass="chip-btn" text="Reset" />
+            </HBox>
+        </VBox>
+    </HBox>
+
+    <VBox spacing="8.0">
+        <Label styleClass="popup-field-label" text="Game Title" />
+        <TextField fx:id="nameField" promptText="Counter-Strike 2" styleClass="popup-field" />
+    </VBox>
+
+    <VBox spacing="8.0">
+        <Label styleClass="popup-field-label" text="Game ID / Steam App ID" />
+        <TextField fx:id="gameIdField" promptText="730" styleClass="popup-field" />
+    </VBox>
+
+    <HBox alignment="CENTER_RIGHT" spacing="10.0">
+        <Button onAction="#saveGame" styleClass="btn-blue" text="Save Game" />
+    </HBox>
+   <styleClass>
+      <String fx:value="edit-popup" />
+      <String fx:value="game-modal" />
+   </styleClass>
+</VBox>

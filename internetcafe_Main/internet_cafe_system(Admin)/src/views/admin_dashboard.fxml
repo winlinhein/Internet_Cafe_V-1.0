@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="root" minHeight="680" minWidth="1100" styleClass="app-root" stylesheets="@../CSS/pixel_admin_reactive.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin_controllers.Admin_dashboardController">
+
+    <top>
+        <HBox spacing="12" styleClass="topbar" BorderPane.alignment="CENTER">
+            <padding><Insets bottom="14" left="16" right="16" top="14" /></padding>
+            <Label styleClass="title" text="I.CAFE ADMIN" />
+            <Region HBox.hgrow="ALWAYS" />
+
+            <TextField fx:id="searchField" promptText="Search customer / PC / receipt..." styleClass="search" visible="false" />
+
+            <Button fx:id="btnNotifications" onAction="#handleNoti" styleClass="icon-btn">
+                <graphic>
+                    <StackPane fx:id="notifRoot">
+                        <ImageView fx:id="notifBellImage" fitHeight="23.0" fitWidth="27.0" preserveRatio="true">
+                            <image><Image url="@../images/notification-bell-1.png" /></image>
+                        </ImageView>
+                        <Label fx:id="notifBadge" styleClass="notif-badge" text="0" visible="false" StackPane.alignment="TOP_RIGHT" />
+                    </StackPane>
+                </graphic>
+            </Button>
+
+            <Button fx:id="btnSettings" onAction="#handleMyProfile" styleClass="icon-btn">
+                <graphic>
+                    <ImageView fitHeight="27.0" fitWidth="25.0" preserveRatio="true">
+                        <image><Image url="@../images/user.gif" /></image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <Button fx:id="btnLogout" onAction="#onLogout" styleClass="btn-pink" text="LOG OUT" />
+        </HBox>
+    </top>
+
+    <left>
+        <VBox fx:id="sidebar" prefWidth="214.0" spacing="10" styleClass="sidebar">
+            <padding><Insets bottom="16" left="12" right="12" top="16" /></padding>
+
+            <Button fx:id="btnToggleSidebar" onAction="#toggleSidebar" styleClass="side-toggle">
+                <graphic>
+                    <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                        <image><Image url="@../images/list.gif" /></image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
+            <Separator styleClass="sep" />
+
+            <Button onAction="#goOverview" styleClass="side-btn" text="Overview">
+                <graphic><ImageView fitHeight="24" fitWidth="24"><image><Image url="@../images/website.gif" /></image></ImageView></graphic>
+            </Button>
+
+            <Button onAction="#goCustomers" styleClass="side-btn" text="Members">
+                <graphic><ImageView fitHeight="24" fitWidth="24"><image><Image url="@../images/team-1.gif" /></image></ImageView></graphic>
+            </Button>
+
+            <Button onAction="#goStaff" styleClass="side-btn" text="Staff">
+                <graphic><ImageView fitHeight="24" fitWidth="24"><image><Image url="@../images/customer-service.gif" /></image></ImageView></graphic>
+            </Button>
+
+            <Button onAction="#goPCs" styleClass="side-btn" text="PCs">
+                <graphic><ImageView fitHeight="24" fitWidth="24"><image><Image url="@../images/gaming.gif" /></image></ImageView></graphic>
+            </Button>
+
+            <Button onAction="#goGames" styleClass="side-btn" text="Games">
+                <graphic><ImageView fitHeight="24" fitWidth="24"><image><Image url="@../images/video-game.gif" /></image></ImageView></graphic>
+            </Button>
+
+            <Button onAction="#goInventory" styleClass="side-btn" text="Food Inventory">
+                <graphic><ImageView fitHeight="24" fitWidth="24"><image><Image url="@../images/inventory-1.gif" /></image></ImageView></graphic>
+            </Button>
+
+            <Button onAction="#handleSessionHistoryAction" styleClass="side-btn" text="SessionHistory">
+                <graphic><ImageView fitHeight="24" fitWidth="24"><image><Image url="@../images/folder.gif" /></image></ImageView></graphic>
+            </Button>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="contentStack" BorderPane.alignment="CENTER">
+            <VBox fx:id="pageOverview" fillWidth="true">
+                <children>
+                    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+                        <content>
+                            <VBox fillWidth="true" maxWidth="1400.0" spacing="18">
+                                <padding><Insets bottom="20" left="20" right="20" top="20" /></padding>
+
+                                <HBox alignment="CENTER_LEFT" spacing="18" styleClass="dashboard-hero">
+                                    <VBox spacing="10" HBox.hgrow="ALWAYS">
+                                        <Label fx:id="lblOverviewTitle" text="Internet Cafe Overview">
+                                     <styleClass>
+                                        <String fx:value="page-title" />
+                                        <String fx:value="dashboard-hero-title" />
+                                     </styleClass></Label>
+                                        <HBox spacing="10" />
+                                    </VBox>
+                                    <Region HBox.hgrow="ALWAYS" />
+                                    <VBox alignment="CENTER_RIGHT" spacing="12" styleClass="dashboard-control-card">
+                                        <HBox alignment="CENTER_RIGHT" spacing="12">
+                                            <VBox spacing="4">
+                                                <DatePicker fx:id="mainDatePicker">
+                                           <styleClass>
+                                              <String fx:value="overview-date-picker" />
+                                              <String fx:value="date-picker-popup" />
+                                           </styleClass>
+                                        </DatePicker>
+                                            </VBox>
+                                        </HBox>
+                                    </VBox>
+                                </HBox>
+
+                                <HBox spacing="14">
+                                    <VBox fx:id="cardActive" spacing="14" HBox.hgrow="ALWAYS">
+                                        <padding><Insets bottom="18" left="18" right="18" top="18" /></padding>
+                                        <HBox alignment="CENTER_LEFT" spacing="12">
+                                            <StackPane>
+                                                <ImageView fitHeight="18" fitWidth="18">
+                                                    <image><Image url="@../images/moodboard.gif" /></image>
+                                                </ImageView>
+                                        <styleClass>
+                                           <String fx:value="stat-icon-wrap" />
+                                           <String fx:value="stat-icon-blue" />
+                                        </styleClass>
+                                            </StackPane>
+                                            <VBox spacing="3">
+                                                <Label styleClass="stat-card-caption" text="Active stations" />
+                                            </VBox>
+                                        </HBox>
+                                        <HBox alignment="BOTTOM_LEFT" spacing="12">
+                                            <Label fx:id="lblActivePcs" styleClass="overview-stat-value" text="24" />
+                                            <VBox spacing="4">
+                                                <Label styleClass="stat-mini-kicker" text="Live now" />
+                                            </VBox>
+                                        </HBox>
+                                        <Pane prefHeight="1.0" styleClass="stat-divider" />
+                                  <styleClass>
+                                     <String fx:value="overview-stat-card" />
+                                     <String fx:value="card-accent-blue" />
+                                  </styleClass>
+                                    </VBox>
+
+                                    <VBox fx:id="cardIncomeDay" spacing="14" HBox.hgrow="ALWAYS">
+                                        <padding><Insets bottom="18" left="18" right="18" top="18" /></padding>
+                                        <HBox alignment="CENTER_LEFT" spacing="12">
+                                            <StackPane>
+                                                <ImageView fitHeight="18" fitWidth="18">
+                                                    <image><Image url="@../images/rupee-coins.gif" /></image>
+                                                </ImageView>
+                                        <styleClass>
+                                           <String fx:value="stat-icon-wrap" />
+                                           <String fx:value="stat-icon-pink" />
+                                        </styleClass>
+                                            </StackPane>
+                                            <VBox spacing="3">
+                                                <Label fx:id="lblTodayTitle" text="Today">
+                                           <styleClass>
+                                              <String fx:value="stat-card-caption" />
+                                              <String fx:value="highlight-caption" />
+                                           </styleClass></Label>
+                                            </VBox>
+                                        </HBox>
+                                        <VBox spacing="10">
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                                                    <Label styleClass="stat-mini-kicker" text="Points used" />
+                                                    <Label fx:id="lblIncomeToday" text="145,000 P">
+                                              <styleClass>
+                                                 <String fx:value="overview-stat-inline-value" />
+                                                 <String fx:value="pink-value" />
+                                              </styleClass></Label>
+                                                </VBox>
+                                            </HBox>
+                                            <Pane prefHeight="1.0" styleClass="stat-divider" />
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                                                    <Label styleClass="stat-mini-kicker" text="Points sold" />
+                                                    <Label fx:id="lblPointSaleToday" styleClass="overview-stat-inline-value" text="145,000 MMK" />
+                                                </VBox>
+                                            </HBox>
+                                        </VBox>
+                                  <styleClass>
+                                     <String fx:value="overview-stat-card" />
+                                     <String fx:value="card-accent-pink" />
+                                  </styleClass>
+                                    </VBox>
+
+                                    <VBox fx:id="cardIncomeMonth" spacing="14" HBox.hgrow="ALWAYS">
+                                        <padding><Insets bottom="18" left="18" right="18" top="18" /></padding>
+                                        <HBox alignment="CENTER_LEFT" spacing="12">
+                                            <StackPane>
+                                                <ImageView fitHeight="18" fitWidth="18">
+                                                    <image><Image url="@../images/income-1.gif" /></image>
+                                                </ImageView>
+                                        <styleClass>
+                                           <String fx:value="stat-icon-wrap" />
+                                           <String fx:value="stat-icon-gold" />
+                                        </styleClass>
+                                            </StackPane>
+                                            <VBox spacing="3">
+                                                <Label fx:id="lblMonthTitle" text="This month">
+                                           <styleClass>
+                                              <String fx:value="stat-card-caption" />
+                                              <String fx:value="highlight-caption" />
+                                           </styleClass></Label>
+                                            </VBox>
+                                        </HBox>
+                                        <VBox spacing="10">
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                                                    <Label styleClass="stat-mini-kicker" text="Points used" />
+                                                    <Label fx:id="lblIncomeMonth" text="3,250,000 P">
+                                              <styleClass>
+                                                 <String fx:value="overview-stat-inline-value" />
+                                                 <String fx:value="gold-value" />
+                                              </styleClass></Label>
+                                                </VBox>
+                                            </HBox>
+                                            <Pane prefHeight="1.0" styleClass="stat-divider" />
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                                                    <Label styleClass="stat-mini-kicker" text="Points sold" />
+                                                    <Label fx:id="lblPointSalethismonth" styleClass="overview-stat-inline-value" text="145,000 MMK" />
+                                                </VBox>
+                                            </HBox>
+                                        </VBox>
+                                  <styleClass>
+                                     <String fx:value="overview-stat-card" />
+                                     <String fx:value="card-accent-gold" />
+                                  </styleClass>
+                                    </VBox>
+                                </HBox>
+
+                                <HBox spacing="14" VBox.vgrow="ALWAYS">
+                                    <VBox fx:id="panelTopSell" HBox.hgrow="ALWAYS">
+                                        <padding><Insets bottom="16" left="16" right="16" top="16" /></padding>
+                                        <VBox spacing="14">
+                                            <HBox alignment="CENTER_LEFT" spacing="12">
+                                                <StackPane styleClass="panel-icon-wrap">
+                                                    <ImageView fitHeight="18" fitWidth="18">
+                                                        <image><Image url="@../images/analytics.gif" /></image>
+                                                    </ImageView>
+                                                </StackPane>
+                                                <VBox spacing="2">
+                                                    <Label styleClass="panel-title" text="Revenue analytics" />
+                                                </VBox>
+                                                <Region HBox.hgrow="ALWAYS" />
+                                                <ComboBox fx:id="cmbRevenueRange" minWidth="130.0" prefWidth="150.0">
+                                           <styleClass>
+                                              <String fx:value="game-category-box" />
+                                              <String fx:value="overview-range-box" />
+                                           </styleClass></ComboBox>
+                                            </HBox>
+                                            <Pane prefHeight="1.0" styleClass="panel-divider" />
+                                        </VBox>
+                                        <StackPane fx:id="topSellChartHolder" styleClass="analytics-chart-surface" VBox.vgrow="ALWAYS">
+                                            <padding><Insets bottom="14" left="14" right="14" top="14" /></padding>
+                                        </StackPane>
+                                  <styleClass>
+                                     <String fx:value="analytics-panel" />
+                                     <String fx:value="analytics-panel-blue" />
+                                  </styleClass>
+                                    </VBox>
+
+                                    <VBox fx:id="panelPcStatus" HBox.hgrow="ALWAYS">
+                                        <padding><Insets bottom="16" left="16" right="16" top="16" /></padding>
+                                        <VBox spacing="14">
+                                            <HBox alignment="CENTER_LEFT" spacing="12">
+                                                <StackPane>
+                                                    <ImageView fitHeight="18" fitWidth="18">
+                                                        <image><Image url="@../images/pie-chart-ezgif.com-gif.gif" /></image>
+                                                    </ImageView>
+                                           <styleClass>
+                                              <String fx:value="panel-icon-wrap" />
+                                              <String fx:value="panel-icon-wrap-pink" />
+                                           </styleClass>
+                                                </StackPane>
+                                                <VBox spacing="2">
+                                                    <Label styleClass="panel-title" text="Product performance" />
+                                                </VBox>
+                                            </HBox>
+                                            <Pane prefHeight="1.0" styleClass="panel-divider" />
+                                        </VBox>
+                                        <StackPane styleClass="analytics-chart-surface" VBox.vgrow="ALWAYS">
+                                            <padding><Insets bottom="14" left="14" right="14" top="14" /></padding>
+                                            <PieChart fx:id="pieProductsSoldMonth" labelsVisible="true" legendVisible="false" prefHeight="320.0" prefWidth="320.0" />
+                                        </StackPane>
+                                        <VBox fx:id="pieLegendBox" spacing="8" styleClass="analytics-legend-box">
+                                            <padding><Insets bottom="12" left="12" right="12" top="12" /></padding>
+                                        </VBox>
+                                  <styleClass>
+                                     <String fx:value="analytics-panel" />
+                                     <String fx:value="analytics-panel-pink" />
+                                  </styleClass>
+                                    </VBox>
+                                </HBox>
+                            <styleClass>
+                               <String fx:value="overview-root" />
+                               <String fx:value="compact-overview" />
+                               <String fx:value="admin-overview-shell" />
+                            </styleClass>
+                            </VBox>
+                        </content>
+                  <styleClass>
+                     <String fx:value="overview-scroll" />
+                     <String fx:value="admin-overview-scroll" />
+                  </styleClass>
+                    </ScrollPane>
+                </children>
+            </VBox>
+
+            <VBox fx:id="pageCustomers" alignment="CENTER" managed="false" visible="false">
+                 <Label style="-fx-text-fill: white; -fx-font-size: 24;" text="Customers List Coming Soon" />
+            </VBox>
+
+        </StackPane>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" styleClass="statusbar">
+            <padding><Insets bottom="10" left="16" right="16" top="10" /></padding>
+            <Label style="-fx-text-fill: white;" text="Status:" />
+            <Label fx:id="lblStatus" style="-fx-text-fill: #00ff00;" text="Connected" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="lblShift" style="-fx-text-fill: #ff63c5;" text="Evening" visible="false" />
+            <Label style="-fx-text-fill: white;" />
+            <Label fx:id="lblClock" style="-fx-text-fill: white;" text="19:00" visible="false" />
+        </HBox>
+    </bottom>
+</BorderPane>

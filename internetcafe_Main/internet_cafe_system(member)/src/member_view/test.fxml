@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="root" focusTraversable="true" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="true" prefHeight="720.0" prefWidth="1280.0" stylesheets="@../css/test.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="member_controllers.TestController">
+
+    <children>
+        <ImageView fx:id="bgGif" fitHeight="720.0" fitWidth="1280.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="false" smooth="true" />
+
+        <Region fx:id="dimOverlay" mouseTransparent="true" styleClass="screen-dim" />
+        <Region fx:id="vignetteOverlay" mouseTransparent="true" styleClass="screen-vignette" />
+        <Region fx:id="scanlineOverlay" mouseTransparent="true" styleClass="screen-scanline" />
+
+        <VBox alignment="CENTER" fillWidth="true" maxWidth="430.0" pickOnBounds="false" spacing="18.0" StackPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="26.0" left="24.0" right="24.0" top="26.0" />
+            </padding>
+
+            <VBox fx:id="logobox" alignment="CENTER" maxWidth="190.0" prefHeight="170.0" prefWidth="170.0" style="-fx-background-color: transparent;" styleClass="login-window">
+                <children>
+                    <ImageView fx:id="logo" fitHeight="150.0" fitWidth="150.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" smooth="true">
+                        <image>
+                            <Image url="@../Images/photo_2026-02-12_19-37-46.jpg" />
+                        </image>
+                        <effect>
+                            <Glow level="0.2" />
+                        </effect>
+                    </ImageView>
+                </children>
+            </VBox>
+
+            <Label fx:id="lblWelcome1" alignment="CENTER" contentDisplay="CENTER" maxWidth="Infinity" mouseTransparent="true" styleClass="welcome" text="CLICK ANYWHERE TO ENTER" textAlignment="CENTER" textFill="#e8f6ff" wrapText="true">
+                <font>
+                    <Font size="26.0" />
+                </font>
+            </Label>
+
+            <VBox fx:id="loadingBox" alignment="CENTER" fillWidth="true" managed="false" maxWidth="330.0" opacity="0.0" prefWidth="330.0" scaleX="0.92" scaleY="0.92" spacing="10.0" styleClass="holo-panel12 loading-box" visible="false">
+                <children>
+                    <Label fx:id="loadingText" alignment="CENTER" contentDisplay="CENTER" maxWidth="Infinity" styleClass="loading-label" text="Loading" />
+                    <Label fx:id="loadingSubtext" alignment="CENTER" contentDisplay="CENTER" maxWidth="Infinity" styleClass="loading-sub" text="Waiting for admin unlock" wrapText="true" />
+                </children>
+            </VBox>
+
+            <VBox fx:id="loginBox" alignment="CENTER" fillWidth="true" managed="false" maxWidth="380.0" opacity="0.0" prefWidth="380.0" scaleX="0.92" scaleY="0.92" spacing="18.0" styleClass="holo-panel12" visible="false">
+                <children>
+                    <Label styleClass="title-label" text="LOGIN" />
+
+                    <TextField fx:id="usernameField" maxWidth="Infinity" prefHeight="44.0" promptText="Username" styleClass="pixel-input" />
+
+                    <PasswordField fx:id="passwordField" maxWidth="Infinity" prefHeight="44.0" promptText="Password" styleClass="pixel-input" />
+
+                    <Label fx:id="enterLabel" alignment="CENTER" contentDisplay="CENTER" maxWidth="Infinity" onMouseClicked="#loginAction" styleClass="login-button" text="Enter" />
+                </children>
+            </VBox>
+        </VBox>
+    </children>
+</StackPane>

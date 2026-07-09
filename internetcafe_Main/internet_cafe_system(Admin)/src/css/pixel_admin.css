@@ -1,0 +1,245 @@
+
+/* ====== Base ====== */
+.app-root {
+    -fx-background-color: #0b1633; /* deep blue */
+    -fx-font-family: "Press Start 2P";
+    -fx-font-smoothing-type: gray;
+}
+
+/* ====== Topbar ====== */
+.topbar {
+    -fx-background-color: #0f2150;
+    -fx-border-color: #5cc8ff;
+    -fx-border-width: 0 0 3 0;
+}
+
+.title {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
+}
+
+.search {
+    -fx-background-color: #0b1633;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255,255,255,0.55);
+    -fx-border-color: #5cc8ff;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 8 10 8 10;
+    -fx-pref-width: 320;
+}
+
+/* ====== Sidebar ====== */
+.sidebar {
+    -fx-background-color: #0f2150;
+    -fx-border-color: #ff63c5;
+    -fx-border-width: 0 3 0 0;
+}
+
+.brand-box {
+    -fx-background-color: #0b1633;
+    -fx-border-color: #5cc8ff;
+    -fx-border-width: 2;
+    -fx-padding: 10;
+}
+
+.brand-icon { -fx-font-size: 24px; -fx-text-fill: #5cc8ff; }
+.brand-text { -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12px; }
+.brand-sub  { -fx-text-fill: #ff63c5; -fx-font-size: 11px; }
+
+.sep { -fx-opacity: 0.35; }
+
+.side-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10 10 10 10;
+    -fx-border-color: transparent;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+.side-btn:hover {
+    -fx-border-color: #5cc8ff;
+    -fx-background-color: rgba(92,200,255,0.12);
+}
+.side-btn:pressed {
+    -fx-translate-y: 1;
+}
+
+/* ====== Content ====== */
+.content { -fx-background-color: transparent; }
+
+.card {
+    -fx-background-color: #0f2150;
+    -fx-border-color: #5cc8ff;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 12;
+    -fx-pref-width: 240;
+}
+.card-title { -fx-text-fill: rgba(255,255,255,0.75); -fx-font-size: 11px; }
+.card-number { -fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold; }
+.card-sub { -fx-text-fill: rgba(255,255,255,0.65); -fx-font-size: 11px; }
+
+.panel {
+    -fx-background-color: #0f2150;
+    -fx-border-color: #ff63c5;
+    -fx-border-width: 2;
+    -fx-padding: 12;
+}
+.panel-head { -fx-padding: 0 0 8 0; }
+.panel-title { -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12px; }
+
+.hint { -fx-text-fill: rgba(255,255,255,0.6); -fx-font-size: 11px; }
+
+/* ====== Buttons ====== */
+.icon-btn {
+    -fx-background-color: #0b1633;
+    -fx-text-fill: white;
+    -fx-border-color: #5cc8ff;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 6 10 6 10;
+}
+.icon-btn:hover { -fx-background-color: rgba(92,200,255,0.12); }
+
+.btn-blue {
+    -fx-background-color: #5cc8ff;
+    -fx-text-fill: #0b1633;
+    -fx-font-weight: bold;
+    -fx-border-color: white;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 8 12 8 12;
+}
+.btn-blue:hover { -fx-opacity: 0.92; }
+
+.btn-pink {
+    -fx-background-color: #ff63c5;
+    -fx-text-fill: #0b1633;
+    -fx-font-weight: bold;
+    -fx-border-color: white;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 8 12 8 12;
+}
+.btn-pink:hover { -fx-opacity: 0.92; }
+
+.btn-white {
+    -fx-background-color: white;
+    -fx-text-fill: #0b1633;
+    -fx-font-weight: bold;
+    -fx-border-color: #5cc8ff;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 8 12 8 12;
+}
+
+/* ====== Table ====== */
+.table {
+    -fx-background-color: #0b1633;
+    -fx-border-color: #5cc8ff;
+    -fx-border-width: 2;
+}
+.table .column-header-background {
+    -fx-background-color: #0f2150;
+}
+.table .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.table .table-row-cell {
+    -fx-background-color: #0b1633;
+    -fx-text-fill: white;
+}
+.table .table-row-cell:filled:selected {
+    -fx-background-color: rgba(255,99,197,0.25);
+}
+.table .table-cell {
+    -fx-text-fill: white;
+}
+
+/* ====== Badges / Mini rows ====== */
+.badge-live {
+    -fx-background-color: rgba(92,200,255,0.18);
+    -fx-border-color: #5cc8ff;
+    -fx-border-width: 2;
+    -fx-text-fill: #5cc8ff;
+    -fx-padding: 2 8 2 8;
+}
+.badge-pink {
+    -fx-background-color: rgba(255,99,197,0.18);
+    -fx-border-color: #ff63c5;
+    -fx-border-width: 2;
+    -fx-text-fill: #ff63c5;
+    -fx-padding: 2 8 2 8;
+}
+
+.mini-row { -fx-background-color: rgba(255,255,255,0.04); -fx-padding: 8; }
+.mini-key { -fx-text-fill: white; }
+.mini-ok  { -fx-text-fill: #5cc8ff; -fx-font-weight: bold; }
+.mini-warn{ -fx-text-fill: #ffd34d; -fx-font-weight: bold; }
+.mini-bad { -fx-text-fill: #ff63c5; -fx-font-weight: bold; }
+
+.section-label { -fx-text-fill: rgba(255,255,255,0.75); -fx-font-size: 11px; }
+
+/* ====== Status bar ====== */
+.statusbar {
+    -fx-background-color: #0f2150;
+    -fx-border-color: #5cc8ff;
+    -fx-border-width: 3 0 0 0;
+}
+.status-key { -fx-text-fill: rgba(255,255,255,0.7); }
+.status-ok  { -fx-text-fill: #5cc8ff; -fx-font-weight: bold; }
+.status-val { -fx-text-fill: white; }
+
+/* ====== Inventory extras ====== */
+
+.combo, .field {
+    -fx-background-color: #0b1633;
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255,255,255,0.55);
+    -fx-border-color: #5cc8ff;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-padding: 8 10 8 10;
+}
+
+.combo {
+    -fx-pref-width: 170;
+}
+
+/* combo popup list */
+.combo-box-popup .list-view {
+    -fx-background-color: #0b1633;
+    -fx-border-color: #5cc8ff;
+    -fx-border-width: 2;
+}
+.combo-box-popup .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: #0b1633;
+}
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: rgba(92,200,255,0.12);
+}
+
+/* right detail labels */
+.form-key {
+    -fx-text-fill: rgba(255,255,255,0.70);
+    -fx-font-size: 11px;
+}
+.form-val {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}

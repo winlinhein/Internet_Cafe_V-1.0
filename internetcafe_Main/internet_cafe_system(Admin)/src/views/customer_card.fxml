@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="cardShell" maxWidth="332.0" minWidth="260.0" onMouseClicked="#handleCardClick" prefWidth="284.0" styleClass="card-hover-shell" stylesheets="@../css/pixel_admin_reactive.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin_controllers.CustomersCardController">
+
+    <padding>
+        <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+    </padding>
+
+    <VBox fx:id="cardRoot" maxWidth="308.0" minWidth="248.0" prefWidth="284.0" spacing="12.0">
+        <styleClass>
+            <String fx:value="game-card" />
+            <String fx:value="customer-card" />
+        </styleClass>
+
+        <padding>
+            <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+        </padding>
+
+        <StackPane fx:id="avatarWrap" minHeight="96.0" prefHeight="96.0" styleClass="customer-avatar-wrap">
+            <Label fx:id="initialsLabel" styleClass="customer-avatar-text" text="AW" />
+        </StackPane>
+
+        <Label fx:id="nameLabel" styleClass="game-title" text="Aiden Walker" />
+
+        <Label fx:id="metaLabel" styleClass="game-sub" text="MEM-1042 • Regular" wrapText="true" />
+
+        <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <VBox fx:id="pointsStat" spacing="4.0" styleClass="customer-mini-stat" HBox.hgrow="ALWAYS">
+                <padding>
+                    <Insets bottom="8.0" left="10.0" right="10.0" top="8.0" />
+                </padding>
+                <Label styleClass="game-key" text="Points" />
+                <Label fx:id="pointsLabel" styleClass="game-value" text="1240 pts" />
+            </VBox>
+
+            <VBox fx:id="spentStat" spacing="4.0" styleClass="customer-mini-stat" HBox.hgrow="ALWAYS">
+                <padding>
+                    <Insets bottom="8.0" left="10.0" right="10.0" top="8.0" />
+                </padding>
+                <Label styleClass="game-key" text="Spent" />
+                <Label fx:id="spentLabel" styleClass="game-value" text="860 pts" />
+            </VBox>
+        </HBox>
+
+        <Label fx:id="lastVisitLabel" styleClass="customer-last-visit" text="Last visit: Today" visible="false" />
+    </VBox>
+</StackPane>
